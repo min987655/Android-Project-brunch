@@ -5,6 +5,32 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--custom font-family 적용-->
+        <item name="android:buttonStyle">@style/notoButton</item>
+        <item name="android:textViewStyle">@style/notoTextView</item>
+        <item name="android:editTextStyle">@style/notoEditText</item>
+        <item name="android:radioButtonStyle">@style/notoRadioButton</item>
+        <item name="android:checkboxStyle">@style/notoCheckbox</item>
+    </style>
+
+    <style name="notoButton" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/notosans_regular</item>
+    </style>
+
+    <style name="notoTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/notosans_regular</item>
+    </style>
+
+    <style name="notoEditText" parent="android:Widget.EditText">
+        <item name="android:fontFamily">@font/notosans_regular</item>
+    </style>
+
+    <style name="notoRadioButton" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/notosans_regular</item>
+    </style>
+
+    <style name="notoCheckbox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/notosans_regular</item>
     </style>
 
 </resources>

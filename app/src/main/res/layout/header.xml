@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="35dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_profile"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/img_logo_b" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:gravity="center"
+        android:text="nickName"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_rounded_solid"
+        android:gravity="center"
+        android:text="작가신청"
+        android:textColor="#00c3bd"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="글쓰기"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:text="작가의 서랍"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_br"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/img_br" />
+
+    <TextView
+        android:id="@+id/tv_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="브런치 홈"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="브런치 나우"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_bookcase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="글 읽는 서재"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_feed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="피드"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_settings"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="220dp"
+        android:src="@drawable/img_settings" />
+
+
+</LinearLayout>

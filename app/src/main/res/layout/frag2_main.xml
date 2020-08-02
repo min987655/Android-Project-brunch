@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_cover_back_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_cover" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#664A4A31" />
+
+    <RelativeLayout
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_box">
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/img_mark_1_b"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="41dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/notosans_light"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="-5dp"
+            android:text="기다리지 않는 여자, 기대하지 않는 남자"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="-11dp"
+            android:textColor="#74FFFFFF"
+            android:text="일상은 약속의 연속이며 때로는 약속에 울고 약속에 웃는다. 하지만 모든 약속을 지키"
+            android:textSize="12.5sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="45dp"
+            android:layout_below="@+id/tv_content"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="by"
+                android:fontFamily="@font/droidserif_regular"
+                android:textColor="#6BFFFFFF"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_nickname_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_by"
+                android:text="nickName"
+                android:textColor="#6BFFFFFF"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+        <View
+            android:id="@+id/img_pick_br"
+            android:layout_width="115dp"
+            android:layout_height="0.3dp"
+            android:layout_centerHorizontal="true"
+            android:background="#C5C5C5" />
+
+        <TextView
+            android:id="@+id/tv_brunch_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_pick_br"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:text="나를 위한 브런치 Pick"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="115dp"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/tv_brunch_pick"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:background="#C5C5C5" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_cover_back_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_cover" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2314A34" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp">
+
+        <View
+            android:id="@+id/img_pick_br"
+            android:layout_width="115dp"
+            android:layout_height="0.3dp"
+            android:layout_centerHorizontal="true"
+            android:background="#C5C5C5" />
+
+        <TextView
+            android:id="@+id/tv_brunch_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_pick_br"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:text="나를 위한 브런치 Pick"
+            android:textColor="@android:color/white"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="115dp"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/tv_brunch_pick"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:background="#C5C5C5" />
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_cover"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/img_cover" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_cover"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/notosans_light"
+        android:text="외로움은 너무 비싸"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-8dp"
+        android:layout_below="@+id/tv_title">
+
+        <TextView
+            android:id="@+id/tv_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by"
+            android:fontFamily="@font/droidserif_regular"
+            android:textColor="#6BFFFFFF"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv_nickname_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/tv_by"
+            android:text="nickName"
+            android:textColor="#6BFFFFFF"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

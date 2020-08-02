@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/img_profile"
-        android:icon="@drawable/img_logo_black"
-        android:title="nickName" />
+
     <item
         android:id="@+id/nav_menu1"
         android:title="글쓰기" />
     <item
         android:id="@+id/nav_menu2"
         android:title="작가의서랍" />
+
+    <item
+        android:id="@+id/nav_br"
+        android:icon="@drawable/img_br"
+        android:title="br"/>
+
+    <item
+        android:id="@+id/nav_menu3"
+        android:title="브런치 홈" />
+    <item
+        android:id="@+id/nav_menu4"
+        android:title="브런치 나우" />
+    <item
+        android:id="@+id/nav_menu5"
+        android:title="글읽는 서재" />
+    <item
+        android:id="@+id/nav_menu6"
+        android:title="피드" />
 
 </menu>
