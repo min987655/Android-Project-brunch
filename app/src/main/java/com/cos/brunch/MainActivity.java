@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ImageView imgMenu;
 
+    private MainFrag1 frag1;
+    private MainFrag2 frag2;
+    private MainFrag3 frag3;
+    private MainFrag4 frag4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +46,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         mainAdapter = new MainFragmentAdapter(this);
 
-        mainAdapter.addFragment(new MainFrag1());
-        mainAdapter.addFragment(new MainFrag2());
-        mainAdapter.addFragment(new MainFrag3());
+        frag1 = new MainFrag1();
+        frag2 = new MainFrag2();
+        frag3 = new MainFrag3();
+        frag4 = new MainFrag4();
+
+        mainAdapter.addFragment(frag1);
+        mainAdapter.addFragment(frag2);
+        mainAdapter.addFragment(frag3);
+        mainAdapter.addFragment(frag4);
 
         viewPager.setAdapter(mainAdapter);
     }

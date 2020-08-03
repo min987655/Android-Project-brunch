@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:text="by"
             android:fontFamily="@font/droidserif_regular"
-            android:textColor="#6BFFFFFF"
+            android:textColor="#66FFFFFF"
             android:textSize="15sp"
             android:textStyle="italic" />
 
@@ -92,7 +92,7 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/tv_by"
             android:text="nickName"
-            android:textColor="#6BFFFFFF"
+            android:textColor="#66FFFFFF"
             android:textSize="15sp" />
 
     </RelativeLayout>
