@@ -10,24 +10,24 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/img_cover_back_main"
+            android:id="@+id/img_cover_back_main1"
             android:layout_width="match_parent"
-            android:layout_height="352dp"
+            android:layout_height="356.5dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_cover" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="352dp"
+            android:layout_height="356.5dp"
             android:background="#575A626E" />
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_title1"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_editor_pick"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="222dp"
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
@@ -37,11 +37,11 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_title"
-            android:layout_marginTop="300dp">
+            android:layout_alignLeft="@+id/tv_title1"
+            android:layout_marginTop="302dp">
 
             <TextView
-                android:id="@+id/tv_by"
+                android:id="@+id/tv_by1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/droidserif_regular"
@@ -51,11 +51,11 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/tv_nickname_main"
+                android:id="@+id/tv_nickname_main1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/tv_by"
+                android:layout_toRightOf="@id/tv_by1"
                 android:text="nickName"
                 android:textColor="#66FFFFFF"
                 android:textSize="15sp" />
@@ -72,13 +72,13 @@
         <ImageView
             android:id="@+id/img_cover_back_main2"
             android:layout_width="match_parent"
-            android:layout_height="352dp"
+            android:layout_height="356.5dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_cover" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="352dp"
+            android:layout_height="356.5dp"
             android:background="#575A626E" />
 
         <TextView
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_editor_pick"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="222dp"
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignLeft="@+id/tv_title2"
-            android:layout_marginTop="300dp">
+            android:layout_marginTop="302dp">
 
             <TextView
                 android:id="@+id/tv_by2"
