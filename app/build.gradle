@@ -34,6 +34,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
     implementation 'com.google.android.material:material:1.2.0-alpha05'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
     implementation 'io.apisense:rhino-android:1.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'

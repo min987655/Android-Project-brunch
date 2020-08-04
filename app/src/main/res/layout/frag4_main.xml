@@ -12,13 +12,13 @@
         <ImageView
             android:id="@+id/img_cover_back_main1"
             android:layout_width="match_parent"
-            android:layout_height="356.5dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/img_cover" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="356.5dp"
+            android:layout_height="match_parent"
             android:background="#575A626E" />
 
         <TextView
@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_editor_pick"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="222dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
@@ -38,7 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignLeft="@+id/tv_title1"
-            android:layout_marginTop="302dp">
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true">
 
             <TextView
                 android:id="@+id/tv_by1"
@@ -72,13 +74,13 @@
         <ImageView
             android:id="@+id/img_cover_back_main2"
             android:layout_width="match_parent"
-            android:layout_height="356.5dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/img_cover" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="356.5dp"
+            android:layout_height="match_parent"
             android:background="#575A626E" />
 
         <TextView
@@ -87,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_editor_pick"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="222dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
@@ -98,7 +101,8 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignLeft="@+id/tv_title2"
-            android:layout_marginTop="302dp">
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true">
 
             <TextView
                 android:id="@+id/tv_by2"
