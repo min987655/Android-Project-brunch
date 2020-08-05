@@ -4,6 +4,8 @@
     <color name="colorCharcoal">#73000000</color>
     <color name="colorGray">#4D000000</color>
     <color name="colorLightGray">#0F000000</color>
+    <color name="colorBrightGary">#08000000</color>
     <color name="colorBorderLight">#7EFFFFFF</color>
+    <color name="colorBorderDark">#C5C5C5</color>
     <color name="colorAccent">#00c3bd</color>
 </resources>

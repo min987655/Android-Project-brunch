@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,8 +22,9 @@ public class UserActivity extends AppCompatActivity {
 
     private NavigationView nav;
     private View navHeader;
-    private TextView navHome;
-    private ImageView navProfile;
+    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
+    private ImageView navProfile, navSettings;
+    private Button navApply;
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgProfileUpdate;
@@ -37,14 +39,22 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void init() {
-        nav = findViewById(R.id.nav);
         drawerLayout = findViewById(R.id.drawer);
+        imgMenu = findViewById(R.id.img_menu);
+        imgProfileUpdate = findViewById(R.id.img_user_profile_dialog);
+
+        nav = findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);
         navProfile = navHeader.findViewById(R.id.img_profile);
+        navApply = navHeader.findViewById(R.id.btn_apply);
+        navWrite = navHeader.findViewById(R.id.tv_write);
+        navDrawer = navHeader.findViewById(R.id.tv_drawer);
+        navNow = navHeader.findViewById(R.id.tv_now);
+        navBookcase = navHeader.findViewById(R.id.tv_bookcase);
+        navFeed = navHeader.findViewById(R.id.tv_feed);
+        navSettings = navHeader.findViewById(R.id.iv_settings);
 
-        imgMenu = findViewById(R.id.img_menu);
-        imgProfileUpdate = findViewById(R.id.img_user_profile_dialog);
     }
 
     private void listener() {
@@ -77,6 +87,49 @@ public class UserActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, UserActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        navApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ApplyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        navWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navBookcase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        navFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
             }
         });
     }

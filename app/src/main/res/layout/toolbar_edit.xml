@@ -14,20 +14,30 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_menu"
+            android:id="@+id/img_toolbar_l"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/img_menu"
+            app:srcCompat="@drawable/img_cancel"
             android:contentDescription="@string/StringValue"/>
 
+        <TextView
+            android:id="@+id/tv_toolbar_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:fontFamily="@font/notosans_light"
+            android:text="프로필 편집"
+            android:textSize="16sp" />
+
         <ImageView
-            android:id="@+id/img_user_profile_dialog"
+            android:id="@+id/img_toolbar_r"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_width="24dp"
+            android:layout_width="26dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_more"
+            app:srcCompat="@drawable/img_check"
             android:contentDescription="@string/StringValue"/>
 
     </RelativeLayout>

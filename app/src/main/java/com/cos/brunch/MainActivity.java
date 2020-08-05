@@ -2,17 +2,15 @@ package com.cos.brunch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     private NavigationView nav;
     private View navHeader;
-    private TextView navHome;
-    private ImageView navProfile;
+    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
+    private ImageView navProfile, navSettings;
+    private Button navApply;
 
     private DrawerLayout drawerLayout;
-    private ImageView imgMenu;
+    private ImageView imgMenu, imgSearch;
 
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
@@ -49,13 +48,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        nav = findViewById(R.id.nav);
-        imgMenu = findViewById(R.id.img_menu);
+
         drawerLayout = findViewById(R.id.drawer);
+        imgMenu = findViewById(R.id.img_menu);
+
+        nav = findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);
         navProfile = navHeader.findViewById(R.id.img_profile);
-        Log.d(TAG, "init: navHome : " + navHome);
+        navApply = navHeader.findViewById(R.id.btn_apply);
+        navWrite = navHeader.findViewById(R.id.tv_write);
+        navDrawer = navHeader.findViewById(R.id.tv_drawer);
+        navNow = navHeader.findViewById(R.id.tv_now);
+        navBookcase = navHeader.findViewById(R.id.tv_bookcase);
+        navFeed = navHeader.findViewById(R.id.tv_feed);
+        navSettings = navHeader.findViewById(R.id.iv_settings);
 
         viewPager = findViewById(R.id.view_pager);
         mainAdapter = new MainFragmentAdapter(this);
@@ -96,6 +103,49 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, UserActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        navApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ApplyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        navWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navBookcase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        navFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        navSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
             }
         });
     }

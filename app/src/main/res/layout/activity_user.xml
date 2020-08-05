@@ -28,14 +28,14 @@
             android:id="@+id/tv_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/tv_nickname_intro"
+            android:layout_above="@+id/tv_intro"
             android:layout_marginBottom="4dp"
             android:gravity="center"
             android:text="그삼"
-            android:textSize="22sp" />
+            android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/tv_nickname_intro"
+            android:id="@+id/tv_intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/user_follower_following"
@@ -79,7 +79,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="7dp"
                 android:layout_toRightOf="@+id/tv_follower_count"
-                android:background="#C5C5C5" />
+                android:background="@color/colorBorderDark" />
 
             <TextView
                 android:id="@+id/tv_following"
