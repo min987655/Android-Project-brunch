@@ -44,7 +44,7 @@ public class UserActivity extends AppCompatActivity {
         navProfile = navHeader.findViewById(R.id.img_profile);
 
         imgMenu = findViewById(R.id.img_menu);
-        imgProfileUpdate = findViewById(R.id.img_user_profile_update);
+        imgProfileUpdate = findViewById(R.id.img_user_profile_dialog);
     }
 
     private void listener() {

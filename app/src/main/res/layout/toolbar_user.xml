@@ -4,6 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:contentInsetStart="0dp"
     android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+    android:layout_marginTop="@dimen/toolbar_marginTop"
+    android:layout_marginRight="@dimen/toolbar_marginRight"
     android:layout_height="40dp">
 
     <RelativeLayout
@@ -19,7 +22,7 @@
             android:contentDescription="@string/StringValue"/>
 
         <ImageView
-            android:id="@+id/img_user_profile_update"
+            android:id="@+id/img_user_profile_dialog"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_width="24dp"

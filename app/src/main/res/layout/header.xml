@@ -30,7 +30,7 @@
         android:background="@drawable/button_rounded_solid"
         android:gravity="center"
         android:text="작가신청"
-        android:textColor="#00c3bd"
+        android:textColor="@color/colorAccent"
         android:textSize="13sp" />
 
     <TextView

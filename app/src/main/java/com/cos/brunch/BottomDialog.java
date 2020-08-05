@@ -1,6 +1,5 @@
 package com.cos.brunch;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,20 +20,19 @@ public class BottomDialog extends BottomSheetDialogFragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bottom_dialog, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View dialogView = inflater.inflate(R.layout.layout_bottom_dialog, container, false);
 
-        tvProfileUpdate = view.findViewById(R.id.tv_user_profile_update);
-        tvCancel = view.findViewById(R.id.tv_cancel);
+        tvProfileUpdate = dialogView.findViewById(R.id.tv_user_profile_update);
+        tvCancel = dialogView.findViewById(R.id.tv_cancel);
 
         tvProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(this, )
+            
             }
         });
-
-        return view;
+        return dialogView;
     }
 
 }
