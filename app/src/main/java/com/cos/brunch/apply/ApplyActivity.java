@@ -1,10 +1,9 @@
-package com.cos.brunch;
+package com.cos.brunch.apply;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cos.brunch.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class ApplyActivity extends AppCompatActivity {
@@ -19,11 +19,11 @@ public class ApplyActivity extends AppCompatActivity {
     private static final String TAG = "ApplyActivity";
     private Context mContext = ApplyActivity.this;
 
-    private NavigationView nav;
-    private View navHeader;
-    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
-    private ImageView navProfile, navSettings;
-    private Button navApply;
+//    private NavigationView nav;
+//    private View navHeader;
+//    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
+//    private ImageView navProfile, navSettings;
+//    private Button navApply;
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgSearch;

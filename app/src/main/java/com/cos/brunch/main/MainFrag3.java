@@ -1,4 +1,4 @@
-package com.cos.brunch;
+package com.cos.brunch.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class MainFrag1 extends Fragment {
+import com.cos.brunch.R;
+
+public class MainFrag3 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag1_main, container, false);
+        View view = inflater.inflate(R.layout.frag3_main, container, false);
 
         return view;
     }

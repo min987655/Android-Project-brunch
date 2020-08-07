@@ -1,13 +1,15 @@
-package com.cos.brunch;
+package com.cos.brunch.userProfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.cos.brunch.R;
+import com.cos.brunch.user.UserActivity;
 
 public class UserProfileUpdateActivity extends AppCompatActivity {
 

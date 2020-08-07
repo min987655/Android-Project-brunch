@@ -1,4 +1,4 @@
-package com.cos.brunch;
+package com.cos.brunch.main;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.cos.brunch.R;
 
 public class MainFrag4 extends Fragment {
     private static final String TAG = "MainFrag4";

@@ -1,4 +1,4 @@
-package com.cos.brunch;
+package com.cos.brunch.main;
 
 import android.content.Context;
 import android.util.Log;
