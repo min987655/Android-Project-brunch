@@ -13,7 +13,7 @@ import com.cos.brunch.user.UserActivity;
 
 public class UserProfileUpdateActivity extends AppCompatActivity {
 
-    private static final String TAG = "UserProfileUpdateActivi";
+    private static final String TAG = "UserProfileUpdateActivity";
     private Context mContext = UserProfileUpdateActivity.this;
 
     private ImageView imgCancel, imgProfileUpdate;
@@ -23,16 +23,20 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile_update);
 
-        init();
-        listener();
+        initData();
+        initObject();
+        initlistener();
     }
 
-    private void init() {
+    private void initData() {
+    }
+
+    private void initObject() {
         imgCancel = findViewById(R.id.img_toolbar_l);
         imgProfileUpdate = findViewById(R.id.img_toolbar_r);
     }
 
-    private void listener() {
+    private void initlistener() {
 
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +46,7 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
             }
         });
 
-        // 저장중 알림창 뜸 !
+        // 저장중 알림창 떠야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         imgProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

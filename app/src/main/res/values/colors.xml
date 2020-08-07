@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite20">#34FFFFFF</color>
+    <color name="colorWhite40">#66FFFFFF</color>
     <color name="colorMainText">#E4000000</color>
     <color name="colorCharcoal">#73000000</color>
     <color name="colorGray">#4D000000</color>
+    <color name="colorGray20">#33000000</color>
     <color name="colorLightGray">#0F000000</color>
     <color name="colorBrightGary">#08000000</color>
     <color name="colorBorderLight">#7EFFFFFF</color>

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".apply.ApplyActivity"></activity>
+        <activity android:name=".now.NowActivity"></activity>
+        <activity android:name=".apply.ApplyActivity" />
         <activity android:name=".userProfile.UserProfileUpdateActivity" />
         <activity android:name=".user.UserActivity" />
         <activity android:name=".main.MainActivity">

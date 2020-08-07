@@ -17,7 +17,7 @@
         android:layout_marginTop="80dp"
         android:fontFamily="@font/nanummyeongjo"
         android:lineSpacingExtra="5dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:text="브런치는\n작가로 선정되어야\n글을 발행하실 수\n있습니다."
         android:textSize="34dp"/>
 
@@ -29,7 +29,7 @@
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:fontFamily="@font/nanummyeongjo"
         android:lineSpacingExtra="5dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorWhite"
         android:text="출간 작가, 특정 분야의 전문가가 아니어도\n진정성 있게 글을 쓸 분이라면\n브런치 작가에 도전하실 수 있습니다.."
         android:textSize="14dp"/>
 
@@ -59,7 +59,7 @@
             android:gravity="center"
             android:fontFamily="@font/notosans_light"
             android:text="작가 신청하기"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 

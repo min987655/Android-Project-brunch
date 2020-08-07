@@ -41,7 +41,7 @@
             android:gravity="center_horizontal"
             android:lineSpacingExtra="-5dp"
             android:text="기다리지 않는 여자, 기대하지 않는 남자"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorWhite"
             android:textSize="25sp" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/tv_title"
             android:layout_marginTop="-11dp"
-            android:textColor="#74FFFFFF"
+            android:textColor="@color/colorWhite40"
             android:text="일상은 약속의 연속이며 때로는 약속에 울고 약속에 웃는다. 하지만 모든 약속을 지키"
             android:textSize="12.5sp" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:text="by"
                 android:fontFamily="@font/droidserif_regular"
-                android:textColor="#6BFFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp"
                 android:textStyle="italic" />
 
@@ -80,7 +80,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/tv_by"
                 android:text="nickName"
-                android:textColor="#6BFFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp" />
 
         </RelativeLayout>
@@ -98,7 +98,7 @@
             android:layout_width="115dp"
             android:layout_height="0.3dp"
             android:layout_centerHorizontal="true"
-            android:background="#C5C5C5" />
+            android:background="@color/colorBorderLight" />
 
         <TextView
             android:id="@+id/tv_brunch_pick"
@@ -108,7 +108,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:text="나를 위한 브런치 Pick"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorWhite"
             android:textSize="11sp" />
 
         <View
@@ -117,7 +117,7 @@
             android:layout_below="@+id/tv_brunch_pick"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
-            android:background="#C5C5C5" />
+            android:background="@color/colorBorderLight" />
 
     </RelativeLayout>
 

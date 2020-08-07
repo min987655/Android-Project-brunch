@@ -32,7 +32,7 @@
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorWhite"
             android:textSize="22sp" />
 
         <RelativeLayout
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/droidserif_regular"
                 android:text="by"
-                android:textColor="#66FFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp"
                 android:textStyle="italic" />
 
@@ -59,7 +59,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/tv_by1"
                 android:text="nickName"
-                android:textColor="#66FFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp" />
 
         </RelativeLayout>
@@ -94,7 +94,7 @@
             android:fontFamily="@font/notosans_light"
             android:lineSpacingExtra="-5dp"
             android:text="한국에서 멀어졌더니 생긴 변화"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorWhite"
             android:textSize="22sp" />
 
         <RelativeLayout
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/droidserif_regular"
                 android:text="by"
-                android:textColor="#66FFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp"
                 android:textStyle="italic" />
 
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/tv_by2"
                 android:text="nickName"
-                android:textColor="#66FFFFFF"
+                android:textColor="@color/colorWhite40"
                 android:textSize="15sp" />
 
         </RelativeLayout>

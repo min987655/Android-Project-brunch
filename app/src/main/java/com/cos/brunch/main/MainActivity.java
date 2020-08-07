@@ -1,23 +1,16 @@
 package com.cos.brunch.main;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.cos.brunch.apply.ApplyActivity;
 import com.cos.brunch.R;
-import com.cos.brunch.user.UserActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
@@ -25,12 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Main_Activity";
     private Context mContext = MainActivity.this;
-
-//    private NavigationView nav;
-//    private View navHeader;
-//    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
-//    private ImageView navProfile, navSettings;
-//    private Button navApply;
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgSearch;
@@ -63,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         imgMenu = findViewById(R.id.img_menu);
     }
 
-    private void initDesign(){
+    private void initDesign() {
         drawerLayout = findViewById(R.id.drawer);
 
         viewPager = findViewById(R.id.view_pager);
@@ -89,66 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-
-//        navHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d(TAG, "onClick: ");
-//                Intent intent = new Intent(mContext, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        navProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(mContext, UserActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        navApply.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(mContext, ApplyActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        navWrite.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
-//
-//        navDrawer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
-//
-//        navNow.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
-//
-//        navBookcase.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
-//        navFeed.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
-//
-//        navSettings.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
     }
 
     private void setupNavigationView() {

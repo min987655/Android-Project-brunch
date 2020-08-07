@@ -26,7 +26,7 @@
             android:layout_width="115dp"
             android:layout_height="0.3dp"
             android:layout_centerHorizontal="true"
-            android:background="#C5C5C5" />
+            android:background="@color/colorBorderLight" />
 
         <TextView
             android:id="@+id/tv_brunch_pick"
@@ -45,7 +45,7 @@
             android:layout_below="@+id/tv_brunch_pick"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
-            android:background="#C5C5C5" />
+            android:background="@color/colorBorderLight" />
 
     </RelativeLayout>
 
@@ -66,7 +66,7 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/notosans_light"
         android:text="외로움은 너무 비싸"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorWhite"
         android:textSize="25sp" />
 
     <RelativeLayout
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="by"
             android:fontFamily="@font/droidserif_regular"
-            android:textColor="#66FFFFFF"
+            android:textColor="@color/colorWhite40"
             android:textSize="15sp"
             android:textStyle="italic" />
 
@@ -93,7 +93,7 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/tv_by"
             android:text="nickName"
-            android:textColor="#66FFFFFF"
+            android:textColor="@color/colorWhite40"
             android:textSize="15sp" />
 
     </RelativeLayout>

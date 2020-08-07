@@ -19,13 +19,7 @@ public class ApplyActivity extends AppCompatActivity {
     private static final String TAG = "ApplyActivity";
     private Context mContext = ApplyActivity.this;
 
-//    private NavigationView nav;
-//    private View navHeader;
-//    private TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
-//    private ImageView navProfile, navSettings;
-//    private Button navApply;
-
-    private DrawerLayout drawerLayout;
+//    private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgSearch;
     private TextView toolbarHeader;
 
@@ -34,11 +28,13 @@ public class ApplyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply);
 
-        init();
-        listener();
+        initObject();
+        initDesign();
+        initlistener();
     }
 
-    private void init() {
+    private void initObject() {
+
         imgMenu = findViewById(R.id.img_toolbar_l);
         toolbarHeader = findViewById(R.id.tv_toolbar_header);
         imgSearch = findViewById(R.id.img_toolbar_r);
@@ -49,7 +45,11 @@ public class ApplyActivity extends AppCompatActivity {
         imgSearch.setImageDrawable(getDrawable(R.drawable.img_search_w));
     }
 
-    private void listener() {
+    private void initDesign() {
+
+    }
+
+    private void initlistener() {
 
     }
 }
