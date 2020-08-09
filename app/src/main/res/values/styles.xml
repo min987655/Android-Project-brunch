@@ -11,6 +11,7 @@
         <item name="android:editTextStyle">@style/notoEditText</item>
         <item name="android:radioButtonStyle">@style/notoRadioButton</item>
         <item name="android:checkboxStyle">@style/notoCheckbox</item>
+
     </style>
 
     <style name="notoButton" parent="android:Widget.Button">

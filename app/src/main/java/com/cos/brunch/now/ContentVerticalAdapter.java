@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,10 +58,13 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private RecyclerView rvNowApply;
+        private TextView tvNowApplyKeyword;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             rvNowApply = itemView.findViewById(R.id.rv_now_apply);
+            tvNowApplyKeyword =itemView.findViewById(R.id.tv_now_apply_keyword);
+            tvNowApplyKeyword.setText("그림·웹툰");
         }
     }
 

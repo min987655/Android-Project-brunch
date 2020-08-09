@@ -4,51 +4,114 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:id="@+id/now_content_more"
+        android:id="@+id/now_apply"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginRight="@dimen/toolbar_marginRight">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/now_content_keyword"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:layout_marginRight="3dp"
-            android:textColor="@color/colorAccent"
-            android:text="CEO"
-            android:textSize="17sp" />
+        <RelativeLayout
+            android:id="@+id/now_apply_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/toolbar_marginLeft"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="@dimen/toolbar_marginRight"
+            android:layout_marginBottom="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:gravity="center_vertical"
-            android:layout_toRightOf="@+id/now_content_keyword"
-            android:text="작가"
-            android:textSize="17sp" />
+            <TextView
+                android:id="@+id/tv_now_apply_keyword"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginRight="3dp"
+                android:gravity="center_vertical"
+                android:text="CEO"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/img_next_g"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_toRightOf="@+id/tv_now_apply_keyword"
+                android:gravity="center_vertical"
+                android:text="작가"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/img_next_g" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_now_apply"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/now_apply_more"
+            android:scrollbars="none" />
+
+        <View
+            android:id="@+id/now_bar1"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/rv_now_apply"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorBorderDark" />
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_now_apply"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@+id/now_content_more"
-        android:scrollbars="none" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/now_apply">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.3dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/rv_now_apply"
-        android:background="@color/colorBorderDark" />
+        <RelativeLayout
+            android:id="@+id/now_content_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/toolbar_marginLeft"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="@dimen/toolbar_marginRight"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/tv_now_content_keyword"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginRight="3dp"
+                android:gravity="center_vertical"
+                android:text="캘리그라피"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_toRightOf="@+id/tv_now_content_keyword"
+                android:gravity="center_vertical"
+                android:text="이야기"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/img_next_g" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_now_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/now_content_more"
+            android:scrollbars="none" />
+
+        <View
+            android:id="@+id/now_bar2"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/rv_now_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorBorderDark" />
+    </RelativeLayout>
+
 
 </RelativeLayout>

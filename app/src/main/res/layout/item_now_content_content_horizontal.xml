@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/toolbar_marginRight"
+    android:layout_marginLeft="@dimen/toolbar_marginLeft">
+
+    <ImageView
+        android:id="@+id/img_now_content_cover"
+        android:layout_width="130dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_cover" />
+
+    <TextView
+        android:id="@+id/tv_now_content_title"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_now_content_cover"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-80dp"
+        android:textColor="@color/colorWhite"
+        android:text="꿈이 꼭 있어야할까."
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/tv_now_content_title"
+        android:layout_below="@+id/tv_now_content_title">
+
+        <TextView
+            android:id="@+id/tv_by_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/droidserif_regular"
+            android:text="by"
+            android:textColor="@color/colorWhite40"
+            android:textSize="13sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv_now_apply_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/tv_by_now"
+            android:text="nickName"
+            android:textColor="@color/colorWhite40"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

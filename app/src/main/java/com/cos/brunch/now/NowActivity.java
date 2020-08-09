@@ -33,10 +33,11 @@ public class NowActivity extends AppCompatActivity {
     private KeywordAdapter keywordAdapter;
     private ContentVerticalAdapter contentVerticalAdapter;
     private List<List<User>> allUsers = new ArrayList<>();
+    private List<List<Post>> allPosts = new ArrayList<>();
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgSearch;
-    private TextView toolbarHeader;
+    private TextView tvToolbarHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +53,12 @@ public class NowActivity extends AppCompatActivity {
 
     private void initObject() {
         imgMenu = findViewById(R.id.img_toolbar_l);
-        toolbarHeader = findViewById(R.id.tv_toolbar_header);
+        tvToolbarHeader = findViewById(R.id.tv_toolbar_header);
         imgSearch = findViewById(R.id.img_toolbar_r);
 
         imgMenu.setImageDrawable(getDrawable(R.drawable.img_menu_w));
-        toolbarHeader.setText("브런치 나우");
-        toolbarHeader.setTextColor(Color.WHITE);
+        tvToolbarHeader.setText("브런치 나우");
+        tvToolbarHeader.setTextColor(Color.WHITE);
         imgSearch.setImageDrawable(getDrawable(R.drawable.img_search_w));
     }
 
@@ -128,45 +129,6 @@ public class NowActivity extends AppCompatActivity {
         user3.add(new User(R.drawable.img_apply_profile3, "작가29"));
         user3.add(new User(R.drawable.img_apply_profile3, "작가30"));
         allUsers.add(user3);
-
-        List<User> user4 = new ArrayList<>();
-        user4.add(new User(R.drawable.img_apply_profile1, "작가1"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가2"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가3"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가4"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가5"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가6"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가7"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가8"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가9"));
-        user4.add(new User(R.drawable.img_apply_profile1, "작가10"));
-        allUsers.add(user4);
-
-        List<User> user5 = new ArrayList<>();
-        user5.add(new User(R.drawable.img_apply_profile2, "작가11"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가12"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가13"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가14"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가15"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가16"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가17"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가18"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가19"));
-        user5.add(new User(R.drawable.img_apply_profile2, "작가20"));
-        allUsers.add(user5);
-
-        List<User> user6 = new ArrayList<>();
-        user6.add(new User(R.drawable.img_apply_profile3, "작가21"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가22"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가23"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가24"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가25"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가26"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가27"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가28"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가29"));
-        user6.add(new User(R.drawable.img_apply_profile3, "작가30"));
-        allUsers.add(user6);
     }
 
     private void initlistener() {
