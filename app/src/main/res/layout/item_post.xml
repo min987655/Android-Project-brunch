@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/post_apply"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_post_apply"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_below="@+id/now_apply_more"-->
+<!--            android:scrollbars="none" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/now_bar1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.3dp"-->
+<!--            android:layout_below="@+id/rv_post_apply"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@color/colorBorderDark" />-->
+<!--    </RelativeLayout>-->
+
+
+
+        <RelativeLayout
+            android:id="@+id/post_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/toolbar_marginLeft"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="@dimen/toolbar_marginRight"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/tv_post_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="마음의 고향 제주에서 3주살이"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_post_content"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_post_title"
+                android:lineSpacingExtra="2dp"
+                android:text="어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"
+                android:textColor="@color/colorGray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_post_createdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_post_content"
+                android:textColor="@color/colorCharcoal"
+                android:text="Aug 06. 2020"/>
+
+            <TextView
+                android:id="@+id/tv_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_post_createdate"
+                android:layout_below="@+id/tv_post_content"
+                android:text=" · by  "
+                android:fontFamily="@font/droidserif_regular"
+                android:textColor="@color/colorCharcoal"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_post_apply_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_post_content"
+                android:layout_toRightOf="@+id/tv_by"
+                android:textColor="@color/colorCharcoal"
+                android:text="작가닉네임"/>
+
+            <ImageView
+                android:id="@+id/iv_post_cover"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerVertical="true"
+                android:layout_alignTop="@+id/tv_post_content"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cover"/>
+
+
+        </RelativeLayout>
+
+    <View
+        android:id="@+id/now_bar2"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/post_item"
+        android:layout_marginTop="13dp"
+        android:background="@color/colorBorderDark" />
+
+
+</RelativeLayout>
+

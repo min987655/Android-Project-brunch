@@ -1,9 +1,12 @@
 package com.cos.brunch.now;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.model.User;
+import com.cos.brunch.posts.PostsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,19 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
     private static final String TAG = "ContentVerticalAdapter";
     private List<List<User>> allUsers;
     private Context context;
+
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    private static OnItemClickListener mListener = null;
+
+    public interface OnItemClickListener {
+
+
+        void onItemClick(View v, int position) ;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
+    }
 
     public ContentVerticalAdapter(List<List<User>> allUsers, Context context) {
         this.allUsers = allUsers;
@@ -54,18 +71,34 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
         return allUsers.size();
     }
 
+
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private RecyclerView rvNowApply;
         private TextView tvNowApplyKeyword;
+        private RelativeLayout nowApplyMore;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            nowApplyMore = itemView.findViewById(R.id.now_apply_more);
             rvNowApply = itemView.findViewById(R.id.rv_now_apply);
             tvNowApplyKeyword =itemView.findViewById(R.id.tv_now_apply_keyword);
             tvNowApplyKeyword.setText("그림·웹툰");
+
+            nowApplyMore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "onClick: ");
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        mListener.onItemClick(v, position);
+                    }
+                }
+            });
+
         }
+
     }
 
 }

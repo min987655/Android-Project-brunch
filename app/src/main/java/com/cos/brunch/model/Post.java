@@ -4,9 +4,23 @@ public class Post {
 
     private String keyword;
     private String title;
-    private String coverImg;
+    private int coverImg;
+    private String content;
 
-    public Post(String keyword, String title, String coverImg) {
+    public Post(String title, int coverImg, String content) {
+        this.title = title;
+        this.coverImg = coverImg;
+        this.content = content;
+    }
+
+    public Post(String keyword, String title, int coverImg, String content) {
+        this.keyword = keyword;
+        this.title = title;
+        this.coverImg = coverImg;
+        this.content = content;
+    }
+
+    public Post(String keyword, String title, int coverImg) {
         this.keyword = keyword;
         this.title = title;
         this.coverImg = coverImg;
@@ -17,11 +31,19 @@ public class Post {
         this.title = title;
     }
 
-    public String getCoverImg() {
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getCoverImg() {
         return coverImg;
     }
 
-    public void setCoverImg(String coverImg) {
+    public void setCoverImg(int coverImg) {
         this.coverImg = coverImg;
     }
 

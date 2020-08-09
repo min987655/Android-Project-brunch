@@ -1,29 +1,30 @@
 package com.cos.brunch.now;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
-import com.cos.brunch.user.BottomDialog;
-import com.cos.brunch.userProfile.UserProfileUpdateActivity;
+import com.cos.brunch.posts.PostsActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class NowActivity extends AppCompatActivity {
 
@@ -138,6 +139,15 @@ public class NowActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+
+        contentVerticalAdapter.setOnItemClickListener(new ContentVerticalAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Intent intent = new Intent(mContext, PostsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setupNavigationView() {
