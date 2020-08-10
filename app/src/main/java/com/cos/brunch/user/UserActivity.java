@@ -1,9 +1,11 @@
 package com.cos.brunch.user;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.cos.brunch.R;
 import com.cos.brunch.utils.NavigationViewHelper;
+import com.cos.brunch.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class UserActivity extends AppCompatActivity {
@@ -20,6 +23,7 @@ public class UserActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgProfileUpdate;
+    private Button btnWrite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class UserActivity extends AppCompatActivity {
 
     private void initObject() {
         imgMenu = findViewById(R.id.img_menu);
+        btnWrite = findViewById(R.id.btn_write);
     }
 
     private void initDesign() {
@@ -62,6 +67,15 @@ public class UserActivity extends AppCompatActivity {
                 bottomDialog.show(getSupportFragmentManager(), "bottomDialog");
             }
         });
+
+        btnWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, WriteActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setupNavigationView() {

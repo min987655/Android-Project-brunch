@@ -37,7 +37,7 @@
 
     <EditText
         android:id="@+id/tv_nickname"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_nickname_title"
         android:layout_alignLeft="@+id/tv_nickname_title"

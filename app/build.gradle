@@ -42,5 +42,9 @@ dependencies {
     implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
-
+    implementation 'com.github.irshulx:laser-native-editor:3.0.3'
+    implementation 'com.github.duanhong169:colorpicker:1.1.1'
+    implementation 'com.github.bxute:MarkDEditor:v0.16'
+    // ted permission
+    implementation "gun0912.ted:tedpermission:2.1.0"
 }

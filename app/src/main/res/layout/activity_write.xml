@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
     <include layout="@layout/toolbar_edit"/>
 
@@ -18,7 +19,7 @@
 
     <EditText
         android:id="@+id/tv_write_title"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_br1"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
@@ -46,7 +47,7 @@
 
     <EditText
         android:id="@+id/tv_write_sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_br2"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
@@ -60,18 +61,26 @@
         android:layout_width="match_parent"
         android:layout_height="0.3dp"
         android:layout_below="@+id/tv_write_sub_title"
-        android:layout_marginBottom="15dp"
         android:background="@color/colorBorderDark" />
 
-    <EditText
-        android:id="@+id/tv_write_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_above="@+id/controlBar"
         android:layout_below="@+id/img_br3"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginBottom="15dp"
-        android:background="@null"
-        android:hint="내용을 입력하세요."
-        android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:padding="5dp">
+
+        <xute.markdeditor.MarkDEditor
+            android:id="@+id/mdEditor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </ScrollView>
+
+    <xute.markdeditor.EditorControlBar
+        android:id="@+id/controlBar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
 
 </RelativeLayout>
