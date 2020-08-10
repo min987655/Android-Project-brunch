@@ -78,7 +78,7 @@
                 android:layout_height="45dp"
                 android:layout_marginRight="3dp"
                 android:gravity="center_vertical"
-                android:text="캘리그라피"
+                android:text="그림·웹툰"
                 android:textColor="@color/colorAccent"
                 android:textSize="17sp" />
 

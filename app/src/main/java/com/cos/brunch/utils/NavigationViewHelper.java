@@ -13,6 +13,7 @@ import com.cos.brunch.apply.ApplyActivity;
 import com.cos.brunch.main.MainActivity;
 import com.cos.brunch.now.NowActivity;
 import com.cos.brunch.user.UserActivity;
+import com.cos.brunch.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class NavigationViewHelper {
@@ -32,11 +33,11 @@ public class NavigationViewHelper {
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);
         navProfile = navHeader.findViewById(R.id.img_profile);
-        navApply = navHeader.findViewById(R.id.btn_apply);
-        navWrite = navHeader.findViewById(R.id.tv_write);
+//        navApply = navHeader.findViewById(R.id.btn_apply);
+        navWrite = navHeader.findViewById(R.id.btn_write);
         navDrawer = navHeader.findViewById(R.id.tv_drawer);
         navNow = navHeader.findViewById(R.id.tv_now);
-        navBookcase = navHeader.findViewById(R.id.tv_bookcase);
+//        navBookcase = navHeader.findViewById(R.id.tv_bookcase);
         navFeed = navHeader.findViewById(R.id.tv_feed);
         navSettings = navHeader.findViewById(R.id.iv_settings);
 
@@ -58,17 +59,19 @@ public class NavigationViewHelper {
             }
         });
 
-        navApply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ApplyActivity.class);
-                context.startActivity(intent);
-            }
-        });
+//        navApply.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, ApplyActivity.class);
+//                context.startActivity(intent);
+//            }
+//        });
 
         navWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, WriteActivity.class);
+                context.startActivity(intent);
             }
         });
 
@@ -86,11 +89,11 @@ public class NavigationViewHelper {
             }
         });
 
-        navBookcase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+//        navBookcase.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//            }
+//        });
         navFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

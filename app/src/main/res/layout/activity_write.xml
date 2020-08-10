@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_edit"/>
+
+    <View
+        android:id="@+id/img_br1"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorBorderDark" />
+
+
+    <EditText
+        android:id="@+id/tv_write_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_br1"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="15dp"
+        android:background="@null"
+        android:hint="제목"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_br1"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:src="@drawable/img_more"/>
+
+    <View
+        android:id="@+id/img_br2"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/tv_write_title"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorBorderDark" />
+
+    <EditText
+        android:id="@+id/tv_write_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_br2"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="15dp"
+        android:background="@null"
+        android:hint="소제목"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/img_br3"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/tv_write_sub_title"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorBorderDark" />
+
+    <EditText
+        android:id="@+id/tv_write_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_br3"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="15dp"
+        android:background="@null"
+        android:hint="내용을 입력하세요."
+        android:textSize="20sp" />
+
+</RelativeLayout>

@@ -58,16 +58,16 @@ public class PostsActivity extends AppCompatActivity {
 
     private void initData() {
         postsAdapter = new PostsAdapter();
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
-        postsAdapter.addPost(new Post("","마음의 고향 제주에서 3주살이",R.drawable.img_cover, "어김없이 새벽에 눈을 뜨고 다시 감았다. 조식을 먹지 않으려했지만 사장님이 이미 빵도 구워 놨다 하셔서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
 
         rvPostsContent.setLayoutManager(new LinearLayoutManager(this));
         rvPostsContent.setAdapter(postsAdapter);

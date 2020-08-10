@@ -30,8 +30,6 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
     private static OnItemClickListener mListener = null;
 
     public interface OnItemClickListener {
-
-
         void onItemClick(View v, int position) ;
     }
 
@@ -77,16 +75,16 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
 
         private RecyclerView rvNowApply;
         private TextView tvNowApplyKeyword;
-        private RelativeLayout nowApplyMore;
+        private RelativeLayout nowApplyMore, nowContentMore;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            nowApplyMore = itemView.findViewById(R.id.now_apply_more);
+            nowContentMore = itemView.findViewById(R.id.now_content_more);
             rvNowApply = itemView.findViewById(R.id.rv_now_apply);
             tvNowApplyKeyword =itemView.findViewById(R.id.tv_now_apply_keyword);
             tvNowApplyKeyword.setText("그림·웹툰");
 
-            nowApplyMore.setOnClickListener(new View.OnClickListener() {
+            nowContentMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "onClick: ");

@@ -22,11 +22,12 @@
             <include layout="@layout/toolbar_edit" />
 
             <TextView
+                android:id="@+id/tv_posts_keyword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:text="주말 나들이"
+                android:text="그림·웹툰"
                 android:textSize="22sp"/>
 
             <View

@@ -20,6 +20,17 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
     private static final String TAG = "KeywordAdapter";
     private List<Post> posts = new ArrayList<>();
 
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    private static OnItemClickListener mListener = null;
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position) ;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
+    }
+
     public void addPost(Post post) {
         posts.add(post);
     }
@@ -57,6 +68,17 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
             super(itemView);
             btnKeyword = itemView.findViewById(R.id.btn_keyword);
             Log.d(TAG, "MyViewHolder: " + btnKeyword.toString());
+
+            btnKeyword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, "onClick: ");
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        mListener.onItemClick(v, position);
+                    }
+                }
+            });
         }
 
         public void setItem(Post post) {
