@@ -18,6 +18,7 @@ import com.cos.brunch.model.User;
 import com.cos.brunch.now.ContentVerticalAdapter;
 import com.cos.brunch.now.KeywordAdapter;
 import com.cos.brunch.now.NowActivity;
+import com.cos.brunch.post.PostActivity;
 import com.cos.brunch.user.UserActivity;
 
 import java.util.ArrayList;
@@ -78,6 +79,14 @@ public class PostsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, NowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        postsAdapter.setOnItemClickListener(new PostsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Intent intent = new Intent(mContext, PostActivity.class);
                 startActivity(intent);
             }
         });

@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+
     }
 
     private void setupNavigationView() {

@@ -27,7 +27,7 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_rounded_solid"
+        android:background="@drawable/button_rounded_solid_accent"
         android:gravity="center"
         android:text="글쓰기"
         android:textColor="@color/colorAccent"

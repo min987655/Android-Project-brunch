@@ -3,78 +3,215 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
-    <include layout="@layout/toolbar_edit"/>
 
-    <TextView
-        android:id="@+id/tv_post_title"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:layout_marginTop="80dp"
-        android:lineSpacingExtra="-7dp"
-        android:text="나를 위로하다 326 군자란이 피었다"
-        android:textSize="28sp"/>
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-    <TextView
-        android:id="@+id/tv_post_sub_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:layout_below="@+id/tv_post_title"
-        android:text="서브타이틀"
-        android:textSize="13sp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/post_explain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tv_post_sub_title">
+            <include layout="@layout/toolbar_edit" />
 
-        <TextView
-            android:id="@+id/tv_by"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="by"
-            android:fontFamily="@font/droidserif_regular"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="13sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/tv_post_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:layout_marginTop="150dp"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:fontFamily="@font/notosans_light"
+                android:lineSpacingExtra="-7dp"
+                android:text="화장실이 깨끗한 회사가 번창한다"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/tv_nickname_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/tv_by"
-            android:text="nickName"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="13sp" />
+            <TextView
+                android:id="@+id/tv_post_sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_post_title"
+                android:layout_marginTop="-15dp"
+                android:layout_alignLeft="@+id/tv_post_title"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:text="일상을 빛내고 싶지만 무엇부터 해야 할지 모르는 당신에게"
+                android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/tv_post_detail_createdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="11시간 전"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/colorGray"
-            android:textSize="13sp" />
+            <TextView
+                android:id="@+id/tv_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_post_sub_title"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/droidserif_regular"
+                android:text="by"
+                android:textColor="@color/colorCharcoal"
+                android:textSize="13sp"
+                android:textStyle="italic" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_post_apply_nickname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_by"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_by"
+                android:text="nickName"
+                android:textColor="@color/colorCharcoal"
+                android:textSize="13sp" />
 
-    <View
-        android:id="@+id/img_br1"
-        android:layout_width="match_parent"
-        android:layout_height="0.3dp"
-        android:layout_below="@+id/post_explain"
-        android:layout_marginTop="15dp"
-        android:background="@color/colorBorderDark" />
+            <TextView
+                android:id="@+id/tv_post_detail_createdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_by"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:text="11시간 전"
+                android:textColor="@color/colorGray"
+                android:textSize="13sp" />
+
+            <View
+                android:id="@+id/img_br1"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@+id/tv_by"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorBorderDark" />
+
+            <TextView
+                android:id="@+id/tv_post_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_br1"
+                android:layout_alignLeft="@+id/tv_post_title"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:layout_marginTop="20dp"
+                android:text="&lt;화장실이 깨끗한 회사가 번창한다.&gt;\n나의 화장실은 어땠더라.\n그 길로 화장실을 청소했다.\n\n구석구석 피어난 곰팡이와 물때를 닦아내며\n곳곳에 숨어있던 초조함과 나태함도 지워낸다.\n\n화장실을 아끼고 빛내는 사람이라면\n자기의 일상을 닦기 위해서도\n기꺼이 시간을 투자할 것이다.\n\n일상을 빛내고 싶은 자,\n변기를 세면대를 욕조를 타일을\n닦을 일이다."
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/iv_post_content"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_below="@+id/tv_post_content"
+                android:layout_marginBottom="40dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/post1"/>
+
+            <Button
+                android:id="@+id/btn_post_keyword"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_post_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/tv_post_title"
+                android:background="@drawable/button_rounded_solid_gray"
+                android:textSize="13dp"
+                android:textColor="@color/colorCharcoal"
+                android:text="키워드"/>
+
+
+            <Button
+                android:id="@+id/btn_post_keyword2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_post_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/btn_post_keyword"
+                android:background="@drawable/button_rounded_solid_gray"
+                android:textColor="@color/colorCharcoal"
+                android:textSize="13dp"
+                android:text="키워드키워드"/>
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/btn_post_keyword2"
+                android:layout_marginTop="40dp"
+                android:layout_alignLeft="@+id/tv_post_title"
+                android:src="@drawable/img_more"/>
+
+            <TextView
+                android:id="@+id/tv_post_like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_like"
+                android:layout_alignTop="@+id/iv_like"
+                android:layout_marginLeft="10dp"
+                android:text="10"
+                android:textSize="17dp"/>
+
+            <ImageView
+                android:id="@+id/iv_comment"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@+id/btn_post_keyword2"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/tv_post_comment_count"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_more"/>
+
+            <TextView
+                android:id="@+id/tv_post_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/iv_like"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:text="10"
+                android:textSize="17dp"/>
+
+            <View
+                android:id="@+id/img_br2"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@+id/iv_like"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorBorderDark" />
+
+            <TextView
+                android:id="@+id/tv_post_apply_nickname2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:layout_marginTop="50dp"
+                android:text="날숭이"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_post_apply_sub_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_post_apply_nickname2"
+                android:layout_alignLeft="@+id/tv_post_apply_nickname2"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:text="프리랜서"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_post_apply_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/tv_post_apply_sub_intro"
+                android:layout_alignLeft="@+id/tv_post_apply_nickname2"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:text="영감 무료배포, 날라리가 그리고 내숭쟁이가 씁니다. 화/금 주 2회 발행"
+                android:textSize="11sp" />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
