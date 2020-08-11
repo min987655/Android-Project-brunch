@@ -4,6 +4,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhite20">#34FFFFFF</color>
     <color name="colorWhite40">#66FFFFFF</color>
+    <color name="colorWhite60">#99FFFFFF</color>
     <color name="colorMainText">#E4000000</color>
     <color name="colorCharcoal">#73000000</color>
     <color name="colorGray">#4D000000</color>

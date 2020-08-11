@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_post_item_background"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_header" />
+
+    <TextView
+        android:id="@+id/tv_post_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="-60dp"
+        android:layout_below="@+id/iv_post_item_background"
+        android:textColor="@color/colorWhite"
+        android:text="화장실이 없는 집"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_post_detail_title"
+        android:layout_alignLeft="@+id/tv_post_detail_title"
+        android:text="by"
+        android:fontFamily="@font/droidserif_regular"
+        android:textColor="@color/colorWhite60"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv_post_detail_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_post_detail_title"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/tv_by"
+        android:text="nickName"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>
+
