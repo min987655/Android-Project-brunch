@@ -47,6 +47,7 @@ public class PostActivity extends AppCompatActivity {
 
     private void initDesign() {
         rvPostPost = findViewById(R.id.rv_post_post);
+        rvPostPost.setNestedScrollingEnabled(false);
     }
 
     private void initData() {
