@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".post.PostActivity"></activity>
+        <activity android:name=".reply.ReplyActivity"></activity>
+        <activity android:name=".post.PostActivity" />
         <activity android:name=".write.WriteActivity" />
         <activity android:name=".posts.PostsActivity" />
         <activity android:name=".now.NowActivity" />
