@@ -44,6 +44,10 @@
         android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/colorGray20"/>
 
 </RelativeLayout>
 

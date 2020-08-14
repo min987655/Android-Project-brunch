@@ -1,20 +1,18 @@
 package com.cos.brunch.post;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
-import com.cos.brunch.now.NowActivity;
 import com.cos.brunch.posts.PostsActivity;
-import com.cos.brunch.posts.PostsAdapter;
 
 public class PostActivity extends AppCompatActivity {
 

@@ -155,14 +155,15 @@
             android:layout_height="20dp"
             android:layout_below="@+id/btn_post_keyword2"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/tv_post_comment_count"
+            android:layout_marginRight="50dp"
+            android:layout_alignParentRight="true"
             android:src="@drawable/img_reply" />
 
         <TextView
             android:id="@+id/tv_post_comment_count"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:layout_alignTop="@+id/iv_like"
             android:layout_marginTop="-2dp"
             android:layout_alignParentRight="true"
@@ -261,6 +262,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_following"
             android:scrollbars="none" />
+
     </RelativeLayout>
 
 </ScrollView>
