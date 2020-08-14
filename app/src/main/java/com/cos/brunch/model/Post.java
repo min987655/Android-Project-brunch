@@ -1,34 +1,71 @@
 package com.cos.brunch.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+
 public class Post {
-
-    private String keyword;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("userId")
+    @Expose
+    private Integer userId;
+    @SerializedName("title")
+    @Expose
     private String title;
-    private int coverImg;
+    @SerializedName("subTitle")
+    @Expose
+    private String subTitle;
+    @SerializedName("content")
+    @Expose
     private String content;
+    @SerializedName("postType")
+    @Expose
+    private String postType;
+    @SerializedName("likeType")
+    @Expose
+    private String likeType;
+    @SerializedName("likeCount")
+    @Expose
+    private Integer likeCount;
+    @SerializedName("readCount")
+    @Expose
+    private Integer readCount;
+    @SerializedName("createDate")
+    @Expose
+    private String createDate;
 
-    public Post(String title, int coverImg, String content) {
-        this.title = title;
-        this.coverImg = coverImg;
-        this.content = content;
+    public Integer getId() {
+        return id;
     }
 
-    public Post(String keyword, String title, int coverImg, String content) {
-        this.keyword = keyword;
-        this.title = title;
-        this.coverImg = coverImg;
-        this.content = content;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Post(String keyword, String title, int coverImg) {
-        this.keyword = keyword;
-        this.title = title;
-        this.coverImg = coverImg;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public Post(String keyword, String title) {
-        this.keyword = keyword;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSubTitle() {
+        return subTitle;
+    }
+
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
     }
 
     public String getContent() {
@@ -39,33 +76,46 @@ public class Post {
         this.content = content;
     }
 
-    public int getCoverImg() {
-        return coverImg;
+    public String getPostType() {
+        return postType;
     }
 
-    public void setCoverImg(int coverImg) {
-        this.coverImg = coverImg;
+    public void setPostType(String postType) {
+        this.postType = postType;
     }
 
-    public Post(String keyword) {
-        this.keyword = keyword;
+    public String getLikeType() {
+        return likeType;
     }
 
-    public String getKeyword() {
-        return keyword;
+    public void setLikeType(String likeType) {
+        this.likeType = likeType;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public Integer getLikeCount() {
+        return likeCount;
     }
 
-    public String getTitle() {
-        return title;
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public Integer getReadCount() {
+        return readCount;
     }
+
+    public void setReadCount(Integer readCount) {
+        this.readCount = readCount;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
 }
 
 

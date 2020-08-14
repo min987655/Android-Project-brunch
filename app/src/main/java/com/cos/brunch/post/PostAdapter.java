@@ -89,7 +89,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             Log.d(TAG, "setItem: ");
             tvPostDetailTitle.setText(post.getTitle());
             tvPostDetailNickname.setText("작가닉네임");
-            ivPostItemBackground.setImageResource(post.getCoverImg());
+//            ivPostItemBackground.setImageResource(post.getCoverImg());
         }
     }
 

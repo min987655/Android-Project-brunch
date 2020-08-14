@@ -50,16 +50,7 @@ public class PostActivity extends AppCompatActivity {
 
     private void initData() {
         postAdapter = new PostAdapter();
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
-        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
+//        postAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_cover, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
 
         rvPostPost.setLayoutManager(new LinearLayoutManager(this));
         rvPostPost.setAdapter(postAdapter);

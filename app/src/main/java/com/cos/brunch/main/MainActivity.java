@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.cos.brunch.R;
+import com.cos.brunch.repository.MainRepository;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         initDesign();
         initlistener();
         setupNavigationView();
+
     }
 
     private void initData() {

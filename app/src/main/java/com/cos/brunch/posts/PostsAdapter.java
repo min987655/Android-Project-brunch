@@ -94,7 +94,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             Log.d(TAG, "setItem: ");
             tvPostTitle.setText(post.getTitle());
             tvPostContent.setText(post.getContent());
-            ivPostCover.setImageResource(post.getCoverImg());
+//            ivPostCover.setImageResource(post.getCoverImg());
         }
     }
 

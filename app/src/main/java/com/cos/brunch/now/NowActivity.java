@@ -71,18 +71,7 @@ public class NowActivity extends AppCompatActivity {
 
     private void initData() {
         keywordAdapter = new KeywordAdapter();
-        keywordAdapter.addPost(new Post("취향저격영화리뷰"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰1"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰2"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰3"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰4"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰4"));
-        keywordAdapter.addPost(new Post("취향저격영화리뷰5"));
-        keywordAdapter.addPost(new Post("사진·촬영"));
-        keywordAdapter.addPost(new Post("IT트렌드"));
-        keywordAdapter.addPost(new Post("시사·이슈"));
-        keywordAdapter.addPost(new Post("지구한바퀴세계여행"));
-        keywordAdapter.addPost(new Post("그림·웹툰"));
+//        keywordAdapter.addPost(new Post("그림·웹툰"));
         rvKeyword.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
         rvKeyword.scrollToPosition(keywordAdapter.getItemCount()-1);
         rvKeyword.setAdapter(keywordAdapter);

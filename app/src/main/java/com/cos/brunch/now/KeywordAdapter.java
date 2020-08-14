@@ -83,7 +83,7 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
 
         public void setItem(Post post) {
             Log.d(TAG, "setItem: ");
-            btnKeyword.setText(post.getKeyword());
+//            btnKeyword.setText(post.getKeyword());
         }
     }
 
