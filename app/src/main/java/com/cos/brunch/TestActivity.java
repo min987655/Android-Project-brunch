@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.cos.brunch.main.MainFragmentAdapter;
 import com.cos.brunch.model.Post;
-import com.cos.brunch.repository.MainRepository;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,7 +32,7 @@ public class TestActivity extends AppCompatActivity {
         tvTest = findViewById(R.id.tv_test);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.61:8080/brunch/")
+                .baseUrl("http://192.168.219.105:8080/brunch/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
