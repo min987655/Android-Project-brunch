@@ -18,7 +18,7 @@ import com.cos.brunch.databinding.Frag4MainBinding;
 
 public class MainFrag4 extends Fragment {
     private static final String TAG = "MainFrag4";
-    
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -14,7 +14,7 @@ public interface BrunchService {
     Call<List<Post>> getPosts();
 
     Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.35.35:8080/brunch/")
+                .baseUrl("http://192.168.219.105:8080/brunch/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 }

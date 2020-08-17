@@ -1,6 +1,7 @@
 package com.cos.brunch.screen;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -35,11 +36,11 @@ public class WriteActivity extends AppCompatActivity {
 
         mEditor = (RichEditor) findViewById(R.id.editor);
         mEditor.setEditorHeight(200);
-        mEditor.setEditorFontSize(22);
+        mEditor.setEditorFontSize(18);
         mEditor.setEditorFontColor(Color.BLACK);
         mEditor.setEditorBackgroundColor(Color.WHITE);
         mEditor.setBackgroundColor(Color.WHITE);
-        mEditor.setPadding(10, 10, 10, 10);
+        mEditor.setPadding(20, 20, 20, 20);
         mEditor.setPlaceholder("내용을 입력하세요.");
 
 //        mPreview = (TextView) findViewById(R.id.preview);
@@ -141,10 +142,28 @@ public class WriteActivity extends AppCompatActivity {
     }
 
     private void initObject() {
+        imgCancel = findViewById(R.id.img_toolbar_l);
+        tvToolbarHeader = findViewById(R.id.tv_toolbar_header);
+        tvToolbarHeader.setText("글쓰기");
+        imgWriteUpdate = findViewById(R.id.img_toolbar_r);
     }
 
     private void initlistener() {
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
+        // 저장중 알림창 떠야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        imgWriteUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PostsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

@@ -8,9 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.databinding.ItemPostBinding;
 import com.cos.brunch.model.Post;
 
 import java.util.ArrayList;
@@ -41,17 +43,21 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "onCreateViewHolder: ");
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_post_detail, parent, false);
-        return new MyViewHolder(view);
+
+        ItemPostBinding itemPostBinding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.getContext()),
+                R.layout.item_post_detail,
+                parent, // 뷰그룹(해당 프로젝트에서는 리사이클러뷰)
+                false
+        );
+        return new MyViewHolder(itemPostBinding);
     }
 
-    // 껍데기에 데이터 바인등
+    // 껍데기에 데이터 바인딩
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        Post post = posts.get(position);
-        Log.d(TAG, "onBindViewHolder: " + post);
-        holder.setItem(post);
+        Post currentPost = posts.get(position);
+        holder.itemPostBinding.setPostList(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
     }
 
     @Override
@@ -60,17 +66,24 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         return posts.size();
     }
 
+    public void setPosts(List<Post> potes){
+        this.posts = potes;
+        notifyDataSetChanged();
+    }
+
+    public Post getPostAt(int position){
+        return posts.get(position);
+    }
+
+
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvPostDetailTitle, tvPostDetailNickname;
-        private ImageView ivPostItemBackground;
+        private ItemPostBinding itemPostBinding;
 
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvPostDetailTitle = itemView.findViewById(R.id.tv_post_detail_title);
-            tvPostDetailNickname = itemView.findViewById(R.id.tv_post_detail_nickname);
-            ivPostItemBackground = itemView.findViewById(R.id.iv_post_item_background);
+        public MyViewHolder(@NonNull ItemPostBinding itemPostBinding) {
+            super(itemPostBinding.getRoot()); // view. 부모에게 view를 넘겨줌
+            this.itemPostBinding = itemPostBinding;
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,15 +95,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     }
                 }
             });
-
         }
 
-        public void setItem(Post post) {
-            Log.d(TAG, "setItem: ");
-            tvPostDetailTitle.setText(post.getTitle());
-            tvPostDetailNickname.setText("작가닉네임");
-//            ivPostItemBackground.setImageResource(post.getCoverImg());
-        }
     }
 
 }

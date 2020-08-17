@@ -3,15 +3,23 @@ package com.cos.brunch.screen;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.PostAdapter;
+import com.cos.brunch.model.Post;
+import com.cos.brunch.viewmodel.MainViewModel;
+
+import java.util.List;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -19,6 +27,8 @@ public class PostActivity extends AppCompatActivity {
     private Context mContext = PostActivity.this;
     private PostAdapter postAdapter;
     private RecyclerView rvPostPost;
+
+    private MainViewModel mainViewModel;
 
     private ImageView imgBack, imgSearch;
 
@@ -53,6 +63,17 @@ public class PostActivity extends AppCompatActivity {
 
         rvPostPost.setLayoutManager(new LinearLayoutManager(this));
         rvPostPost.setAdapter(postAdapter);
+
+        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+
+        // 콜백함수 : 컬랙션을 덮어 씌움
+        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
+            @Override
+            public void onChanged(List<Post> posts) {
+                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
+                postAdapter.setPosts(posts);
+            }
+        });
     }
 
     private void initlistener() {

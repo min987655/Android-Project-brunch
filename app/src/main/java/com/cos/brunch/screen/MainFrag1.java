@@ -38,20 +38,20 @@ public class MainFrag1 extends Fragment {
         return layout.getRoot();
     }
 
-    @Override
-    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-
-        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
-            @Override
-            public void onChanged(List<Post> posts) {
-                Log.d(TAG, "onChanged: 구독 !!!! ");
-//                mainViewModel.구독하기().postValue(posts);
-            }
-        });
-    }
+//    @Override
+//    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+//
+//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+//            @Override
+//            public void onChanged(List<Post> posts) {
+//                Log.d(TAG, "onChanged: 구독 !!!! ");
+////                mainViewModel.구독하기().postValue(posts);
+//            }
+//        });
+//    }
 
 }

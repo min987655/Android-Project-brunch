@@ -55,16 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
 
-//        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-//
-//        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: 구독 !!!! ");
-//                mainViewModel.구독하기().postValue(posts);
-//            }
-//        });
+        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+
+        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
+            @Override
+            public void onChanged(List<Post> posts) {
+                Log.d(TAG, "onChanged: 구독 !!!! ");
+                mainAdapter.setPosts(posts);
+            }
+        });
 
     }
 
