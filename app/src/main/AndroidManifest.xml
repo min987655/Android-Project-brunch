@@ -22,15 +22,15 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".reply.ReplyActivity" />
-        <activity android:name=".post.PostActivity" />
-        <activity android:name=".write.WriteActivity" />
-        <activity android:name=".posts.PostsActivity" />
-        <activity android:name=".now.NowActivity" />
-        <activity android:name=".apply.ApplyActivity" />
-        <activity android:name=".userProfile.UserProfileUpdateActivity" />
-        <activity android:name=".user.UserActivity" />
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".screen.ReplyActivity" />
+        <activity android:name=".screen.PostActivity" />
+        <activity android:name=".screen.PostsActivity" />
+        <activity android:name=".screen.NowActivity" />
+        <activity android:name=".screen.ApplyActivity" />
+        <activity android:name=".screen.UserProfileUpdateActivity" />
+        <activity android:name=".screen.UserActivity" />
+        <activity android:name=".screen.WriteActivity" />
+        <activity android:name=".screen.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

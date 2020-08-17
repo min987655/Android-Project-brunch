@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.cos.brunch.model.Post;
+import com.cos.brunch.network.BrunchService;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class TestActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        BrunchService jsonPlaceHolderApi = retrofit.create(BrunchService.class);
 
         Call<List<Post>> call = jsonPlaceHolderApi.getPosts();
         Log.d(TAG, "MainRepository: call : " + call);

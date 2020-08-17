@@ -1,132 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
-    <RelativeLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--setPost-->
+    <data>
+
+        <variable
+            name="main_frag4"
+            type="com.cos.brunch.model.Post" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/img_cover_back_main1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_cover" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#575A626E" />
-
-        <TextView
-            android:id="@+id/tv_title1"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tv_editor_pick"
-            android:layout_marginLeft="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="35dp"
-            android:fontFamily="@font/notosans_light"
-            android:lineSpacingExtra="-5dp"
-            android:text="한국에서 멀어졌더니 생긴 변화"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_title1"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_cover_back_main1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cover" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#575A626E" />
 
             <TextView
-                android:id="@+id/tv_by1"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_title1"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/droidserif_regular"
-                android:text="by"
-                android:textColor="@color/colorWhite40"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:layout_alignLeft="@+id/tv_editor_pick"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="35dp"
+                android:fontFamily="@font/notosans_light"
+                android:lineSpacingExtra="-5dp"
+                android:text="@{main_frag4.title}"
+                android:ellipsize="end"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/tv_nickname_main1"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/tv_by1"
-                android:text="nickName"
-                android:textColor="@color/colorWhite40"
-                android:textSize="15sp" />
+                android:layout_height="30dp"
+                android:layout_alignLeft="@+id/tv_title1"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tv_by1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/droidserif_regular"
+                    android:text="by"
+                    android:textColor="@color/colorWhite40"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tv_nickname_main1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_by1"
+                    android:text="nickName"
+                    android:textColor="@color/colorWhite40"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/img_cover_back_main2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_cover" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#575A626E" />
-
-        <TextView
-            android:id="@+id/tv_title2"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tv_editor_pick"
-            android:layout_marginLeft="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="35dp"
-            android:fontFamily="@font/notosans_light"
-            android:lineSpacingExtra="-5dp"
-            android:text="한국에서 멀어졌더니 생긴 변화"
-            android:textColor="@color/colorWhite"
-            android:textSize="22sp" />
-
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_title2"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_cover_back_main2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cover" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#575A626E" />
 
             <TextView
-                android:id="@+id/tv_by2"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/droidserif_regular"
-                android:text="by"
-                android:textColor="@color/colorWhite40"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:layout_alignLeft="@+id/tv_editor_pick"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="35dp"
+                android:fontFamily="@font/notosans_light"
+                android:lineSpacingExtra="-5dp"
+                android:text="@{main_frag4.title}"
+                android:ellipsize="end"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/tv_nickname_main2"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/tv_by2"
-                android:text="nickName"
-                android:textColor="@color/colorWhite40"
-                android:textSize="15sp" />
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tv_by2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/droidserif_regular"
+                    android:text="by"
+                    android:textColor="@color/colorWhite40"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tv_nickname_main2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_by2"
+                    android:text="nickName"
+                    android:textColor="@color/colorWhite40"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
+    </LinearLayout>
 
-    </RelativeLayout>
-
-
-</LinearLayout>
+</layout>

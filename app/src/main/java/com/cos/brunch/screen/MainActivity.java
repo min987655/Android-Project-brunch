@@ -1,19 +1,27 @@
-package com.cos.brunch.main;
+package com.cos.brunch.screen;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.cos.brunch.R;
-import com.cos.brunch.repository.MainRepository;
+import com.cos.brunch.adapter.MainFragmentAdapter;
+import com.cos.brunch.model.Post;
 import com.cos.brunch.utils.NavigationViewHelper;
+import com.cos.brunch.viewmodel.MainViewModel;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
+    private MainViewModel mainViewModel;
+    private List<Post> posts;
 
     private MainFrag1 frag1;
     private MainFrag2 frag2;
@@ -36,15 +46,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initData();
         initObject();
         initDesign();
+        initData();
         initlistener();
         setupNavigationView();
-
     }
 
     private void initData() {
+
+//        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+//
+//        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
+//            @Override
+//            public void onChanged(List<Post> posts) {
+//                Log.d(TAG, "onChanged: 구독 !!!! ");
+//                mainViewModel.구독하기().postValue(posts);
+//            }
+//        });
 
     }
 
@@ -56,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer);
 
         viewPager = findViewById(R.id.view_pager);
-        mainAdapter = new MainFragmentAdapter(this);
+        mainAdapter = new MainFragmentAdapter(this, posts);
 
         frag1 = new MainFrag1();
         frag2 = new MainFrag2();

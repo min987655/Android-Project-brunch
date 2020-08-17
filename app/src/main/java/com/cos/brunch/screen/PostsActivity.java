@@ -1,4 +1,4 @@
-package com.cos.brunch.posts;
+package com.cos.brunch.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,24 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.model.Post;
-import com.cos.brunch.model.User;
-import com.cos.brunch.now.ContentVerticalAdapter;
-import com.cos.brunch.now.KeywordAdapter;
-import com.cos.brunch.now.NowActivity;
-import com.cos.brunch.post.PostActivity;
-import com.cos.brunch.user.UserActivity;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.Inflater;
+import com.cos.brunch.adapter.PostsAdapter;
 
 public class PostsActivity extends AppCompatActivity {
 

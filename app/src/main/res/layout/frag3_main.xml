@@ -1,114 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <!--setPost-->
+    <data>
+        <variable
+            name="main_frag3"
+            type="com.cos.brunch.model.Post" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/img_cover_back_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_cover" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#576E655A" />
-
-        <TextView
-            android:id="@+id/tv_editor_pick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_above="@+id/tv_brunch_picks"
-            android:fontFamily="@font/droidserif_regular"
-            android:text="editor's picks"
-            android:textColor="#C8B7A2"
-            android:textSize="16sp"
-            android:textStyle="italic|bold" />
-
-        <TextView
-            android:id="@+id/tv_brunch_picks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="25dp"
-            android:layout_alignLeft="@+id/tv_editor_pick"
-            android:text="브런치가 추천하는 글"
-            android:textColor="#C8B7A2"
-            android:textSize="11.5sp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/img_back_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:background="#E8E4DC" />
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/notosans_light"
-            android:text="노 밀가루 해물파전"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="334dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_title"
-            android:layout_alignLeft="@+id/tv_title"
-            android:layout_marginTop="-10dp"
-            android:text="일상은 약속의 연속이며 때로는 약속에 울고 약속에 웃는다. 하지만 모든 약속을 지키"
-            android:textColor="@color/colorCharcoal"
-            android:textSize="12.5sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_title"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_cover_back_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_cover" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#576E655A" />
 
             <TextView
-                android:id="@+id/tv_by"
+                android:id="@+id/tv_editor_pick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_brunch_picks"
+                android:layout_marginLeft="25dp"
                 android:fontFamily="@font/droidserif_regular"
-                android:text="by"
-                android:textColor="@color/colorGray20"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:text="editor's picks"
+                android:textColor="#C8B7A2"
+                android:textSize="16sp"
+                android:textStyle="italic|bold" />
 
             <TextView
-                android:id="@+id/tv_nickname_main"
+                android:id="@+id/tv_brunch_picks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/tv_by"
-                android:text="nickName"
-                android:textColor="@color/colorGray20"
-                android:textSize="15sp" />
+                android:layout_alignLeft="@+id/tv_editor_pick"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25dp"
+                android:text="브런치가 추천하는 글"
+                android:textColor="#C8B7A2"
+                android:textSize="11.5sp" />
 
         </RelativeLayout>
 
-    </RelativeLayout>
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_back_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="#E8E4DC" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosans_light"
+                android:text="@{main_frag3.title}"
+                android:textColor="@color/colorCharcoal"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_alignLeft="@+id/tv_title"
+                android:layout_marginTop="-10dp"
+                android:text="@{main_frag3.content}"
+                android:ellipsize="end"
+                android:textColor="@color/colorCharcoal"
+                android:textSize="12.5sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignLeft="@+id/tv_title"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tv_by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/droidserif_regular"
+                    android:text="by"
+                    android:textColor="@color/colorGray20"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/tv_nickname_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_by"
+                    android:text="nickName"
+                    android:textColor="@color/colorGray20"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

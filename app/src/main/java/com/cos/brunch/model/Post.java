@@ -3,38 +3,46 @@ package com.cos.brunch.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 
+import lombok.Builder;
+
+@Builder
 public class Post {
     @SerializedName("id")
-    @Expose
     private Integer id;
     @SerializedName("userId")
-    @Expose
     private Integer userId;
     @SerializedName("title")
-    @Expose
     private String title;
     @SerializedName("subTitle")
-    @Expose
     private String subTitle;
     @SerializedName("content")
-    @Expose
     private String content;
     @SerializedName("postType")
-    @Expose
     private String postType;
     @SerializedName("likeType")
-    @Expose
     private String likeType;
     @SerializedName("likeCount")
-    @Expose
     private Integer likeCount;
     @SerializedName("readCount")
-    @Expose
     private Integer readCount;
     @SerializedName("createDate")
-    @Expose
     private String createDate;
+    //    @Expose
+
+    public Post(Integer id, Integer userId, String title, String subTitle, String content, String postType, String likeType, Integer likeCount, Integer readCount, String createDate) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.content = content;
+        this.postType = postType;
+        this.likeType = likeType;
+        this.likeCount = likeCount;
+        this.readCount = readCount;
+        this.createDate = createDate;
+    }
 
     public Integer getId() {
         return id;

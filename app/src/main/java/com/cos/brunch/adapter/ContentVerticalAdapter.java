@@ -1,7 +1,6 @@
-package com.cos.brunch.now;
+package com.cos.brunch.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.model.User;
-import com.cos.brunch.posts.PostsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVerticalAdapter.MyViewHolder> {

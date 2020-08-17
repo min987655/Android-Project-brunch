@@ -1,51 +1,28 @@
-package com.cos.brunch.write;
+package com.cos.brunch.screen;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
-import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cos.brunch.R;
-import com.cos.brunch.posts.PostsActivity;
-import com.cos.brunch.user.UserActivity;
-import com.cos.brunch.userProfile.UserProfileUpdateActivity;
 
-import java.util.ArrayList;
+import jp.wasabeef.richeditor.RichEditor;
 
-import xute.markdeditor.EditorControlBar;
-import xute.markdeditor.MarkDEditor;
-import xute.markdeditor.Styles.TextComponentStyle;
-import xute.markdeditor.datatype.DraftDataItemModel;
-import xute.markdeditor.models.DraftModel;
-import xute.markdeditor.utilities.FilePathUtils;
-
-import static android.graphics.Typeface.NORMAL;
-import static xute.markdeditor.Styles.TextComponentStyle.BLOCKQUOTE;
-import static xute.markdeditor.Styles.TextComponentStyle.H1;
-import static xute.markdeditor.Styles.TextComponentStyle.H3;
-import static xute.markdeditor.components.TextComponentItem.MODE_OL;
-import static xute.markdeditor.components.TextComponentItem.MODE_PLAIN;
-
-public class WriteActivity extends AppCompatActivity implements EditorControlBar.EditorControlListener {
+public class WriteActivity extends AppCompatActivity {
 
     private static final String TAG = "WriteActivity";
-    private static final int REQUEST_IMAGE_SELECTOR = 110;
     private Context mContext = WriteActivity.this;
 
     private ImageView imgCancel, imgWriteUpdate;
     private TextView tvToolbarHeader;
-    private EditorControlBar editorControlBar;
-    private MarkDEditor markDEditor;
+
+    private RichEditor mEditor;
+    private TextView mPreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,109 +33,119 @@ public class WriteActivity extends AppCompatActivity implements EditorControlBar
         initObject();
         initlistener();
 
-        markDEditor = findViewById(R.id.mdEditor);
-        markDEditor.configureEditor (
-                " " , // 이미지 업로드 용 서버 URL
-                " " ,               // serverToken
-                true ,            // isDraft : 드래프트를로드 할 때 true로 설정
-                "내용을 입력하세요." , // 입력 상자의 기본 힌트
-                NORMAL
-        );
-        markDEditor.loadDraft(getDraftContent());
-        editorControlBar = findViewById(R.id.controlBar);
-        editorControlBar.setEditorControlListener(this);
-// 초안로드
-// markDEditor.loadDraft (getDraftContent ());
-        editorControlBar.setEditor (markDEditor);
+        mEditor = (RichEditor) findViewById(R.id.editor);
+        mEditor.setEditorHeight(200);
+        mEditor.setEditorFontSize(22);
+        mEditor.setEditorFontColor(Color.BLACK);
+        mEditor.setEditorBackgroundColor(Color.WHITE);
+        mEditor.setBackgroundColor(Color.WHITE);
+        mEditor.setPadding(10, 10, 10, 10);
+        mEditor.setPlaceholder("내용을 입력하세요.");
+
+//        mPreview = (TextView) findViewById(R.id.preview);
+//        mEditor.setOnTextChangeListener(new RichEditor.OnTextChangeListener() {
+//            @Override public void onTextChange(String text) {
+//                mPreview.setText(text);
+//            }
+//        });
+
+        findViewById(R.id.action_bold).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setBold();
+            }
+        });
+
+        findViewById(R.id.action_italic).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setItalic();
+            }
+        });
+
+        findViewById(R.id.action_underline).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setUnderline();
+            }
+        });
+
+        findViewById(R.id.action_heading1).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setHeading(1);
+            }
+        });
+
+        findViewById(R.id.action_heading2).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setHeading(2);
+            }
+        });
+
+        findViewById(R.id.action_txt_color).setOnClickListener(new View.OnClickListener() {
+            private boolean isChanged;
+
+            @Override public void onClick(View v) {
+                mEditor.setTextColor(isChanged ? Color.BLACK : Color.rgb(140, 140, 140));
+                isChanged = !isChanged;
+            }
+        });
+
+        findViewById(R.id.action_bg_color).setOnClickListener(new View.OnClickListener() {
+            private boolean isChanged;
+
+            @Override public void onClick(View v) {
+                mEditor.setTextBackgroundColor(isChanged ? Color.rgb(255,224,140 ) : Color.rgb(228,247,186));
+                isChanged = !isChanged;
+            }
+        });
+
+        findViewById(R.id.action_align_left).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setAlignLeft();
+            }
+        });
+
+        findViewById(R.id.action_align_center).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setAlignCenter();
+            }
+        });
+
+        findViewById(R.id.action_align_right).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setAlignRight();
+            }
+        });
+
+        findViewById(R.id.action_blockquote).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.setBlockquote();
+            }
+        });
+
+        findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.insertImage("https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg",
+                        "dachshund");
+            }
+        });
+
+        findViewById(R.id.action_insert_link).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                mEditor.insertLink("https://github.com/wasabeef", "wasabeef");
+            }
+        });
     }
+
+
 
     private void initData() {
     }
 
     private void initObject() {
-        imgCancel = findViewById(R.id.img_toolbar_l);
-        tvToolbarHeader = findViewById(R.id.tv_toolbar_header);
-        tvToolbarHeader.setText("글쓰기");
-        imgWriteUpdate = findViewById(R.id.img_toolbar_r);
     }
 
     private void initlistener() {
 
-        imgCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        // 저장중 알림창 떠야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        imgWriteUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, PostsActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
-    private DraftModel getDraftContent() {
-        ArrayList<DraftDataItemModel> contentTypes = new ArrayList<>();
-        return new DraftModel(contentTypes);
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_SELECTOR) {
-            if (resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-                Uri uri = data.getData();
-                String filePath = FilePathUtils.getPath(this, uri);
-                addImage(filePath);
-            }
-        }
-    }
-
-    public void addImage(String filePath) {
-        markDEditor.insertImage(filePath);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_IMAGE_SELECTOR:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openGallery();
-                } else {
-                    //do something like displaying a message that he didn`t allow the app to access gallery and you wont be able to let him select from gallery
-                    //Toast.makeText()"Permission not granted to access images.");
-                }
-                break;
-        }
-    }
-
-    private void openGallery() {
-        try {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_IMAGE_SELECTOR);
-            } else {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, REQUEST_IMAGE_SELECTOR);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onInsertImageClicked() {
-        openGallery();
-    }
-
-    @Override
-    public void onInserLinkClicked() {
-        markDEditor.addLink("Click Here", "http://www.hapramp.com");
-    }
 }

@@ -1,4 +1,4 @@
-package com.cos.brunch.user;
+package com.cos.brunch.screen;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.cos.brunch.R;
 import com.cos.brunch.utils.NavigationViewHelper;
-import com.cos.brunch.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class UserActivity extends AppCompatActivity {

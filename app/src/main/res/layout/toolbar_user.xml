@@ -15,8 +15,9 @@
 
         <ImageView
             android:id="@+id/img_menu"
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:paddingRight="10dp"
             android:layout_centerVertical="true"
             app:srcCompat="@drawable/img_menu"
             android:contentDescription="@string/StringValue"/>
@@ -25,8 +26,9 @@
             android:id="@+id/img_user_profile_dialog"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_width="24dp"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
             app:srcCompat="@drawable/img_more"
             android:contentDescription="@string/StringValue"/>
 

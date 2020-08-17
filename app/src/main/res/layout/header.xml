@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="35dp"
+    android:layout_marginBottom="35dp"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -67,14 +68,14 @@
         android:text="브런치 나우"
         android:textSize="15sp" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_bookcase"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="15dp"-->
-<!--        android:gravity="center"-->
-<!--        android:text="글 읽는 서재"-->
-<!--        android:textSize="15sp" />-->
+    <TextView
+        android:id="@+id/tv_bookcase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="글 읽는 서재"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/tv_feed"
@@ -88,9 +89,9 @@
     <ImageView
         android:id="@+id/iv_settings"
         android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="170dp"
         android:src="@drawable/img_settings" />
-
 
 </LinearLayout>

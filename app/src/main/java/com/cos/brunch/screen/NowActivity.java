@@ -1,4 +1,4 @@
-package com.cos.brunch.now;
+package com.cos.brunch.screen;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,15 +15,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.adapter.ContentVerticalAdapter;
+import com.cos.brunch.adapter.KeywordAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
-import com.cos.brunch.posts.PostsActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class NowActivity extends AppCompatActivity {
 

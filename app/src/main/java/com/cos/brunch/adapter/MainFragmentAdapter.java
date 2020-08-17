@@ -1,4 +1,4 @@
-package com.cos.brunch.main;
+package com.cos.brunch.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.cos.brunch.model.Post;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +19,11 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
 
     private static final String TAG = "MainFragmentAdapter";
     private List<Fragment> fragmentList = new ArrayList<>();
-    // 오브젝트 데이터 (배열)
+    private List<Post> posts;
 
-    public MainFragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public MainFragmentAdapter(@NonNull FragmentActivity fragmentActivity, List<Post> posts) {
         super(fragmentActivity);
+        this.posts = posts;
         Log.d(TAG, "MainFragmentAdapter: ");
     }
 
@@ -53,5 +56,11 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         Log.d(TAG, "getItemCount: " + fragmentList.size());
         return fragmentList.size();
+    }
+
+    public void setPosts(List<Post> posts){
+        this.posts = posts;
+        Log.d(TAG, "setPosts: " + posts);
+        notifyDataSetChanged();
     }
 }

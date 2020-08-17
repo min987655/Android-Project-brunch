@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#718ec9"
-    tools:context=".apply.ApplyActivity">
+    tools:context=".screen.ApplyActivity">
 
     <include layout="@layout/toolbar_edit" />
 

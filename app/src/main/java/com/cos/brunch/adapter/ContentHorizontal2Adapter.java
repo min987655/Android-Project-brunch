@@ -1,4 +1,4 @@
-package com.cos.brunch.now;
+package com.cos.brunch.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
-import com.cos.brunch.model.User;
 
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ContentHorizontal2Adapter extends RecyclerView.Adapter<ContentHorizontal2Adapter.MyViewHolder> {
 

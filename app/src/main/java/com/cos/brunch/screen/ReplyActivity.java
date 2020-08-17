@@ -1,4 +1,4 @@
-package com.cos.brunch.reply;
+package com.cos.brunch.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 

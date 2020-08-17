@@ -1,18 +1,14 @@
-package com.cos.brunch.apply;
+package com.cos.brunch.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
-import com.google.android.material.navigation.NavigationView;
 
 public class ApplyActivity extends AppCompatActivity {
 
