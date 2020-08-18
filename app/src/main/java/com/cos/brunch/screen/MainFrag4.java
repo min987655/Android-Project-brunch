@@ -28,7 +28,6 @@ public class MainFrag4 extends Fragment {
     private static final String TAG = "MainFrag4";
 
     private MainViewModel mainViewModel;
-    public MainFragmentAdapter mainFragmentAdapter;
     public List<Post> post = new ArrayList<>();
 
 
@@ -44,18 +43,24 @@ public class MainFrag4 extends Fragment {
 //
 //        Log.d(TAG, "MainFrag4 : onCreateView: ");
 //        return view;
-        Frag4MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag4_main, container, false);
+        final Frag4MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag4_main, container, false);
 
-//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-//
-//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: 구독 !!!! ");
-//                mainFragmentAdapter.setPosts(posts);
-//            }
-//        });
+        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+
+        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+            @Override
+            public void onChanged(List<Post> posts) {
+                Log.d(TAG, "onChanged: 구독 !!!! " + posts);
+                String title = posts.get(3).getTitle();
+                String title2 = posts.get(4).getTitle();
+                layout.tvTitle4.setText(title);
+                layout.tvTitle5.setText(title2);
+                Log.d(TAG, "onChanged: layout.tvTitle : " + title.toString());
+                Log.d(TAG, "onChanged: layout.tvTitle : " + title2.toString());
+            }
+
+        });
 
         return layout.getRoot();
 

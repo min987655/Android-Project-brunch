@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,11 +25,12 @@ import com.cos.brunch.viewmodel.MainViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.POST;
+
 public class MainFrag1 extends Fragment {
 
     private static final String TAG = "MainFrag1";
     private MainViewModel mainViewModel;
-    public MainFragmentAdapter mainFragmentAdapter;
     public List<Post> posts = new ArrayList<>();
 
     @Nullable
@@ -37,6 +39,7 @@ public class MainFrag1 extends Fragment {
 
         final Frag1MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag1_main, container, false);
 
+
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
@@ -44,8 +47,9 @@ public class MainFrag1 extends Fragment {
             @Override
             public void onChanged(List<Post> posts) {
                 Log.d(TAG, "onChanged: 구독 !!!! " + posts);
-//                .setPosts(posts);
-
+                String title = posts.get(0).getTitle();
+                layout.tvTitle.setText(title);
+                Log.d(TAG, "onChanged: layout.tvTitle : " + layout.tvTitle);
             }
 
         });

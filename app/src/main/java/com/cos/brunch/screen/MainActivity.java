@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
-    private MainViewModel mainViewModel;
     private List<Post> posts = new ArrayList<>();
 
     private MainFrag1 frag1;
@@ -58,24 +57,9 @@ public class MainActivity extends AppCompatActivity {
         initData();
         initlistener();
         setupNavigationView();
-        printHashKey(this);
     }
 
     private void initData() {
-
-//        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-//
-//
-//        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: " + posts);
-//                Log.d(TAG, "onChanged: 구독 !!!! ");
-////                mainAdapter.setPosts(posts);
-//                frag1.setPosts(posts);
-//            }
-//        });
 
     }
 
@@ -116,21 +100,5 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav);
         NavigationViewHelper.enableNavigation(mContext, navigationView);
 
-    }
-
-    public static void printHashKey(Context pContext) {
-        try {
-            PackageInfo info = pContext.getPackageManager().getPackageInfo(pContext.getPackageName(), PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String hashKey = new String(Base64.encode(md.digest(), 0));
-                Log.i(TAG, "printHashKey() Hash Key: " + hashKey);
-            }
-        } catch (NoSuchAlgorithmException e) {
-            Log.e(TAG, "printHashKey()", e);
-        } catch (Exception e) {
-            Log.e(TAG, "printHashKey()", e);
-        }
     }
 }

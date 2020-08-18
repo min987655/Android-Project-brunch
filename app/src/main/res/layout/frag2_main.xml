@@ -44,7 +44,7 @@
                 android:src="@drawable/img_mark_1_b" />
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_title2"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -58,10 +58,10 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/tv_content"
+                android:id="@+id/tv_content2"
                 android:layout_width="215dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_title"
+                android:layout_below="@+id/tv_title2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-11dp"
                 android:gravity="center_horizontal"

@@ -1,9 +1,6 @@
 package com.cos.brunch.adapter;
 
-import android.content.Context;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
