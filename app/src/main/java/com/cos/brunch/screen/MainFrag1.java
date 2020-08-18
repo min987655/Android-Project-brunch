@@ -29,29 +29,29 @@ public class MainFrag1 extends Fragment {
     private static final String TAG = "MainFrag1";
     private MainViewModel mainViewModel;
     public MainFragmentAdapter mainFragmentAdapter;
-    public List<Post> post = new ArrayList<>();
+    public List<Post> posts = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         final Frag1MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag1_main, container, false);
+
+        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+
+        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+            @Override
+            public void onChanged(List<Post> posts) {
+                Log.d(TAG, "onChanged: 구독 !!!! " + posts);
+//                .setPosts(posts);
+
+            }
+
+        });
+
+        Log.d(TAG, "onCreateView: layout : " + layout);
         return layout.getRoot();
     }
-
-//    @Override
-//    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-//
-//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: 구독 !!!! ");
-////                mainViewModel.구독하기().postValue(posts);
-//            }
-//        });
-//    }
 
 }

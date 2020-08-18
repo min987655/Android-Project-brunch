@@ -19,7 +19,7 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
 
     private static final String TAG = "MainFragmentAdapter";
     private List<Fragment> fragmentList = new ArrayList<>();
-    private List<Post> posts;
+    private List<Post> posts = new ArrayList<>();
 
     public MainFragmentAdapter(@NonNull FragmentActivity fragmentActivity, List<Post> posts) {
         super(fragmentActivity);

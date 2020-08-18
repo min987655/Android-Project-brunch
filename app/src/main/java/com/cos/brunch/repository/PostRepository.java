@@ -47,20 +47,6 @@ public class PostRepository {
                 if (postItems != null) {
                     allPosts.setValue(postItems);
                 }
-//                for (Post post : postItems) {
-//                    String content = "";
-//                    content += "id: " + post.getId() + "\n";
-//                    content += "USER_ID: " + post.getUserId() + "\n";
-//                    content += "TITLE: " + post.getTitle() + "\n";
-//                    content += "SUB_TITLE: " + post.getSubTitle() + "\n";
-//                    content += "POST_TYPE: " + post.getPostType() + "\n";
-//                    content += "CONTENT: " + post.getContent() + "\n\n";
-//                    content += "LIKE_TYPE: " + post.getLikeType() + "\n\n";
-//                    content += "LIKE_COUNT: " + post.getLikeCount() + "\n\n";
-//                    content += "READ_COUNT: " + post.getReadCount() + "\n\n";
-//                    content += "CREATE_DATE: " + post.getCreateDate() + "\n\n";
-//                    Log.d(TAG, "onResponse: tvTest : " + content);
-//                }
                 Log.d(TAG, "onResponse: allPosts : " + allPosts.getValue());
             }
 

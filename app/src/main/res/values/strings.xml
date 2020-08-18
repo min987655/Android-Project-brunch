@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">brunch</string>
     <string name="StringValue">이미지가 열리지 않습니다.</string>
+    <string name="kakao_app_key">872a8b43644c15354348c5b0f271c0fd</string>
 </resources>
