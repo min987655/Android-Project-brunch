@@ -1,11 +1,8 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.posts;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,11 +12,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.PostsAdapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;

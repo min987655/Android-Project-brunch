@@ -9,25 +9,15 @@ import lombok.Builder;
 
 @Builder
 public class Post {
-    @SerializedName("id")
     private Integer id;
-    @SerializedName("userId")
     private Integer userId;
-    @SerializedName("title")
     private String title;
-    @SerializedName("subTitle")
     private String subTitle;
-    @SerializedName("content")
     private String content;
-    @SerializedName("postType")
     private String postType;
-    @SerializedName("likeType")
     private String likeType;
-    @SerializedName("likeCount")
     private Integer likeCount;
-    @SerializedName("readCount")
     private Integer readCount;
-    @SerializedName("createDate")
     private String createDate;
     //    @Expose
 

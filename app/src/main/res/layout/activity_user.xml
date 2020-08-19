@@ -6,12 +6,12 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.MainActivity">
+    tools:context=".screen.main.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screen.UserActivity">
+        tools:context=".screen.user.UserActivity">
 
         <include layout="@layout/toolbar_user" />
 

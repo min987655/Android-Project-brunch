@@ -2,8 +2,9 @@ package com.cos.brunch.model;
 
 public class User {
 
-    private int profileImg;
+    private String email;
     private String nickName;
+    private int profileImg;
 
     public User(int profileImg, String nickName) {
         this.profileImg = profileImg;

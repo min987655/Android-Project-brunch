@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".screen.LoginActivity">
+    tools:context=".screen.login.LoginActivity">
 
     <Button
         android:id="@+id/btn_custom_login"

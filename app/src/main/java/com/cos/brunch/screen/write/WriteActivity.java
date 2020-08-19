@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.write;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.posts.PostsActivity;
 
 import jp.wasabeef.richeditor.RichEditor;
 

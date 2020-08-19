@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.write;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.posts.PostsActivity;
 
 import java.util.ArrayList;
 

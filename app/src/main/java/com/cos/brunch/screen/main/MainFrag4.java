@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.main;
 
 import android.os.Bundle;
 import android.util.Log;

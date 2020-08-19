@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.userprofileupdate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.userprofileupdate.UserProfileUpdateActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 // BottomDialog 커스텀

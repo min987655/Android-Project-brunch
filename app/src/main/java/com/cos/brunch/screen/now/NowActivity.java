@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.now;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import com.cos.brunch.adapter.ContentVerticalAdapter;
 import com.cos.brunch.adapter.KeywordAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
+import com.cos.brunch.screen.posts.PostsActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 

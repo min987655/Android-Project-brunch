@@ -1,4 +1,4 @@
-package com.cos.brunch.screen;
+package com.cos.brunch.screen.userprofileupdate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.user.UserActivity;
 
 public class UserProfileUpdateActivity extends AppCompatActivity {
 

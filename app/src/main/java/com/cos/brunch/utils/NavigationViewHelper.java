@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.screen.MainActivity;
-import com.cos.brunch.screen.NowActivity;
-import com.cos.brunch.screen.UserActivity;
-import com.cos.brunch.screen.WriteActivity;
+import com.cos.brunch.screen.main.MainActivity;
+import com.cos.brunch.screen.now.NowActivity;
+import com.cos.brunch.screen.user.UserActivity;
+import com.cos.brunch.screen.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class NavigationViewHelper {

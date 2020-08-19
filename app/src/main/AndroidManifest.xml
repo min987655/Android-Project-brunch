@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".adapter.GlobalApplication"
+        android:name=".utils.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".screen.LoginActivity">
+        <activity android:name=".screen.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,15 +30,15 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".TestActivity"></activity>
-        <activity android:name=".screen.ReplyActivity" />
-        <activity android:name=".screen.PostActivity" />
-        <activity android:name=".screen.PostsActivity" />
-        <activity android:name=".screen.NowActivity" />
-        <activity android:name=".screen.ApplyActivity" />
-        <activity android:name=".screen.UserProfileUpdateActivity" />
-        <activity android:name=".screen.UserActivity" />
-        <activity android:name=".screen.WriteActivity" />
-        <activity android:name=".screen.MainActivity">
+        <activity android:name=".screen.reply.ReplyActivity" />
+        <activity android:name=".screen.post.PostActivity" />
+        <activity android:name=".screen.posts.PostsActivity" />
+        <activity android:name=".screen.now.NowActivity" />
+        <activity android:name=".screen.apply.ApplyActivity" />
+        <activity android:name=".screen.userprofileupdate.UserProfileUpdateActivity" />
+        <activity android:name=".screen.user.UserActivity" />
+        <activity android:name=".screen.write.WriteActivity" />
+        <activity android:name=".screen.main.MainActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
