@@ -1,66 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#718ec9"
     tools:context=".screen.apply.ApplyActivity">
 
-    <include layout="@layout/toolbar_edit" />
-
-    <TextView
-        android:id="@+id/tv_guide"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/nanummyeongjo"
-        android:lineSpacingExtra="5dp"
-        android:textColor="@color/colorWhite"
-        android:text="브런치는\n작가로 선정되어야\n글을 발행하실 수\n있습니다."
-        android:textSize="34dp"/>
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_guide"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:fontFamily="@font/nanummyeongjo"
-        android:lineSpacingExtra="5dp"
-        android:textColor="@color/colorWhite"
-        android:text="출간 작가, 특정 분야의 전문가가 아니어도\n진정성 있게 글을 쓸 분이라면\n브런치 작가에 도전하실 수 있습니다.."
-        android:textSize="14dp"/>
-
-    <LinearLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
 
-        <TextView
-            android:id="@+id/tv_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#494949"
-            android:gravity="center"
-            android:fontFamily="@font/notosans_light"
-            android:text="독자로 글읽기"
-            android:textColor="#41FFFFFF" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_apply"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </com.google.android.material.tabs.TabLayout>
 
-        <TextView
-            android:id="@+id/tv_apply"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#292929"
-            android:gravity="center"
-            android:fontFamily="@font/notosans_light"
-            android:text="작가 신청하기"
-            android:textColor="@color/colorWhite" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="210dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|left"
+        app:headerLayout="@layout/header"
+        app:labelVisibilityMode="unlabeled" />
 
-    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <include layout="@layout/toolbar_tap" />
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

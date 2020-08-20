@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.main.MainActivity;
 import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.user.UserActivity;
@@ -54,14 +55,6 @@ public class NavigationViewHelper {
             }
         });
 
-//        navApply.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, ApplyActivity.class);
-//                context.startActivity(intent);
-//            }
-//        });
-
         navWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +66,8 @@ public class NavigationViewHelper {
         navDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, ApplyActivity.class);
+                context.startActivity(intent);
             }
         });
 

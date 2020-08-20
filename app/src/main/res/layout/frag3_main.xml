@@ -96,7 +96,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_alignLeft="@+id/tv_title"
+                android:layout_alignLeft="@+id/tv_title3"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="15dp">
 

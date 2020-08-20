@@ -2,6 +2,7 @@ package com.cos.brunch.screen.user;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -43,13 +44,16 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void initObject() {
-        imgMenu = findViewById(R.id.img_menu);
+        imgMenu = findViewById(R.id.img_toolbar_l);
         btnWrite = findViewById(R.id.btn_write);
+        imgProfileUpdate = findViewById(R.id.img_toolbar_r);
+
+        imgMenu.setImageDrawable(getDrawable(R.drawable.img_menu));
+        imgProfileUpdate.setImageDrawable(getDrawable(R.drawable.img_more));
     }
 
     private void initDesign() {
         drawerLayout = findViewById(R.id.drawer);
-        imgProfileUpdate = findViewById(R.id.img_user_profile_dialog);
     }
 
 

@@ -18,7 +18,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorWhite" />
 
-            <include layout="@layout/toolbar_edit" />
+            <include layout="@layout/toolbar_sub" />
 
             <TextView
                 android:id="@+id/tv_posts_keyword"

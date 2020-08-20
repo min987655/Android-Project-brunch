@@ -44,7 +44,8 @@ public class MainFrag3 extends Fragment {
                 Log.d(TAG, "onChanged: 구독 !!!! " + posts);
                 String title = posts.get(2).getTitle();
                 layout.tvTitle3.setText(title);
-                Log.d(TAG, "onChanged: layout.tvTitle : " + title.toString());
+                Log.d(TAG, "onChanged: layout.tvTitle : " + title);
+                Log.d(TAG, "onChanged: layout.tvTitle : " + layout.tvTitle3);
             }
 
         });

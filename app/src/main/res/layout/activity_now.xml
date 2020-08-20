@@ -36,7 +36,7 @@
                 android:layout_height="match_parent"
                 android:background="#AD352C21" />
 
-            <include layout="@layout/toolbar_edit" />
+            <include layout="@layout/toolbar_sub" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_now_toolbar_keyword"

@@ -19,7 +19,6 @@
             android:layout_height="40dp"
             android:paddingRight="10dp"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/img_menu"
             android:contentDescription="@string/StringValue"/>
 
         <ImageView
@@ -29,7 +28,6 @@
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:paddingLeft="10dp"
-            app:srcCompat="@drawable/img_more"
             android:contentDescription="@string/StringValue"/>
 
     </RelativeLayout>

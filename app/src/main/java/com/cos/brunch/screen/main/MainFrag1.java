@@ -25,8 +25,6 @@ import com.cos.brunch.viewmodel.MainViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.http.POST;
-
 public class MainFrag1 extends Fragment {
 
     private static final String TAG = "MainFrag1";
@@ -39,7 +37,6 @@ public class MainFrag1 extends Fragment {
 
         final Frag1MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag1_main, container, false);
 
-
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
@@ -49,9 +46,7 @@ public class MainFrag1 extends Fragment {
                 Log.d(TAG, "onChanged: 구독 !!!! " + posts);
                 String title = posts.get(0).getTitle();
                 layout.tvTitle.setText(title);
-                Log.d(TAG, "onChanged: layout.tvTitle : " + layout.tvTitle);
             }
-
         });
 
         Log.d(TAG, "onCreateView: layout : " + layout);

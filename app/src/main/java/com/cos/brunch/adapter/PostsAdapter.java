@@ -4,8 +4,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,23 +19,17 @@ import java.util.List;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder> {
 
+    private static OnClickListener mListener = null;
     private static final String TAG = "PostsAdapter";
     private List<Post> posts = new ArrayList<>();
 
-//    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-//    private static OnItemClickListener mListener = null;
-//
-//    public interface OnItemClickListener {
-//        void onItemClick(View v, int position) ;
-//    }
-//
-//    public void setOnItemClickListener(OnItemClickListener listener) {
-//        this.mListener = listener ;
-//    }
-//
-//    public void addPost(Post post) {
-//        posts.add(post);
-//    }
+    public interface OnClickListener {
+        void onItemClick(View v, int pos);
+    }
+
+    public void setOnClickListener(OnClickListener listener) {
+        this.mListener = listener;
+    }
 
     // 껍데기 생성
     @NonNull
@@ -58,7 +50,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         Post currentPost = posts.get(position);
-        holder.itemPostBinding.setPostList(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
+        holder.itemPostBinding.setPost(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
     }
 
     @Override
@@ -76,7 +68,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
         return posts.get(position);
     }
 
-
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -86,19 +77,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             super(itemPostBinding.getRoot()); // view. 부모에게 view를 넘겨줌
             this.itemPostBinding = itemPostBinding;
 
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Log.d(TAG, "onClick: 아이템 클릭 됨 ");
-//                    int position = getAdapterPosition() ;
-//                    if (position != RecyclerView.NO_POSITION) {
-//                        mListener.onItemClick(v, position);
-//                    }
-//                }
-//            });
-
+            itemPostBinding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        if(mListener!=null){
+                            mListener.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
         }
-
     }
 
 }

@@ -29,7 +29,6 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-        <activity android:name=".TestActivity"></activity>
         <activity android:name=".screen.reply.ReplyActivity" />
         <activity android:name=".screen.post.PostActivity" />
         <activity android:name=".screen.posts.PostsActivity" />

@@ -8,35 +8,13 @@
     <data>
 
         <variable
-            name="postList"
+            name="post"
             type="com.cos.brunch.model.Post" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-<!--        android:onClick="@{postList::rvItemClick}">-->
-
-        <!--    <RelativeLayout-->
-        <!--        android:id="@+id/post_apply"-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content">-->
-
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:id="@+id/rv_post_apply"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="80dp"-->
-        <!--            android:layout_below="@+id/now_apply_more"-->
-        <!--            android:scrollbars="none" />-->
-
-        <!--        <View-->
-        <!--            android:id="@+id/now_bar1"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="0.3dp"-->
-        <!--            android:layout_below="@+id/rv_post_apply"-->
-        <!--            android:layout_marginTop="20dp"-->
-        <!--            android:background="@color/colorBorderDark" />-->
-        <!--    </RelativeLayout>-->
 
         <RelativeLayout
             android:id="@+id/post_item"
@@ -52,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="@{postList.title}"
+                android:text="@{post.title}"
                 android:textSize="17sp" />
 
             <TextView
@@ -63,7 +41,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="5dp"
                 android:lineSpacingExtra="2dp"
-                android:text="@{postList.content}"
+                android:text="@{post.content}"
                 android:textColor="@color/colorGray"
                 android:textSize="13sp" />
 
@@ -72,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_post_content"
-                android:text="@{postList.createDate}"
+                android:text="@{post.createDate}"
                 android:textColor="@color/colorCharcoal" />
 
             <TextView

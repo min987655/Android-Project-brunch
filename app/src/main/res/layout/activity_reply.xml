@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".screen.reply.ReplyActivity">
 
-    <include layout="@layout/toolbar_edit" />
+    <include layout="@layout/toolbar_sub" />
 
     <View
         android:id="@+id/reply_br1"

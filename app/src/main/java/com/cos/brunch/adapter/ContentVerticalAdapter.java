@@ -70,7 +70,7 @@ public class ContentVerticalAdapter extends RecyclerView.Adapter<ContentVertical
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private RecyclerView rvNowApply;
+        private RecyclerView rvNowApply, rvNowontent;
         private TextView tvNowApplyKeyword;
         private RelativeLayout nowApplyMore, nowContentMore;
 

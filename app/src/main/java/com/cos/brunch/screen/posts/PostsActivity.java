@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.PostsAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.now.NowActivity;
+import com.cos.brunch.screen.post.PostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
@@ -83,14 +85,13 @@ public class PostsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        postsAdapter.setOnItemClickListener(new PostsAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View v, int position) {
-//                Intent intent = new Intent(mContext, PostActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
+        postsAdapter.setOnClickListener(new PostsAdapter.OnClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Log.d(TAG, "onItemClick: "+pos);
+                Toast.makeText(mContext, "상세보기", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-
 }

@@ -19,6 +19,7 @@ import com.kakao.util.exception.KakaoException;
 
 public class SessionCallback implements ISessionCallback {
 
+    private BrunchService brunchService;
     private static final String TAG = "SessionCallback";
 
     // 로그인에 성공한 상태
@@ -61,8 +62,11 @@ public class SessionCallback implements ISessionCallback {
                             // 토큰
                             AccessToken accessToken;
                             accessToken = Session.getCurrentSession().getTokenInfo();
-                            Log.d(TAG, "onSuccess: getAccessToken : " + accessToken.getAccessToken());
+                            String acToken;
+                            acToken = accessToken.getAccessToken();
+                            Log.d(TAG, "onSuccess: getAccessToken : " + acToken);
                             Log.d(TAG, "onSuccess: getRefreshToken : " + accessToken.getRefreshToken());
+                            brunchService.AccessToken(acToken);
                         }
                     }
                 });

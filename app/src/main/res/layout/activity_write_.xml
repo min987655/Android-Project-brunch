@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite">
 
-    <include layout="@layout/toolbar_edit"/>
+    <include layout="@layout/toolbar_sub"/>
 
     <View
         android:id="@+id/img_br1"

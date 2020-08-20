@@ -42,11 +42,10 @@ public class MainFrag2 extends Fragment {
             @Override
             public void onChanged(List<Post> posts) {
                 Log.d(TAG, "onChanged: 구독 !!!! " + posts);
-                String title = posts.get(1).getTitle();
-                String content = posts.get(1).getContent();
-                layout.tvTitle2.setText(title);
-                layout.tvContent2.setText(content);
-                Log.d(TAG, "onChanged: layout.tvTitle : " + title.toString());
+                String title1 = posts.get(1).getTitle();
+                String content1 = posts.get(1).getContent();
+                layout.tvTitle2.setText(title1);
+                layout.tvContent2.setText(content1);
             }
 
         });
