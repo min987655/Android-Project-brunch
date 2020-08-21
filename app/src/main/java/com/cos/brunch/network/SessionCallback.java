@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.main.MainActivity;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
@@ -17,9 +18,16 @@ import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.http.Header;
+
 public class SessionCallback implements ISessionCallback {
 
-    private BrunchService brunchService;
+    BrunchService brunchService = BrunchService.retrofit.create(BrunchService.class);
     private static final String TAG = "SessionCallback";
 
     // 로그인에 성공한 상태
@@ -71,4 +79,7 @@ public class SessionCallback implements ISessionCallback {
                     }
                 });
     }
+//
+//    Call<Map<String, Object>> call = brunchService.AccessToken(acToken);
+//        call.
 }
