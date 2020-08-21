@@ -1,12 +1,10 @@
 package com.cos.brunch.screen.main;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,10 +12,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.MainFragmentAdapter;
 import com.cos.brunch.databinding.Frag1MainBinding;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.viewmodel.MainViewModel;

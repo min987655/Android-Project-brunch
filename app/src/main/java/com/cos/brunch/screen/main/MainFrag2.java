@@ -14,8 +14,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.MainFragmentAdapter;
-import com.cos.brunch.databinding.Frag1MainBinding;
 import com.cos.brunch.databinding.Frag2MainBinding;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.viewmodel.MainViewModel;

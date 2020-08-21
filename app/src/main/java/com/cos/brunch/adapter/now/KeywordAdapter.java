@@ -1,4 +1,4 @@
-package com.cos.brunch.adapter;
+package com.cos.brunch.adapter.now;
 
 import android.util.Log;
 import android.view.LayoutInflater;

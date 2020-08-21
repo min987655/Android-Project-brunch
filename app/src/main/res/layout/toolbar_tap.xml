@@ -1,34 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:contentInsetStart="0dp"
     android:layout_width="match_parent"
+    android:layout_height="45dp"
     android:layout_marginLeft="@dimen/toolbar_marginLeft"
     android:layout_marginTop="@dimen/toolbar_marginTop"
     android:layout_marginRight="@dimen/toolbar_marginRight"
-    android:layout_height="40dp">
+    app:contentInsetStart="0dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_apply"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tab1" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tab2" />
+        </com.google.android.material.tabs.TabLayout>
+
         <ImageView
-            android:id="@+id/img_menu"
+            android:id="@+id/img_apply_menu"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:paddingRight="10dp"
             android:layout_centerVertical="true"
-            android:contentDescription="@string/StringValue"/>
+            android:contentDescription="@string/StringValue"
+            android:paddingRight="10dp" />
 
         <ImageView
             android:id="@+id/img_user_profile_dialog"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:paddingLeft="10dp"
-            android:contentDescription="@string/StringValue"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/StringValue"
+            android:paddingLeft="10dp" />
+
 
     </RelativeLayout>
 

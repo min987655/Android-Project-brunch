@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="35dp"
-    android:layout_marginBottom="35dp"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -91,7 +90,7 @@
         android:layout_width="15dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingTop="170dp"
+        android:paddingTop="330dp"
         android:src="@drawable/img_settings" />
 
 </LinearLayout>

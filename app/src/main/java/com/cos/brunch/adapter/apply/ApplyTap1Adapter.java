@@ -1,11 +1,9 @@
-package com.cos.brunch.adapter;
+package com.cos.brunch.adapter.apply;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -18,24 +16,18 @@ import com.cos.brunch.model.Post;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
+public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyViewHolder> {
 
-    private static final String TAG = "PostAdapter";
+    private static OnClickListener mListener = null;
+    private static final String TAG = "ApplyTap1Adapter";
     private List<Post> posts = new ArrayList<>();
 
-    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
-    private static OnItemClickListener mListener = null;
-
-    public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
+    public interface OnClickListener {
+        void onItemClick(View v, int pos);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.mListener = listener ;
-    }
-
-    public void addPost(Post post) {
-        posts.add(post);
+    public void setOnClickListener(OnClickListener listener) {
+        this.mListener = listener;
     }
 
     // 껍데기 생성
@@ -43,14 +35,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "onCreateViewHolder: ");
-
         ItemPostBinding itemPostBinding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()),
-                R.layout.item_post_detail,
+                R.layout.item_post,
                 parent, // 뷰그룹(해당 프로젝트에서는 리사이클러뷰)
                 false
         );
         return new MyViewHolder(itemPostBinding);
+
     }
 
     // 껍데기에 데이터 바인딩
@@ -66,15 +58,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         return posts.size();
     }
 
-    public void setPosts(List<Post> potes){
-        this.posts = potes;
+    public void setPosts(List<Post> posts){
+        this.posts = posts;
         notifyDataSetChanged();
     }
 
-    public Post getPostAt(int position){
-        return posts.get(position);
-    }
-
+//    public Post getPostAt(int position){
+//        return posts.get(position);
+//    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -85,18 +76,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             super(itemPostBinding.getRoot()); // view. 부모에게 view를 넘겨줌
             this.itemPostBinding = itemPostBinding;
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemPostBinding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "onClick: 아이템 클릭 됨 ");
-                    int position = getAdapterPosition() ;
-                    if (position != RecyclerView.NO_POSITION) {
-                        mListener.onItemClick(v, position);
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        if(mListener!=null){
+                            mListener.onItemClick(v, pos);
+                        }
                     }
                 }
             });
         }
-
     }
 
 }

@@ -1,10 +1,9 @@
-package com.cos.brunch.adapter;
+package com.cos.brunch.adapter.apply;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -17,10 +16,10 @@ import com.cos.brunch.model.Post;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder> {
+public class ApplyTap2Adapter extends RecyclerView.Adapter<ApplyTap2Adapter.MyViewHolder> {
 
     private static OnClickListener mListener = null;
-    private static final String TAG = "PostsAdapter";
+    private static final String TAG = "ApplyTap1Adapter";
     private List<Post> posts = new ArrayList<>();
 
     public interface OnClickListener {

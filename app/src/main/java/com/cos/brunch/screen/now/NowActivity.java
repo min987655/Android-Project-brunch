@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.ContentVerticalAdapter;
-import com.cos.brunch.adapter.KeywordAdapter;
+import com.cos.brunch.adapter.now.ContentVerticalAdapter;
+import com.cos.brunch.adapter.now.KeywordAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
 import com.cos.brunch.screen.posts.PostsActivity;

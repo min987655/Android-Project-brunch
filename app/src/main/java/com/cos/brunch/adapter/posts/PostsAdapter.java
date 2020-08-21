@@ -1,4 +1,4 @@
-package com.cos.brunch.adapter;
+package com.cos.brunch.adapter.posts;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,10 +16,10 @@ import com.cos.brunch.model.Post;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyViewHolder> {
+public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder> {
 
     private static OnClickListener mListener = null;
-    private static final String TAG = "ApplyTap1Adapter";
+    private static final String TAG = "PostsAdapter";
     private List<Post> posts = new ArrayList<>();
 
     public interface OnClickListener {
