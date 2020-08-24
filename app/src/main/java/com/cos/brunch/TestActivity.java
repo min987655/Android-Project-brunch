@@ -38,25 +38,23 @@ public class TestActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = new User(1,"1");
+                Post post = new Post(1, 1, "1.제목_통신테스트", "1.소제목_통신테스트", "1.본문_통신테스트", "에세이", "ok", 0, 0, null);
 
                 BrunchService brunchService = BrunchService.retrofit.create(BrunchService.class);
 
-                Gson gson = new Gson();
-                String test = gson.toJson(user);
-                Log.d(TAG, "onClick: test : " + test);
-
-                Call<ResponseBody> test1 = brunchService.getTest(test);
-                test1.enqueue(new Callback<ResponseBody>() {
+                Call<Post> test1 = brunchService.createPost(post);
+                test1.enqueue(new Callback<Post>() {
                     @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        if (!response.isSuccessful()) {
-                            Log.d(TAG, "onResponse: 연결실패 ! ");
+                    public void onResponse(Call<Post> call, Response<Post> response) {
+                        if(!response.isSuccessful()) {
+                            Log.d(TAG, "onResponse: 연결 실패 ! " + response.code());
+                            return;
                         }
                     }
+
                     @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        Log.d(TAG, "onFailure: error : " + t.getMessage());
+                    public void onFailure(Call<Post> call, Throwable t) {
+                        Log.d(TAG, "onFailure: " + t.getMessage());
                     }
                 });
 //                Intent intent = new Intent(mContext, MainActivity.class);

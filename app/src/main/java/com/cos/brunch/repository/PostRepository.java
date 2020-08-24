@@ -30,9 +30,9 @@ public class PostRepository {
     }
 
     public MutableLiveData<List<Post>> getAllPosts() {
-        
+
         BrunchService brunchService = BrunchService.retrofit.create(BrunchService.class);
-        
+
         Call<List<Post>> call = brunchService.getPosts();
         call.enqueue(new Callback<List<Post>>() {
             @Override
