@@ -7,7 +7,6 @@ import java.util.List;
 
 import lombok.Builder;
 
-@Builder
 public class Post {
     private Integer id;
     private Integer userId;
@@ -15,23 +14,23 @@ public class Post {
     private String subTitle;
     private String content;
     private String postType;
-    private String likeType;
-    private Integer likeCount;
     private Integer readCount;
     private String createDate;
-    //    @Expose
 
-    public Post(Integer id, Integer userId, String title, String subTitle, String content, String postType, String likeType, Integer likeCount, Integer readCount, String createDate) {
-        this.id = id;
+    public Post(Integer userId, String title, String subTitle, String content, String postType, Integer readCount, String createDate) {
         this.userId = userId;
         this.title = title;
         this.subTitle = subTitle;
         this.content = content;
         this.postType = postType;
-        this.likeType = likeType;
-        this.likeCount = likeCount;
         this.readCount = readCount;
         this.createDate = createDate;
+    }
+
+    public Post(String title, String subTitle, String content) {
+        this.title = title;
+        this.subTitle = subTitle;
+        this.content = content;
     }
 
     public Integer getId() {
@@ -80,22 +79,6 @@ public class Post {
 
     public void setPostType(String postType) {
         this.postType = postType;
-    }
-
-    public String getLikeType() {
-        return likeType;
-    }
-
-    public void setLikeType(String likeType) {
-        this.likeType = likeType;
-    }
-
-    public Integer getLikeCount() {
-        return likeCount;
-    }
-
-    public void setLikeCount(Integer likeCount) {
-        this.likeCount = likeCount;
     }
 
     public Integer getReadCount() {

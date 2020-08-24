@@ -1,11 +1,8 @@
 package com.cos.brunch.network;
 
-import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
 import com.cos.brunch.model.Post;
-import com.cos.brunch.screen.main.MainActivity;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
 import com.kakao.auth.authorization.accesstoken.AccessToken;
@@ -13,21 +10,19 @@ import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.usermgmt.response.model.Profile;
 import com.kakao.usermgmt.response.model.UserAccount;
-import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.http.Header;
+import retrofit2.Response;
 
 public class SessionCallback implements ISessionCallback {
 
-    BrunchService brunchService = BrunchService.retrofit.create(BrunchService.class);
+    private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
     private static final String TAG = "SessionCallback";
 
     // 로그인에 성공한 상태
@@ -74,12 +69,30 @@ public class SessionCallback implements ISessionCallback {
                             acToken = accessToken.getAccessToken();
                             Log.d(TAG, "onSuccess: getAccessToken : " + acToken);
                             Log.d(TAG, "onSuccess: getRefreshToken : " + accessToken.getRefreshToken());
-                            brunchService.AccessToken(acToken);
+
+                            Map<String, String> headers = new HashMap<>();
+                            headers.put("Authorization", acToken);
+
+                            Log.d(TAG, "onSuccess: headers : " + headers);
+
+                            Call<Post> call = brunchService.AccessToken(headers);
+                            call.enqueue(new Callback<Post>() {
+                                @Override
+                                public void onResponse(Call<Post> call, Response<Post> response) {
+                                    if(!response.isSuccessful()) {
+                                        Log.d(TAG, "onResponse: AccessToken : 못넘김 : " + response.code());
+                                        return;
+                                    }
+                                    Log.d(TAG, "onResponse: AccessToken 넘기기 성공 : " + response.code());
+                                }
+
+                                @Override
+                                public void onFailure(Call<Post> call, Throwable t) {
+                                    Log.d(TAG, "onFailure: " + t.getMessage());
+                                }
+                            });
                         }
                     }
                 });
     }
-//
-//    Call<Map<String, Object>> call = brunchService.AccessToken(acToken);
-//        call.
 }

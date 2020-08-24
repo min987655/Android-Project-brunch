@@ -2,7 +2,6 @@ package com.cos.brunch.screen.user;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.cos.brunch.R;
-import com.cos.brunch.screen.userprofileupdate.BottomDialog;
 import com.cos.brunch.screen.write.WriteActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
@@ -68,7 +66,7 @@ public class UserActivity extends AppCompatActivity {
         imgProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomDialog bottomDialog = new BottomDialog();
+                UserBottomDialog bottomDialog = new UserBottomDialog();
                 bottomDialog.show(getSupportFragmentManager(), "bottomDialog");
             }
         });

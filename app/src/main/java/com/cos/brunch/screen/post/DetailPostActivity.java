@@ -49,16 +49,7 @@ public class DetailPostActivity extends AppCompatActivity {
     }
     private void initData() {
         detailPostAdapter = new DetailPostAdapter();
-        detailPostAdapter.addPost(new Post(1,1,"1.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(2,1,"2.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(3,1,"3.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(4,1,"4.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(5,1,"5.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(6,1,"6.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(7,1,"7.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(8,1,"8.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(9,1,"9.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
-        detailPostAdapter.addPost(new Post(10,1,"10.제목", "1.소제목", "1.본문", "에세이", "ok", 0, 0, "20.08.08"));
+        detailPostAdapter.addPost(new Post(1,"1.제목", "1.소제목", "1.본문", "에세이", 0, null));
 
         rvPostPost.setLayoutManager(new LinearLayoutManager(this));
         rvPostPost.setAdapter(detailPostAdapter);
