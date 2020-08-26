@@ -36,9 +36,9 @@
             <TextView
                 android:id="@+id/tv_post_content"
                 android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_below="@+id/tv_post_title"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:lineSpacingExtra="2dp"
                 android:text="@{post.content}"
@@ -75,9 +75,10 @@
 
             <ImageView
                 android:id="@+id/iv_post_cover"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignTop="@+id/tv_post_content"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"

@@ -40,9 +40,11 @@ public class ServiceGenerator {
                 .addInterceptor(loggingInterceptor)
                 .build();
 
+        // 내 주소 http://192.168.0.64:8080/brunch/
+        // 민경이 주소 http://192.168.0.61:8080/brunch/
         // Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.64:8080/brunch/")
+                .baseUrl("http://192.168.0.61:8080/brunch/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient) // client를 OkHttp로 함.
                 .build();

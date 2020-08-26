@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Base64InputStream;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -25,14 +24,10 @@ import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.repository.PostRepository;
 import com.cos.brunch.utils.DialogCallBack;
-import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.StringWriter;
 
 import jp.wasabeef.richeditor.RichEditor;
 
@@ -50,7 +45,7 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
 
     // 사진 업로드
     private String imageRealPath;
-    private File tempFile;
+//    private File tempFile;
     private static final int PICK_FROM_ALBUM = 1;
 
 
@@ -184,15 +179,6 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
             }
         });
 
-//        findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                goToAlbum();
-//                mEditor.insertImage("https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg",
-//                        "img");
-//            }
-//        });
-
         findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -240,8 +226,6 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
 
         imageRealPath = getRealPathFromURI(photoUri); // 해당경로에 저장되어있음 - 해당 경로를 DB에 저장하여 불러옴
         Log.d(TAG, "onActivityResult: imageRealPath : " + imageRealPath);
-//        tempFile = new File(imageRealPath);  // 파일로 inPutStream
-//        Log.d(TAG, "onActivityResult: tempFile : " + tempFile);
 
         try {
             InputStream inputStream = resolver.openInputStream(photoUri);
@@ -253,7 +237,7 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
             imgBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             Log.d(TAG, "onActivityResult: byteArray : " + byteArray);
-            String encoded = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.NO_WRAP);
+            String encoded = Base64.encodeToString(byteArray, Base64.NO_WRAP);
             Log.d(TAG, "onActivityResult: encoded : " + encoded);
 
             mEditor.insertImage("data:image/png;base64," + encoded, "img");
@@ -273,5 +257,6 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
                 mEditor.getHtml()
         );
         postRepository.save(savePost);
+
     }
 }
