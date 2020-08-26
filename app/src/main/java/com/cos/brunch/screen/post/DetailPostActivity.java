@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import com.cos.brunch.R;
 import com.cos.brunch.adapter.post.DetailPostAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.posts.PostsActivity;
+import com.cos.brunch.screen.reply.ReplyActivity;
 
 public class DetailPostActivity extends AppCompatActivity {
     private static final String TAG = "PostActivity";
@@ -22,7 +24,7 @@ public class DetailPostActivity extends AppCompatActivity {
     private RecyclerView rvPostPost;
 
     private ImageView imgBack, imgSearch;
-
+    private TextView tvReply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class DetailPostActivity extends AppCompatActivity {
         imgBack = findViewById(R.id.img_toolbar_l);
         imgSearch = findViewById(R.id.img_toolbar_r);
 
+        tvReply = findViewById(R.id.tv_post_comment_count);
         imgBack.setImageDrawable(getDrawable(R.drawable.img_back_b));
         imgSearch.setImageDrawable(null);
     }
@@ -68,6 +71,14 @@ public class DetailPostActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int position) {
                 Intent intent = new Intent(mContext, DetailPostActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tvReply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ReplyActivity.class);
                 startActivity(intent);
             }
         });

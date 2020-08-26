@@ -1,6 +1,7 @@
 package com.cos.brunch.screen.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.main.MainFragmentAdapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initObject() {
         imgMenu = findViewById(R.id.img_menu);
+        imgSearch = findViewById(R.id.img_search);
     }
 
     private void initDesign() {
@@ -80,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SearchActivity.class);
+                startActivity(intent);
             }
         });
 

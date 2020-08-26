@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.screen.apply.ApplyActivity;
+import com.cos.brunch.screen.feed.FeedActivity;
+import com.cos.brunch.screen.library.LibraryActivity;
 import com.cos.brunch.screen.main.MainActivity;
 import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.user.UserActivity;
@@ -23,7 +25,7 @@ public class NavigationViewHelper {
     public static void enableNavigation(final Context context, NavigationView view) {
         NavigationView nav;
         View navHeader;
-        TextView navHome, navWrite, navDrawer, navNow, navBookcase, navFeed;
+        TextView navHome, navWrite, navDrawer, navNow, navLibrary, navFeed;
         ImageView navProfile, navSettings;
         Button navApply;
 
@@ -34,7 +36,7 @@ public class NavigationViewHelper {
         navWrite = navHeader.findViewById(R.id.btn_write);
         navDrawer = navHeader.findViewById(R.id.tv_drawer);
         navNow = navHeader.findViewById(R.id.tv_now);
-        navBookcase = navHeader.findViewById(R.id.tv_bookcase);
+        navLibrary = navHeader.findViewById(R.id.tv_library);
         navFeed = navHeader.findViewById(R.id.tv_feed);
         navSettings = navHeader.findViewById(R.id.iv_settings);
 
@@ -79,15 +81,19 @@ public class NavigationViewHelper {
             }
         });
 
-        navBookcase.setOnClickListener(new View.OnClickListener() {
+        navLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, LibraryActivity.class);
+                context.startActivity(intent);
             }
         });
 
         navFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, FeedActivity.class);
+                context.startActivity(intent);
             }
         });
 

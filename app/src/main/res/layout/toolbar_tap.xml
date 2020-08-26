@@ -15,7 +15,9 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_apply"
             android:layout_width="match_parent"
-            android:layout_height="45dp">
+            android:layout_height="45dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab1"

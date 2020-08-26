@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private Context mContext = LoginActivity.this;
 
     private Button btn_custom_login;
-    private Button btn_custom_login_out;
+//    private Button btn_custom_login_out;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initObject(){
         btn_custom_login = findViewById(R.id.btn_custom_login);
-        btn_custom_login_out = findViewById(R.id.btn_custom_login_out);
+//        btn_custom_login_out = findViewById(R.id.btn_custom_login_out);
     }
 
     private void initListener(){
@@ -73,18 +73,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btn_custom_login_out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserManagement.getInstance()
-                        .requestLogout(new LogoutResponseCallback() {
-                            @Override
-                            public void onCompleteLogout() {
-                                Toast.makeText(LoginActivity.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        });
+//        btn_custom_login_out.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                UserManagement.getInstance()
+//                        .requestLogout(new LogoutResponseCallback() {
+//                            @Override
+//                            public void onCompleteLogout() {
+//                                Toast.makeText(LoginActivity.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//            }
+//        });
     }
 
     public static void printHashKey(Context pContext) {
