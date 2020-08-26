@@ -1,5 +1,6 @@
 package com.cos.brunch.screen.write;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,6 +10,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Base64InputStream;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -21,20 +24,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.repository.PostRepository;
-import com.cos.brunch.screen.apply.ApplyActivity;
-import com.cos.brunch.screen.user.UserBottomDialog;
 import com.cos.brunch.utils.DialogCallBack;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.StringWriter;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import jp.wasabeef.richeditor.RichEditor;
 
 // 커스텀 인터페이스 DialogCallBack 사용을 위해 implements 함
 public class WriteActivity extends AppCompatActivity implements DialogCallBack {
 
-
-    private static final String TAG = "WriteActivity";
+    private static final String TAG = "Write_Activity";
     private Context mContext = WriteActivity.this;
 
     private ImageView imgCancel, imgWriteUpdate;
@@ -179,12 +184,19 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
             }
         });
 
+//        findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                goToAlbum();
+//                mEditor.insertImage("https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg",
+//                        "img");
+//            }
+//        });
+
         findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToAlbum();
-                mEditor.insertImage("https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg",
-                        "img");
             }
         });
 
@@ -221,28 +233,45 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         Uri photoUri = data.getData();
+        ContentResolver resolver = getContentResolver();
+        Log.d(TAG, "onActivityResult: resolver : " + resolver);
+
         imageRealPath = getRealPathFromURI(photoUri); // 해당경로에 저장되어있음 - 해당 경로를 DB에 저장하여 불러옴
         Log.d(TAG, "onActivityResult: imageRealPath : " + imageRealPath);
-        tempFile = new File(imageRealPath);  // 파일로 inPutStream
-        Log.d(TAG, "onActivityResult: tempFile : " + tempFile);
+//        tempFile = new File(imageRealPath);  // 파일로 inPutStream
+//        Log.d(TAG, "onActivityResult: tempFile : " + tempFile);
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options); // 사진이 저장된 경로를 받아서 비트맵으로 바꿈
+        try {
+            InputStream inputStream = resolver.openInputStream(photoUri);
+            Log.d(TAG, "onActivityResult: inputStream : " + inputStream);
+            Bitmap imgBm = BitmapFactory.decodeStream(inputStream);
+            Log.d(TAG, "onActivityResult: imgBm : " + imgBm);
 
-        mEditor.insertImage(String.valueOf(originalBm), "img");
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            imgBm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+            Log.d(TAG, "onActivityResult: byteArray : " + byteArray);
+            String encoded = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.NO_WRAP);
+            Log.d(TAG, "onActivityResult: encoded : " + encoded);
+
+            mEditor.insertImage("data:image/png;base64," + encoded, "img");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // .onClick시 실행 됨
     @Override
     public void onClick() {
-                PostRepository postRepository = PostRepository.getInstance();
+        PostRepository postRepository = PostRepository.getInstance();
 
-                Post savePost = new Post(
-                        etTitle.getText().toString(),
-                        etSubTitle.getText().toString(),
-                        mEditor.getHtml()
-                );
-                postRepository.save(savePost);
+        Post savePost = new Post(
+                etTitle.getText().toString(),
+                etSubTitle.getText().toString(),
+                mEditor.getHtml()
+        );
+        postRepository.save(savePost);
     }
 }

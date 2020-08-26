@@ -1,12 +1,5 @@
 package com.cos.brunch.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
-import lombok.Builder;
-
 public class Post {
     private Integer id;
     private Integer userId;
