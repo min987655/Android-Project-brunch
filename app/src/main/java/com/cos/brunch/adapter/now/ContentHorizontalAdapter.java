@@ -1,5 +1,8 @@
 package com.cos.brunch.adapter.now;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,9 +61,10 @@ public class ContentHorizontalAdapter extends RecyclerView.Adapter<ContentHorizo
         }
 
         public void setItem(User user) {
-            imgApplyNickname.setImageResource(user.getProfileImg());
+//            imgApplyNickname.setImageBitmap(user.getProfileImage()); //
+
             tvApplyNickname.setText(user.getNickName());
         }
     }
-
 }
+

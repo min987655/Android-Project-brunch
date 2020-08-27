@@ -12,11 +12,15 @@ import com.cos.brunch.R;
 import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.feed.FeedActivity;
 import com.cos.brunch.screen.library.LibraryActivity;
+import com.cos.brunch.screen.login.LoginActivity;
 import com.cos.brunch.screen.main.MainActivity;
 import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.user.UserActivity;
 import com.cos.brunch.screen.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
+import com.kakao.network.ErrorResult;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.UnLinkResponseCallback;
 
 public class NavigationViewHelper {
 
@@ -100,6 +104,19 @@ public class NavigationViewHelper {
         navSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UserManagement.getInstance().requestUnlink(new UnLinkResponseCallback() {
+                    @Override
+                    public void onSessionClosed(ErrorResult errorResult) {
+                        Log.d(TAG, "onSessionClosed: 회원탈퇴 성공 ");
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        context.startActivity(intent);
+                    }
+
+                    @Override
+                    public void onSuccess(Long result) {
+
+                    }
+                });
             }
         });
     }

@@ -92,14 +92,6 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_FROM_ALBUM);
     }
 
-    // 이미지 채우기
-    public void setImage(String profileURL, ImageView imgUserProfile) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options); // 사진이 저장된 경로를 받아서 비트맵으로 바꿈
-        Log.d(TAG, "setImage: originalBm : " + originalBm);
-        imgUserProfile.setImageBitmap(originalBm);
-    }
-
     // URI로 이미지 실제 경로 가져오기
     private String getRealPathFromURI(Uri contentURI) {
         String result;
@@ -119,14 +111,22 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == 1) {
-            Uri photoUri = data.getData();
-            Log.d(TAG, "onActivityResult: photoUri : " + photoUri);
-            imageRealPath = getRealPathFromURI(photoUri); // 해당경로에 저장되어있음 - 해당 경로를 DB에 저장하여 불러옴
-            Log.d(TAG, "onActivityResult: imageRealPath : " + imageRealPath);
-            tempFile = new File(imageRealPath); // 파일로 inPutStream
-            Log.d(TAG, "onActivityResult: tempFile : " + tempFile);
-            setImage(imageRealPath, imgUserProfile);
+        Uri photoUri = data.getData();
+        ContentResolver resolver = getContentResolver();
+        Log.d(TAG, "onActivityResult: resolver : " + resolver);
+
+        imageRealPath = getRealPathFromURI(photoUri); // 해당경로에 저장되어있음 - 해당 경로를 DB에 저장하여 불러옴
+        Log.d(TAG, "onActivityResult: imageRealPath : " + imageRealPath);
+
+        try {
+            InputStream inputStream = resolver.openInputStream(photoUri);
+            Log.d(TAG, "onActivityResult: inputStream : " + inputStream);
+            Bitmap imgBm = BitmapFactory.decodeStream(inputStream);
+            Log.d(TAG, "onActivityResult: imgBm : " + imgBm);
+            imgUserProfile.setImageBitmap(imgBm); // 이미지 채워짐
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
 }

@@ -82,42 +82,12 @@ public class NowActivity extends AppCompatActivity {
         rvNowContent.setAdapter(contentVerticalAdapter);
 
         List<User> user1 = new ArrayList<>();
-        user1.add(new User(R.drawable.img_apply_profile1, "작가1"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가2"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가3"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가4"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가5"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가6"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가7"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가8"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가9"));
-        user1.add(new User(R.drawable.img_apply_profile1, "작가10"));
         allUsers.add(user1);
 
         List<User> user2 = new ArrayList<>();
-        user2.add(new User(R.drawable.img_apply_profile2, "작가11"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가12"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가13"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가14"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가15"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가16"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가17"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가18"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가19"));
-        user2.add(new User(R.drawable.img_apply_profile2, "작가20"));
         allUsers.add(user2);
 
         List<User> user3 = new ArrayList<>();
-        user3.add(new User(R.drawable.img_apply_profile3, "작가21"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가22"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가23"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가24"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가25"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가26"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가27"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가28"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가29"));
-        user3.add(new User(R.drawable.img_apply_profile3, "작가30"));
         allUsers.add(user3);
     }
 
