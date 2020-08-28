@@ -32,7 +32,7 @@ public class ServiceGenerator {
                     public okhttp3.Response intercept(@NotNull Chain chain) throws IOException {
                         Request originalRequest = chain.request();
                         Request newRequest = originalRequest.newBuilder()
-//                                .addHeader("Authorization",)
+                                .addHeader("Authorization", "Bearer "+"")
                                 .build();
                         return chain.proceed(newRequest);
                     }

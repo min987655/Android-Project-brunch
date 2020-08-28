@@ -22,19 +22,11 @@ public interface BrunchService {
     @GET("posts")
     Call<List<Post>> getPosts();
 
-//    @FormUrlEncoded
-//    @POST("oauth/jwt/kakao")
-//    Call<ResponseBody> AccessToken(@HeaderMap Map<String, Object> data);
-
-//    @POST("oauth/jwt/kakao")
-//    Call<String> AccessToken(@HeaderMap Map<String, Object> data);
-//
-//    @POST("oauth/jwt/kakao")
-//    Call<Object> AccessToken(@Body Map<String, Object> data);
-
     @POST("oauth/jwt/kakao")
-    Call<Object> AccessToken(@Body Map<String, Object> data);
+    Call<String> AccessToken(@Body Map<String, Object> data);
 
+//    @POST("oauth/jwt/kakao")
+//    Call<String> AccessToken(@Body Object result);
 
     @POST("test1")
     Call<Post> createPost(@Body Post post);
