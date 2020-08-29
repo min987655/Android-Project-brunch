@@ -1,6 +1,7 @@
 package com.cos.brunch.network;
 
 import com.cos.brunch.model.Post;
+import com.cos.brunch.model.Resp;
 import com.cos.brunch.model.User;
 import com.kakao.network.response.ResponseBody;
 import com.kakao.usermgmt.response.model.Profile;
@@ -23,10 +24,7 @@ public interface BrunchService {
     Call<List<Post>> getPosts();
 
     @POST("oauth/jwt/kakao")
-    Call<String> AccessToken(@Body Map<String, Object> data);
-
-//    @POST("oauth/jwt/kakao")
-//    Call<String> AccessToken(@Body Object result);
+    Call<Resp> kakaoAccess(@Body Map<String, Object> data);
 
     @POST("test1")
     Call<Post> createPost(@Body Post post);
