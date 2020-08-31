@@ -37,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
 
         session = Session.getCurrentSession();
         session.addCallback(sessionCallback);
-//      session.getCurrentSession().checkAndImplicitOpen(); // 토큰 만료시 자동 갱신
 
         initObject();
         initListener();
@@ -79,6 +78,5 @@ public class LoginActivity extends AppCompatActivity {
     public void setupMainView() {
         sessionCallback.loginSuccese(mContext);
     }
-
 
 }

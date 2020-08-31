@@ -4,10 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.cos.brunch.model.Resp;
+import com.cos.brunch.dto.CommonRespDto;
 import com.cos.brunch.screen.main.MainActivity;
 import com.kakao.auth.ISessionCallback;
-import com.kakao.auth.Session;
 import com.kakao.auth.authorization.accesstoken.AccessToken;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
@@ -28,7 +27,7 @@ public class SessionCallback implements ISessionCallback {
 
     private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
     private static final String TAG = "SessionCallback";
-    public AccessToken accessToken;
+    private AccessToken accessToken;
     private Context context;
 
     // loginActivity context 받기위한 생성자
@@ -65,9 +64,6 @@ public class SessionCallback implements ISessionCallback {
                     @Override
                     public void onSuccess(MeV2Response result) {
 
-                        // 로그인 성공시 mainActivity로 이동
-                        Intent intent = new Intent(context, MainActivity.class);
-                        context.startActivity(intent);
 
                         Log.d(TAG, "onSuccess: result : " + result);
 
@@ -97,29 +93,41 @@ public class SessionCallback implements ISessionCallback {
                             data.put("properties",data2);
                             Log.d(TAG, "onSuccess: data : " +data);
 
-                            Call<Resp> call = brunchService.kakaoAccess(data);
-                            call.enqueue(new Callback<Resp>() {
+                            Call<CommonRespDto> call = brunchService.kakaoAccess(data);
+                            call.enqueue(new Callback<CommonRespDto>() {
                                 @Override
-                                public void onResponse(Call<Resp> call, Response<Resp> response) {
+                                public void onResponse(Call<CommonRespDto> call, Response<CommonRespDto> response) {
                                     if (!response.isSuccessful()) {
                                         Log.d(TAG, "onResponse: 못넘김 : " + response.code());
                                         return;
                                     }
                                     Log.d(TAG, "onResponse: 넘기기 성공 : " + response.body());
+
+                                    CommonRespDto responseJwtToken = response.body();
+
+                                    Object jwtToken = responseJwtToken.getData();
+                                    Log.d(TAG, "onResponse: tk : " + jwtToken);
+
+                                    // 로그인 성공시 mainActivity로 이동
+                                    Intent intent = new Intent(context, MainActivity.class);
+                                    intent.putExtra("jwtToken", String.valueOf(jwtToken));
+                                    Log.d(TAG, "onSuccess: 메인에 넘기는 jwtToken : " + String.valueOf(jwtToken));
+                                    context.startActivity(intent);
                                 }
 
                                 @Override
-                                public void onFailure(Call<Resp> call, Throwable t) {
+                                public void onFailure(Call<CommonRespDto> call, Throwable t) {
                                     Log.d(TAG, "onFailure: " + t.getMessage());
                                 }
                             });
 
                             // 토큰
-                            accessToken = Session.getCurrentSession().getTokenInfo();
-                            String acToken = accessToken.getAccessToken();
-                            Log.d(TAG, "onSuccess: getAccessToken : " + acToken);
-                            Log.d(TAG, "onSuccess: getRefreshToken : " + accessToken.getRefreshToken());
+//                            accessToken = Session.getCurrentSession().getTokenInfo();
+//                            String acToken = accessToken.getAccessToken();
+//                            Log.d(TAG, "onSuccess: getAccessToken : " + acToken);
+//                            Log.d(TAG, "onSuccess: getRefreshToken : " + accessToken.getRefreshToken());
                         }
+
                     }
                 });
     }

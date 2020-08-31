@@ -2,7 +2,9 @@ package com.cos.brunch.screen.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +16,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.main.MainFragmentAdapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.network.ServiceGenerator;
+import com.cos.brunch.network.SessionCallback;
 import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
     private List<Post> posts = new ArrayList<>();
+    public String serverJwtToken;
 
     private MainFrag1 frag1;
     private MainFrag2 frag2;
@@ -51,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        Intent intent = getIntent();
+        String jwtToken = intent.getExtras().getString("jwtToken");
 
+        Log.d(TAG, "initData: jwtToken : " + jwtToken);
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        SharedPreferences.Editor stEditor = sf.edit();
+        stEditor.putString("jwtToken", jwtToken);
+        stEditor.commit();
+
+        serverJwtToken = sf.getString("jwtToken", "");
+        Log.d(TAG, "initData: sp : " + serverJwtToken);
     }
 
     private void initObject() {
@@ -100,4 +115,5 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav);
         NavigationViewHelper.enableNavigation(mContext, navigationView);
     }
+
 }

@@ -1,30 +1,32 @@
 package com.cos.brunch.screen.userprofileupdate;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cos.brunch.R;
+import com.cos.brunch.model.User;
+import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.screen.user.UserActivity;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.InputStream;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserProfileUpdateActivity extends AppCompatActivity {
 
@@ -32,10 +34,12 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
     private Context mContext = UserProfileUpdateActivity.this;
 
     private ImageView imgCancel, imgProfileUpdate, imgUserProfile;
+    private TextView tvHeader;
+    private EditText etNickname, etBio;
 
     // 사진 업로드
     private String imageRealPath;
-    private File tempFile;
+//    private File tempFile;
     private static final int PICK_FROM_ALBUM = 1;
 
     @Override
@@ -55,6 +59,11 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
         imgCancel = findViewById(R.id.img_toolbar_l);
         imgProfileUpdate = findViewById(R.id.img_toolbar_r);
         imgUserProfile = findViewById(R.id.img_user_profile);
+        tvHeader = findViewById(R.id.tv_toolbar_header);
+        tvHeader.setText("프로필 편집");
+
+        etNickname = findViewById(R.id.et_nickname);
+        etBio = findViewById(R.id.et_bio);
     }
 
     private void initlistener() {
@@ -71,6 +80,24 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
         imgProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+                String serverJwtToken = sf.getString("jwtToken", "");
+
+                Map<String, Object> headerJwtToken = new HashMap<>();
+                headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+                Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
+                UserRepository userRepository = UserRepository.getInstance();
+
+                User updateUser = new User(
+                        etNickname.getText().toString(),
+                        etBio.getText().toString(),
+                        imageRealPath
+                );
+                userRepository.update(headerJwtToken, updateUser);
+                Log.d(TAG, "onClick: updateUser : " + updateUser);
+
                 Intent intent = new Intent(mContext, UserActivity.class);
                 startActivity(intent);
             }

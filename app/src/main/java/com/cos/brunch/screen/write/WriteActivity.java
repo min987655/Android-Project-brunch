@@ -257,6 +257,5 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
                 mEditor.getHtml()
         );
         postRepository.save(savePost);
-
     }
 }

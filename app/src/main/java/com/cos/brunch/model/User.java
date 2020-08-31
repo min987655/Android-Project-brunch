@@ -13,6 +13,17 @@ public class User {
     private String provider;
     private String providerId;
 
+    public User(String nickName, String bio) {
+        this.nickName = nickName;
+        this.bio = bio;
+    }
+
+    public User(String nickName, String bio, String profileImage) {
+        this.nickName = nickName;
+        this.bio = bio;
+        this.profileImage = profileImage;
+    }
+
     public User(String email) {
         this.email = email;
     }
