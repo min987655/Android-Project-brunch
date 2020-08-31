@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.apply.ApplyTap1Adapter;
 import com.cos.brunch.adapter.library.LibraryTap1Adapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.viewmodel.MainViewModel;

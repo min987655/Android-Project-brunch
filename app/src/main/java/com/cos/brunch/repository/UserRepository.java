@@ -20,7 +20,7 @@ public class UserRepository {
 
     private static final String TAG = "UserRepository";
 
-    private MutableLiveData<List<User>> allUosts = new MutableLiveData<>();
+//    private MutableLiveData<List<User>> allUsers = new MutableLiveData<>();
     private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
 
     private static UserRepository instance = new UserRepository();

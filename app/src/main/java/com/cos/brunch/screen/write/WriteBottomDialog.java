@@ -6,21 +6,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.cos.brunch.R;
-import com.cos.brunch.model.Post;
-import com.cos.brunch.repository.PostRepository;
-import com.cos.brunch.screen.apply.ApplyActivity;
-import com.cos.brunch.screen.userprofileupdate.UserProfileUpdateActivity;
+import com.cos.brunch.screen.cabinet.CabinetActivity;
 import com.cos.brunch.utils.DialogCallBack;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
-import jp.wasabeef.richeditor.RichEditor;
 
 // BottomDialog 커스텀
 public class WriteBottomDialog extends BottomSheetDialogFragment {
@@ -64,7 +58,7 @@ public class WriteBottomDialog extends BottomSheetDialogFragment {
                 // 커스텀한 WriteActivity의 onClick
                 dialogCallBack.onClick();
 
-                Intent intent = new Intent(v.getContext(), ApplyActivity.class);
+                Intent intent = new Intent(v.getContext(), CabinetActivity.class);
                 startActivity(intent);
             }
         });

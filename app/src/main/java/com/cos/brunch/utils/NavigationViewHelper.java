@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.screen.apply.ApplyActivity;
+import com.cos.brunch.screen.cabinet.CabinetActivity;
 import com.cos.brunch.screen.feed.FeedActivity;
 import com.cos.brunch.screen.library.LibraryActivity;
 import com.cos.brunch.screen.login.LoginActivity;
@@ -18,37 +18,38 @@ import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.user.UserActivity;
 import com.cos.brunch.screen.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
-import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
-import com.kakao.usermgmt.callback.UnLinkResponseCallback;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
 public class NavigationViewHelper {
 
     private static final String TAG = "NavigationViewHelper";
 
-    public static void enableNavigation(final Context context, NavigationView view) {
+    public static void enableNavigation(final Context context, NavigationView view, final String jwtToken) {
         NavigationView nav;
         View navHeader;
-        TextView navHome, navWrite, navDrawer, navNow, navLibrary, navFeed;
-        ImageView navProfile, navSettings;
-        Button navApply;
+        TextView navHome, navWrite, navCabinet, navNow, navLibrary, navFeed;
+        ImageView navProfile;
+        Button navLogout;
 
         nav = view.findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);
         navProfile = navHeader.findViewById(R.id.img_profile);
         navWrite = navHeader.findViewById(R.id.btn_write);
-        navDrawer = navHeader.findViewById(R.id.tv_drawer);
+        navCabinet = navHeader.findViewById(R.id.tv_cabinet);
         navNow = navHeader.findViewById(R.id.tv_now);
         navLibrary = navHeader.findViewById(R.id.tv_library);
         navFeed = navHeader.findViewById(R.id.tv_feed);
-        navSettings = navHeader.findViewById(R.id.iv_settings);
+//        navSettings = navHeader.findViewById(R.id.iv_settings);
+        navLogout = navHeader.findViewById(R.id.btn_logout);
 
         navHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: ");
                 Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
@@ -57,6 +58,7 @@ public class NavigationViewHelper {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, UserActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
@@ -65,14 +67,16 @@ public class NavigationViewHelper {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WriteActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
 
-        navDrawer.setOnClickListener(new View.OnClickListener() {
+        navCabinet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ApplyActivity.class);
+                Intent intent = new Intent(context, CabinetActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
@@ -81,6 +85,7 @@ public class NavigationViewHelper {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NowActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
@@ -89,6 +94,7 @@ public class NavigationViewHelper {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, LibraryActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
@@ -97,27 +103,43 @@ public class NavigationViewHelper {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, FeedActivity.class);
+                intent.putExtra("jwtToken", jwtToken);
                 context.startActivity(intent);
             }
         });
 
-        navSettings.setOnClickListener(new View.OnClickListener() {
+        navLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManagement.getInstance().requestUnlink(new UnLinkResponseCallback() {
+                UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
                     @Override
-                    public void onSessionClosed(ErrorResult errorResult) {
-                        Log.d(TAG, "onSessionClosed: 회원탈퇴 성공 ");
+                    public void onCompleteLogout() {
+                        Log.d(TAG, "onCompleteLogout: 로그아웃 성공 ! ");
                         Intent intent = new Intent(context, LoginActivity.class);
                         context.startActivity(intent);
-                    }
-
-                    @Override
-                    public void onSuccess(Long result) {
-
                     }
                 });
             }
         });
+
+//        navSettings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                UserManagement.getInstance().requestUnlink(new UnLinkResponseCallback() {
+//                    @Override
+//                    public void onSessionClosed(ErrorResult errorResult) {
+//                        Log.d(TAG, "onSessionClosed: 회원탈퇴 성공 ");
+//                        Intent intent = new Intent(context, LoginActivity.class);
+//                        intent.putExtra("jwtToken", jwtToken);
+//                        context.startActivity(intent);
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(Long result) {
+//
+//                    }
+//                });
+//            }
+//        });
     }
 }

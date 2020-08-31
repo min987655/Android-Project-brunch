@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
     private List<Post> posts = new ArrayList<>();
-    public String serverJwtToken;
+//    public String serverJwtToken;
 
     private MainFrag1 frag1;
     private MainFrag2 frag2;
@@ -50,23 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
         initObject();
         initDesign();
-        initData();
         initlistener();
         setupNavigationView();
+        initData();
     }
 
     private void initData() {
-        Intent intent = getIntent();
-        String jwtToken = intent.getExtras().getString("jwtToken");
-
-        Log.d(TAG, "initData: jwtToken : " + jwtToken);
-        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
-        SharedPreferences.Editor stEditor = sf.edit();
-        stEditor.putString("jwtToken", jwtToken);
-        stEditor.commit();
-
-        serverJwtToken = sf.getString("jwtToken", "");
-        Log.d(TAG, "initData: sp : " + serverJwtToken);
     }
 
     private void initObject() {
@@ -112,8 +101,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigationView() {
+
+        Intent intent = getIntent();
+        String jwtToken = intent.getExtras().getString("jwtToken");
+
+        Log.d(TAG, "initData: jwtToken : " + jwtToken);
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        SharedPreferences.Editor stEditor = sf.edit();
+        stEditor.putString("jwtToken", jwtToken);
+        stEditor.commit();
+
+//        serverJwtToken = sf.getString("jwtToken", "");
+//        Log.d(TAG, "initData: sp : " + serverJwtToken);
+
         NavigationView navigationView = findViewById(R.id.nav);
-        NavigationViewHelper.enableNavigation(mContext, navigationView);
+        NavigationViewHelper.enableNavigation(mContext, navigationView, jwtToken);
     }
 
 }

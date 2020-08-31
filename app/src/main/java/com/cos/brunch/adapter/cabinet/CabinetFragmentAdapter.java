@@ -1,4 +1,4 @@
-package com.cos.brunch.adapter.apply;
+package com.cos.brunch.adapter.cabinet;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -8,11 +8,11 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplyFragmentAdapter extends FragmentStatePagerAdapter {
+public class CabinetFragmentAdapter extends FragmentStatePagerAdapter {
 
     private List<Fragment> fragmentList = new ArrayList<>();
 
-    public ApplyFragmentAdapter(@NonNull FragmentManager fm, int behavior) {
+    public CabinetFragmentAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 

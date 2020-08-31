@@ -71,7 +71,6 @@ public class SessionCallback implements ISessionCallback {
 
                         if (kakaoAccount != null) {
 
-                            Profile profile = result.getKakaoAccount().getProfile();
                             String id = String.valueOf(result.getId());
                             String email = kakaoAccount.getEmail();
                             String nickname = result.getProperties().get("nickname");

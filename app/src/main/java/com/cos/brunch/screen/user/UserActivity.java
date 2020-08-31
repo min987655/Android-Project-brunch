@@ -2,6 +2,7 @@ package com.cos.brunch.screen.user;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -29,7 +30,6 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-
 
         initData();
         initObject();
@@ -82,8 +82,12 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void setupNavigationView() {
+
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
         NavigationView navigationView = findViewById(R.id.nav);
-        NavigationViewHelper.enableNavigation(mContext, navigationView);
+        NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
 
     }
 }

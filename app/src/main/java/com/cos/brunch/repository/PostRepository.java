@@ -1,11 +1,9 @@
 package com.cos.brunch.repository;
 
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.cos.brunch.databinding.ActivityUserProfileUpdateBinding;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.network.BrunchService;
 import com.cos.brunch.network.ServiceGenerator;

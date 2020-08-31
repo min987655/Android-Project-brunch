@@ -36,7 +36,7 @@
         <activity android:name=".screen.post.DetailPostActivity" />
         <activity android:name=".screen.posts.PostsActivity" />
         <activity android:name=".screen.now.NowActivity" />
-        <activity android:name=".screen.apply.ApplyActivity" />
+        <activity android:name=".screen.cabinet.CabinetActivity" />
         <activity android:name=".screen.userprofileupdate.UserProfileUpdateActivity" />
         <activity android:name=".screen.user.UserActivity" />
         <activity android:name=".screen.write.WriteActivity" />

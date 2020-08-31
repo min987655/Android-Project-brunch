@@ -1,4 +1,4 @@
-package com.cos.brunch.adapter.apply;
+package com.cos.brunch.adapter.cabinet;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,10 +16,10 @@ import com.cos.brunch.model.Post;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyViewHolder> {
+public class CabinetTap2Adapter extends RecyclerView.Adapter<CabinetTap2Adapter.MyViewHolder> {
 
     private static OnClickListener mListener = null;
-    private static final String TAG = "ApplyTap1Adapter";
+    private static final String TAG = "CabinetTap2Adapter";
     private List<Post> posts = new ArrayList<>();
 
     public interface OnClickListener {
@@ -63,9 +63,9 @@ public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyVi
         notifyDataSetChanged();
     }
 
-//    public Post getPostAt(int position){
-//        return posts.get(position);
-//    }
+    public Post getPostAt(int position){
+        return posts.get(position);
+    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {

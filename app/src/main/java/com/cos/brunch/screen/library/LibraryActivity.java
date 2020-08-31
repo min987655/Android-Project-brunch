@@ -5,17 +5,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.apply.ApplyFragmentAdapter;
 import com.cos.brunch.adapter.library.LibraryFragmentAdapter;
-import com.cos.brunch.screen.apply.ApplyActivity;
-import com.cos.brunch.screen.apply.ApplyFrag1;
-import com.cos.brunch.screen.apply.ApplyFrag2;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -86,7 +83,11 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
     private void setupNavigationView() {
+
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
         NavigationView navigationView = findViewById(R.id.nav);
-        NavigationViewHelper.enableNavigation(mContext, navigationView);
+        NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
     }
 }

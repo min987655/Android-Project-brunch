@@ -24,10 +24,6 @@ public interface BrunchService {
     @POST("test1")
     Call<Post> createPost(@Body Post post);
 
-//    @POST("test1")
-//    Call<Post> createPost(@HeaderMap Map<String, Object> data,
-//                            @Body Post post);
-
     @POST("userProfileUpdate")
     Call<User> updateUser(@HeaderMap Map<String, Object> data,
                             @Body User user);

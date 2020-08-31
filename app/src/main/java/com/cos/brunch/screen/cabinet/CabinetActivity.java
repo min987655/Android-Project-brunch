@@ -1,50 +1,41 @@
-package com.cos.brunch.screen.apply;
+package com.cos.brunch.screen.cabinet;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.apply.ApplyFragmentAdapter;
-import com.cos.brunch.adapter.apply.ApplyTap1Adapter;
-import com.cos.brunch.adapter.apply.ApplyTap2Adapter;
-import com.cos.brunch.model.Post;
+import com.cos.brunch.adapter.cabinet.CabinetFragmentAdapter;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-import java.util.List;
+public class CabinetActivity extends AppCompatActivity {
 
-public class ApplyActivity extends AppCompatActivity {
-
-    private static final String TAG = "ApplyActivity";
-    private Context mContext = ApplyActivity.this;
+    private static final String TAG = "CabinetActivity";
+    private Context mContext = CabinetActivity.this;
 
     private DrawerLayout drawerLayout;
     private ImageView imgApplyMenu;
 
     private ViewPager viewPager;
-    private ApplyFragmentAdapter applyAdapter;
+    private CabinetFragmentAdapter cabinetAdapter;
 
-    private ApplyFrag1 applyfrag1;
-    private ApplyFrag2 applyfrag2;
+    private CabinetFrag1 cabinetfrag1;
+    private CabinetFrag2 cabinetfrag2;
     private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apply);
+        setContentView(R.layout.activity_cabinet);
 
         initObject();
         initDesign();
@@ -55,9 +46,9 @@ public class ApplyActivity extends AppCompatActivity {
 
     private void initObject() {
         imgApplyMenu = findViewById(R.id.img_apply_menu);
-        applyAdapter = new ApplyFragmentAdapter(getSupportFragmentManager(), 1);
-        applyfrag1 = new ApplyFrag1();
-        applyfrag2 = new ApplyFrag2();
+        cabinetAdapter = new CabinetFragmentAdapter(getSupportFragmentManager(), 1);
+        cabinetfrag1 = new CabinetFrag1();
+        cabinetfrag2 = new CabinetFrag2();
         tabLayout = findViewById(R.id.tabs_apply);
     }
 
@@ -65,10 +56,10 @@ public class ApplyActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer);
         viewPager = findViewById(R.id.view_pager);
 
-        applyAdapter.addFragment(applyfrag1);
-        applyAdapter.addFragment(applyfrag2);
+        cabinetAdapter.addFragment(cabinetfrag1);
+        cabinetAdapter.addFragment(cabinetfrag2);
 
-        viewPager.setAdapter(applyAdapter);
+        viewPager.setAdapter(cabinetAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
@@ -91,7 +82,11 @@ public class ApplyActivity extends AppCompatActivity {
     }
 
     private void setupNavigationView() {
+
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
         NavigationView navigationView = findViewById(R.id.nav);
-        NavigationViewHelper.enableNavigation(mContext, navigationView);
+        NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
     }
 }
