@@ -34,6 +34,8 @@ public class NavigationViewHelper {
         ImageView navProfile;
         Button navLogout;
 
+        Log.d(TAG, "enableNavigation: " + jwtToken);
+
         nav = view.findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);

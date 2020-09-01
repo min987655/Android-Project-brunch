@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 
 import java.util.List;
@@ -18,9 +19,10 @@ public class ContentHorizontal2Adapter extends RecyclerView.Adapter<ContentHoriz
 
     private static final String TAG = "ContentHorizontalAdapter";
     private List<Post> posts;
+    private List<PostRespDto> postRespDtos;
 
-    public ContentHorizontal2Adapter(List<Post> posts) {
-        this.posts = posts;
+    public ContentHorizontal2Adapter(List<PostRespDto> postRespDtos) {
+        this.postRespDtos = postRespDtos;
     }
 
     // 껍데기 생성
@@ -35,13 +37,13 @@ public class ContentHorizontal2Adapter extends RecyclerView.Adapter<ContentHoriz
     // 껍데기에 데이터 바인딩
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post = posts.get(position);
-        holder.setItem(post);
+        PostRespDto postRespDto = postRespDtos.get(position);
+        holder.setItem(postRespDto);
     }
 
     @Override
     public int getItemCount() {
-        return posts.size();
+        return postRespDtos.size();
     }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
@@ -57,7 +59,7 @@ public class ContentHorizontal2Adapter extends RecyclerView.Adapter<ContentHoriz
             tvNowApplyNickname = itemView.findViewById(R.id.tv_now_apply_nickname);
         }
 
-        public void setItem(Post post) {
+        public void setItem(PostRespDto postRespDto) {
             imgNowContentCover.setImageResource(R.drawable.img_cover);
             tvNowContentTitle.setText("꿈이 꼭 있어야할까.");
             tvNowApplyNickname.setText("닉네임");

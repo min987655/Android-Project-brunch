@@ -15,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.main.MainFragmentAdapter;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.network.ServiceGenerator;
 import com.cos.brunch.network.SessionCallback;
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
-    private List<Post> posts = new ArrayList<>();
+    private List<PostRespDto> postRespDtos = new ArrayList<>();
+//    private List<Post> posts = new ArrayList<>();
 //    public String serverJwtToken;
 
     private MainFrag1 frag1;
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer);
 
         viewPager = findViewById(R.id.view_pager);
-        mainAdapter = new MainFragmentAdapter(this, posts);
+        mainAdapter = new MainFragmentAdapter(this, postRespDtos);
 
         frag1 = new MainFrag1();
         frag2 = new MainFrag2();

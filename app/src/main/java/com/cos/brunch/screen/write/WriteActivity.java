@@ -3,6 +3,7 @@ package com.cos.brunch.screen.write;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,8 @@ import com.cos.brunch.utils.DialogCallBack;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import jp.wasabeef.richeditor.RichEditor;
 
@@ -256,6 +259,14 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
                 etSubTitle.getText().toString(),
                 mEditor.getHtml()
         );
-        postRepository.save(savePost);
+
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
+        Map<String, Object> headerJwtToken = new HashMap<>();
+        headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+        Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
+        postRepository.save(headerJwtToken, savePost);
     }
 }

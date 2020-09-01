@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.databinding.ItemPostBinding;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
     private static OnClickListener mListener = null;
     private static final String TAG = "FeedTap1Adapter";
     private List<Post> posts = new ArrayList<>();
+    private List<PostRespDto> postRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
         void onItemClick(View v, int pos);
@@ -48,18 +50,18 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
     // 껍데기에 데이터 바인딩
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        Post currentPost = posts.get(position);
-        holder.itemPostBinding.setPost(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
+        PostRespDto currentPost = postRespDtos.get(position);
+        holder.itemPostBinding.setPostRespDto(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
     }
 
     @Override
     public int getItemCount() {
-        Log.d(TAG, "getItemCount: " + posts.size());
-        return posts.size();
+        Log.d(TAG, "getItemCount: " + postRespDtos.size());
+        return postRespDtos.size();
     }
 
-    public void setPosts(List<Post> posts){
-        this.posts = posts;
+    public void setPosts(List<PostRespDto> postRespDtos){
+        this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }
 

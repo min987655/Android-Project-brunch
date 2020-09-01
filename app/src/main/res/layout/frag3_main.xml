@@ -7,8 +7,8 @@
     <!--setPost-->
     <data>
         <variable
-            name="main_frag3"
-            type="com.cos.brunch.model.Post" />
+            name="postRespDto"
+            type="com.cos.brunch.dto.PostRespDto" />
     </data>
 
     <LinearLayout
@@ -77,7 +77,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/notosans_light"
-                android:text="@{main_frag3.title}"
+                android:text="@{postRespDto.title}"
                 android:textColor="@color/colorCharcoal"
                 android:textSize="25sp" />
 
@@ -88,7 +88,7 @@
                 android:layout_below="@+id/tv_title"
                 android:layout_alignLeft="@+id/tv_title"
                 android:layout_marginTop="-10dp"
-                android:text="@{main_frag3.content}"
+                android:text="@{postRespDto.content}"
                 android:ellipsize="end"
                 android:textColor="@color/colorCharcoal"
                 android:textSize="12.5sp" />
@@ -111,12 +111,12 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/tv_nickname_main"
+                    android:id="@+id/tv_nickname_main3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@id/tv_by"
-                    android:text="nickName"
+                    android:text="@{postRespDto.nickName}"
                     android:textColor="@color/colorGray20"
                     android:textSize="15sp" />
 

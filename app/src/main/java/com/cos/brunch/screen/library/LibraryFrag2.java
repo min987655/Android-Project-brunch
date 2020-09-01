@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.library.LibraryTap1Adapter;
 import com.cos.brunch.adapter.library.LibraryTap2Adapter;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
@@ -59,13 +60,11 @@ public class LibraryFrag2 extends Fragment {
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
-        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
-            public void onChanged(List<Post> posts) {
-                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+posts);
-
-                libraryTap2Adapter.setPosts(posts);
-
+            public void onChanged(List<PostRespDto> postRespDtos) {
+                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+postRespDtos);
+                libraryTap2Adapter.setPosts(postRespDtos);
             }
         });
     }

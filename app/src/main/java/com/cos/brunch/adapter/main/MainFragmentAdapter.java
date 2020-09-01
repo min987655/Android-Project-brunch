@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 
 import java.util.ArrayList;
@@ -16,11 +17,11 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
 
     private static final String TAG = "MainFragmentAdapter";
     private List<Fragment> fragmentList = new ArrayList<>();
-    public static List<Post> posts = new ArrayList<>();
+    public static List<PostRespDto> postsRespDtos = new ArrayList<>();
 
-    public MainFragmentAdapter(@NonNull FragmentActivity fragmentActivity, List<Post> posts) {
+    public MainFragmentAdapter(@NonNull FragmentActivity fragmentActivity, List<PostRespDto> postsRespDtos) {
         super(fragmentActivity);
-        this.posts = posts;
+        this.postsRespDtos = postsRespDtos;
         Log.d(TAG, "MainFragmentAdapter: ");
     }
 
@@ -54,10 +55,10 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
         Log.d(TAG, "getItemCount: " + fragmentList.size());
         return fragmentList.size();
     }
-
-    public void setPosts(List<Post> posts){
-        this.posts = posts;
-        Log.d(TAG, "setPosts: " + posts);
-        notifyDataSetChanged();
-    }
+//
+//    public void setPostsRespDtos(List<PostRespDto> postsRespDtos){
+//        this.postsRespDtos = postsRespDtos;
+//        Log.d(TAG, "setPosts: " + postsRespDtos);
+//        notifyDataSetChanged();
+//    }
 }

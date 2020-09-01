@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="main_frag2"
-            type="com.cos.brunch.model.Post" />
+            name="postRespDto"
+            type="com.cos.brunch.dto.PostRespDto" />
     </data>
 
     <RelativeLayout
@@ -46,13 +46,13 @@
             <TextView
                 android:id="@+id/tv_title2"
                 android:layout_width="210dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="41dp"
                 android:fontFamily="@font/notosans_light"
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="-5dp"
-                android:text="@{main_frag2.title}"
+                android:text="@{postRespDto.title}"
                 android:ellipsize="end"
                 android:textColor="@color/colorWhite"
                 android:textSize="25sp" />
@@ -60,12 +60,12 @@
             <TextView
                 android:id="@+id/tv_content2"
                 android:layout_width="215dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_below="@+id/tv_title2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-11dp"
                 android:gravity="center_horizontal"
-                android:text="@{main_frag2.content}"
+                android:text="@{postRespDto.content}"
                 android:ellipsize="end"
                 android:textColor="@color/colorWhite40"
                 android:textSize="12.5sp" />
@@ -88,12 +88,12 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/tv_nickname_main"
+                    android:id="@+id/tv_nickname_main2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@id/tv_by"
-                    android:text="nickName"
+                    android:text="@{postRespDto.nickName}"
                     android:textColor="@color/colorWhite40"
                     android:textSize="15sp" />
 

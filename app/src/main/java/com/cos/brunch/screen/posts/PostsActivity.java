@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.posts.PostsAdapter;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.post.DetailPostActivity;
@@ -67,11 +68,11 @@ public class PostsActivity extends AppCompatActivity {
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         // 콜백함수 : 컬랙션을 덮어 씌움
-        mainViewModel.구독하기().observe(this, new Observer<List<Post>>() {
+        mainViewModel.DTO구독하기().observe(this, new Observer<List<PostRespDto>>() {
             @Override
-            public void onChanged(List<Post> posts) {
+            public void onChanged(List<PostRespDto> postRespDtos) {
                 Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
-                postsAdapter.setPosts(posts);
+                postsAdapter.setPosts(postRespDtos);
             }
         });
 

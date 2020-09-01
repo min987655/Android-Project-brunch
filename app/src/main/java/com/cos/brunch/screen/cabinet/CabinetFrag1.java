@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.cabinet.CabinetTap1Adapter;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
@@ -57,15 +58,25 @@ public class CabinetFrag1 extends Fragment {
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
-        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
-            public void onChanged(List<Post> posts) {
-                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+posts);
+            public void onChanged(List<PostRespDto> postRespDtos) {
+                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+postRespDtos);
 
-                cabinetTap1Adapter.setPosts(posts);
+                cabinetTap1Adapter.setPosts(postRespDtos);
 
             }
         });
+
+//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+//            @Override
+//            public void onChanged(List<Post> posts) {
+//                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+posts);
+//
+//                cabinetTap1Adapter.setPosts(posts);
+//
+//            }
+//        });
     }
 
     private void initlistener() {

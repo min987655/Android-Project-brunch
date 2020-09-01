@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.cos.brunch.R;
 import com.cos.brunch.databinding.Frag1MainBinding;
+import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.viewmodel.MainViewModel;
 
@@ -25,7 +26,8 @@ public class MainFrag1 extends Fragment {
 
     private static final String TAG = "MainFrag1";
     private MainViewModel mainViewModel;
-    public List<Post> posts = new ArrayList<>();
+    public List<PostRespDto> postRespDtos = new ArrayList<>();
+
 
     @Nullable
     @Override
@@ -36,12 +38,14 @@ public class MainFrag1 extends Fragment {
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
-        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
+        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
-            public void onChanged(List<Post> posts) {
-                Log.d(TAG, "onChanged: 구독 !!!! " + posts);
-                String title = posts.get(0).getTitle();
+            public void onChanged(List<PostRespDto> postRespDtos) {
+                Log.d(TAG, "onChanged: 구독 !!!! " + postRespDtos);
+                String title = postRespDtos.get(0).getTitle();
+                String nickName = postRespDtos.get(0).getNickName();
                 layout.tvTitle.setText(title);
+                layout.tvNicknameMain.setText(nickName);
             }
         });
 

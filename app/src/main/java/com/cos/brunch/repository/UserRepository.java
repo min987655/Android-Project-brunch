@@ -4,7 +4,6 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
 import com.cos.brunch.network.BrunchService;
 import com.cos.brunch.network.ServiceGenerator;
@@ -20,7 +19,7 @@ public class UserRepository {
 
     private static final String TAG = "UserRepository";
 
-//    private MutableLiveData<List<User>> allUsers = new MutableLiveData<>();
+    private MutableLiveData<List<User>> allUsers = new MutableLiveData<>();
     private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
 
     private static UserRepository instance = new UserRepository();
@@ -30,33 +29,6 @@ public class UserRepository {
         return instance;
     }
 
-//    public MutableLiveData<List<Post>> getAllPosts() {
-//
-//        Call<List<Post>> call = brunchService.getPosts();
-//        call.enqueue(new Callback<List<Post>>() {
-//            @Override
-//            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-//                if (!response.isSuccessful()) {
-//                    Log.d(TAG, "onResponse: 연결실패 ! ");
-//                    return;
-//                }
-//                List<Post> postItems = response.body();
-//                Log.d(TAG, "onResponse: postItems : " + postItems);
-//
-//                if (postItems != null) {
-//                    allPosts.setValue(postItems);
-//                }
-//                Log.d(TAG, "onResponse: allPosts : " + allPosts.getValue());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Post>> call, Throwable t) {
-//                Log.d(TAG, "onFailure: error : " + t.getMessage());
-//            }
-//
-//        });
-//        return allPosts;
-//    }
 
     public int update(Map<String,Object> headerJwtToken, User user){
 
@@ -69,6 +41,8 @@ public class UserRepository {
                     Log.d(TAG, "onResponse: response.code() : " + response.code());
                     return;
                 }
+                Log.d(TAG, "onResponse: response.body() : " + response.body());
+
             }
 
             @Override

@@ -8,8 +8,8 @@
     <data>
 
         <variable
-            name="post"
-            type="com.cos.brunch.model.Post" />
+            name="postRespDto"
+            type="com.cos.brunch.dto.PostRespDto" />
     </data>
 
     <RelativeLayout
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="@{post.title}"
+                android:text="@{postRespDto.title}"
                 android:textSize="17sp" />
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:lineSpacingExtra="2dp"
-                android:text="@{post.content}"
+                android:text="@{postRespDto.content}"
                 android:textColor="@color/colorGray"
                 android:textSize="13sp" />
 
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_post_content"
-                android:text="@{post.createDate}"
+                android:text="@{postRespDto.createDate}"
                 android:textColor="@color/colorCharcoal" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_post_content"
                 android:layout_toRightOf="@+id/tv_by"
-                android:text="작가닉네임"
+                android:text="@{postRespDto.nickName}"
                 android:textColor="@color/colorCharcoal" />
 
             <ImageView
