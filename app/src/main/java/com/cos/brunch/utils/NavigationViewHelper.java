@@ -1,5 +1,6 @@
 package com.cos.brunch.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.cabinet.CabinetActivity;
 import com.cos.brunch.screen.feed.FeedActivity;
 import com.cos.brunch.screen.library.LibraryActivity;

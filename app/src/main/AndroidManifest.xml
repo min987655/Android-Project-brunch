@@ -16,18 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".screen.search.SearchActivity"></activity>
+        <activity android:name=".screen.apply.ApplyActivity"></activity>
+        <activity android:name=".screen.search.SearchActivity" />
         <activity android:name=".screen.feed.FeedActivity" />
         <activity android:name=".screen.library.LibraryActivity" />
-        <activity android:name=".TestActivity">
-        </activity>
         <activity android:name=".screen.login.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
@@ -40,8 +40,7 @@
         <activity android:name=".screen.userprofileupdate.UserProfileUpdateActivity" />
         <activity android:name=".screen.user.UserActivity" />
         <activity android:name=".screen.write.WriteActivity" />
-        <activity android:name=".screen.main.MainActivity">
-        </activity>
+        <activity android:name=".screen.main.MainActivity"></activity>
     </application>
 
 </manifest>

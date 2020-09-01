@@ -23,7 +23,7 @@ public class CabinetActivity extends AppCompatActivity {
     private Context mContext = CabinetActivity.this;
 
     private DrawerLayout drawerLayout;
-    private ImageView imgApplyMenu;
+    private ImageView imgMenu;
 
     private ViewPager viewPager;
     private CabinetFragmentAdapter cabinetAdapter;
@@ -45,11 +45,11 @@ public class CabinetActivity extends AppCompatActivity {
     }
 
     private void initObject() {
-        imgApplyMenu = findViewById(R.id.img_apply_menu);
+        imgMenu = findViewById(R.id.img_apply_menu);
         cabinetAdapter = new CabinetFragmentAdapter(getSupportFragmentManager(), 1);
         cabinetfrag1 = new CabinetFrag1();
         cabinetfrag2 = new CabinetFrag2();
-        tabLayout = findViewById(R.id.tabs_apply);
+        tabLayout = findViewById(R.id.tabs);
     }
 
     private void initDesign() {
@@ -66,14 +66,14 @@ public class CabinetActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setText("저장글");
         tabLayout.getTabAt(1).setText("발행취소글");
 
-        imgApplyMenu.setImageResource(R.drawable.img_menu);
+        imgMenu.setImageResource(R.drawable.img_menu);
     }
 
     private void initData() {
     }
 
     private void initlistener() {
-        imgApplyMenu.setOnClickListener(new View.OnClickListener() {
+        imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);

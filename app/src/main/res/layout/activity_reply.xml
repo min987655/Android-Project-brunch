@@ -15,15 +15,51 @@
         android:layout_marginTop="50dp"
         android:background="@color/colorBorderDark" />
 
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/img_br"/>
+
+    <TextView
+        android:id="@+id/tv_reply_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_logo"
+        android:layout_marginBottom="5dp"
+        android:text="작성된 댓글이 없습니다."/>
+
+    <TextView
+        android:id="@+id/tv_reply_ex2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_reply_ex"
+        android:textSize="11sp"
+        android:textColor="@color/colorGray"
+        android:text="작가에게 첫 번째 댓글을 남겨주세요!"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_reply"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
         android:paddingLeft="@dimen/toolbar_marginLeft"
         android:paddingRight="@dimen/toolbar_marginRight"
         android:layout_below="@+id/reply_br1"
         android:layout_above="@+id/et_reply"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_above="@+id/et_reply"
+        android:background="@color/colorBorderDark" />
 
     <EditText
         android:id="@+id/et_reply"
@@ -33,7 +69,7 @@
         android:paddingLeft="@dimen/toolbar_marginLeft"
         android:textSize="15sp"
         android:hint="댓글을 입력하세요"
-        android:background="@null"/>
+        android:background="@color/colorLightGray"/>
 
     <Button
         android:id="@+id/btn_reply_update"
@@ -46,11 +82,6 @@
         android:textSize="15sp"
         android:textColor="@color/colorCharcoal"
         android:text="입력"
-        android:background="@drawable/button_rounded_solid_gray"/>
+        android:background="@drawable/button_rounded_stroke_gray"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.3dp"
-        android:layout_above="@+id/et_reply"
-        android:background="@color/colorBorderDark" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.cos.brunch.screen.feed;
+package com.cos.brunch.screen.apply;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,27 +16,26 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.feed.FeedTap1Adapter;
-import com.cos.brunch.adapter.feed.FeedTap2Adapter;
+import com.cos.brunch.adapter.apply.ApplyTap1Adapter;
+import com.cos.brunch.adapter.apply.ApplyTap2Adapter;
 import com.cos.brunch.model.Post;
-import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
 
-public class FeedFrag2 extends Fragment {
+public class ApplyFrag2 extends Fragment {
 
-    private static final String TAG = "ApplyFrag1";
-    public FeedTap2Adapter feedTap2Adapter;
-    private RecyclerView rvFeedContent2;
+    private static final String TAG = "ApplyFrag2";
+    public ApplyTap2Adapter applyTap2Adapter;
+    private RecyclerView rvApplyContent2;
     private MainViewModel mainViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.frag2_feed, container, false);
+        View v = inflater.inflate(R.layout.frag2_apply, container, false);
 
         init(v);
         initData();
@@ -46,16 +45,16 @@ public class FeedFrag2 extends Fragment {
     }
 
     private void init(View v){
+
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        rvFeedContent2 = v.findViewById(R.id.rv_feed_content2);
-        feedTap2Adapter = new FeedTap2Adapter();
+        rvApplyContent2 = v.findViewById(R.id.rv_apply_content2);
+        applyTap2Adapter = new ApplyTap2Adapter();
     }
 
     private void initData(){
-
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
-        rvFeedContent2.setLayoutManager(layoutManager);
-        rvFeedContent2.setAdapter(feedTap2Adapter);
+        rvApplyContent2.setLayoutManager(layoutManager);
+        rvApplyContent2.setAdapter(applyTap2Adapter);
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
@@ -63,22 +62,20 @@ public class FeedFrag2 extends Fragment {
             @Override
             public void onChanged(List<Post> posts) {
                 Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+posts);
-
-                feedTap2Adapter.setPosts(posts);
+                applyTap2Adapter.setPosts(posts);
 
             }
         });
     }
 
     private void initlistener() {
-        feedTap2Adapter.setOnClickListener(new FeedTap2Adapter.OnClickListener() {
+        applyTap2Adapter.setOnClickListener(new ApplyTap2Adapter.OnClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
                 Log.d(TAG, "onItemClick: "+pos);
-                Intent intent = new Intent(getContext(), ApplyActivity.class);
+                Intent intent = new Intent(getContext(), DetailPostActivity.class);
                 startActivity(intent);
             }
         });
     }
-
 }

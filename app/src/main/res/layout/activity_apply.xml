@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/toolbar_sub" />
+
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/colorLightGray"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_apply_profile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/header_background"
+        android:layout_marginTop="-40dp"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:src="@drawable/img_logo_b" />
+
+    <TextView
+        android:id="@+id/tv_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_background"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="15dp"
+        android:text="브런치팀"
+        android:fontFamily="@font/notosans_light"
+        android:textColor="@color/colorBlack"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tv_apply_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_apply"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="-15dp"
+        android:text="작가명"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_follower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_apply_tag"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="5dp"
+        android:text="구독자"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_apply_tag"
+        android:layout_toRightOf="@+id/tv_follower"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="5dp"
+        android:text="관심작가"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_follower_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_follower"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="-7dp"
+        android:text="10"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_following_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_following"
+        android:layout_toRightOf="@+id/tv_follower"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="-7dp"
+        android:text="20"
+        android:textSize="13sp" />
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="37dp"
+        android:text="구독중"
+        android:textColor="@color/colorWhite"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/tv_follower_count"
+        android:background="@drawable/button_rounded_solid_accent" />
+
+    <View
+        android:id="@+id/bar1"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_above="@+id/tabs"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:background="@color/colorBorderDark" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_follower_count"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tab1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tab2" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/tabs"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:background="@color/colorBorderDark" />
+
+</RelativeLayout>

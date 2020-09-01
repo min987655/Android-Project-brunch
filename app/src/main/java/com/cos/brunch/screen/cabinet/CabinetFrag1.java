@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.cabinet.CabinetTap1Adapter;
-import com.cos.brunch.adapter.library.LibraryTap1Adapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
@@ -28,14 +27,14 @@ public class CabinetFrag1 extends Fragment {
 
     private static final String TAG = "ApplyFrag1";
     public CabinetTap1Adapter cabinetTap1Adapter;
-    private RecyclerView rvApplyContent1;
+    private RecyclerView rvCabinetContent1;
     private MainViewModel mainViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.frag1_apply, container, false);
+        View v = inflater.inflate(R.layout.frag1_cabinet, container, false);
 
         init(v);
         initData();
@@ -46,15 +45,15 @@ public class CabinetFrag1 extends Fragment {
 
     private void init(View v){
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        rvApplyContent1 = v.findViewById(R.id.rv_apply_content1);
+        rvCabinetContent1 = v.findViewById(R.id.rv_cabinet_content1);
         cabinetTap1Adapter = new CabinetTap1Adapter();
     }
 
     private void initData(){
 
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
-        rvApplyContent1.setLayoutManager(layoutManager);
-        rvApplyContent1.setAdapter(cabinetTap1Adapter);
+        rvCabinetContent1.setLayoutManager(layoutManager);
+        rvCabinetContent1.setAdapter(cabinetTap1Adapter);
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 

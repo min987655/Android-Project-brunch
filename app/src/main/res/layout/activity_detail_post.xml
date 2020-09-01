@@ -110,7 +110,7 @@
             android:layout_below="@+id/iv_post_content"
             android:layout_alignLeft="@+id/tv_post_title"
             android:layout_marginTop="10dp"
-            android:background="@drawable/button_rounded_solid_gray"
+            android:background="@drawable/button_rounded_stroke_gray"
             android:text="그림·웹툰"
             android:textColor="@color/colorCharcoal"
             android:textSize="13dp" />
@@ -124,7 +124,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/btn_post_keyword"
-            android:background="@drawable/button_rounded_solid_gray"
+            android:background="@drawable/button_rounded_stroke_gray"
             android:text="키워드키워드"
             android:textColor="@color/colorCharcoal"
             android:textSize="13dp" />
@@ -251,7 +251,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="@dimen/toolbar_marginRight"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/button_rounded_solid_accent"
+            android:background="@drawable/button_rounded_stroke_accent"
             android:text="구독하기"
             android:textColor="@color/colorAccent"
             android:textSize="12dp" />

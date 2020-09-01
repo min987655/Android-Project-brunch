@@ -39,7 +39,6 @@
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:paddingLeft="10dp"
-            app:srcCompat="@drawable/img_check"
             android:contentDescription="@string/StringValue"/>
 
     </RelativeLayout>

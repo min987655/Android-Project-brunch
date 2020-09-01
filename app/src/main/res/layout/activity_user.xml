@@ -123,7 +123,7 @@
                 android:layout_below="@+id/user_follower_following"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/button_rounded_solid_accent"
+                android:background="@drawable/button_rounded_stroke_accent"
                 android:gravity="center"
                 android:text="글쓰기"
                 android:textColor="@color/colorAccent"

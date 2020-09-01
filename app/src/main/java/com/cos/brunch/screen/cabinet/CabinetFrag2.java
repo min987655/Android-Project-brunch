@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.adapter.cabinet.CabinetTap1Adapter;
 import com.cos.brunch.adapter.cabinet.CabinetTap2Adapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.post.DetailPostActivity;
@@ -28,13 +27,13 @@ public class CabinetFrag2 extends Fragment {
 
     private static final String TAG = "ApplyFrag2";
     public CabinetTap2Adapter cabinetTap2Adapter;
-    private RecyclerView rvApplyContent2;
+    private RecyclerView rvCabinetContent2;
     private MainViewModel mainViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.frag2_apply, container, false);
+        View v = inflater.inflate(R.layout.frag2_cabinet, container, false);
 
         init(v);
         initData();
@@ -45,15 +44,15 @@ public class CabinetFrag2 extends Fragment {
 
     private void init(View v) {
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        rvApplyContent2 = v.findViewById(R.id.rv_apply_content2);
+        rvCabinetContent2 = v.findViewById(R.id.rv_cabinet_content2);
         cabinetTap2Adapter = new CabinetTap2Adapter();
     }
 
     private void initData() {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        rvApplyContent2.setLayoutManager(layoutManager);
-        rvApplyContent2.setAdapter(cabinetTap2Adapter);
+        rvCabinetContent2.setLayoutManager(layoutManager);
+        rvCabinetContent2.setAdapter(cabinetTap2Adapter);
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 

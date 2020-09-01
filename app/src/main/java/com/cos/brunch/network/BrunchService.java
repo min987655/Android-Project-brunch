@@ -18,6 +18,9 @@ public interface BrunchService {
     @GET("posts")
     Call<List<Post>> getPosts();
 
+//    @GET("main/post")
+//    Call<List<Post>> getPostService();
+
     @POST("oauth/jwt/kakao/android")
     Call<CommonRespDto> kakaoAccess(@Body Map<String, Object> data);
 

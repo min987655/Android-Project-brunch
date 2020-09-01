@@ -51,7 +51,7 @@ public class PostRepository {
                 for (Post post : postItems) {
 
                     String serverDate = post.getCreateDate();
-                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
+//                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
 
                     SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
                     SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");

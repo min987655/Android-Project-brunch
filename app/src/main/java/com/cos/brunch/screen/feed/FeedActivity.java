@@ -51,7 +51,7 @@ public class FeedActivity extends AppCompatActivity {
         feedAdapter = new FeedFragmentAdapter(getSupportFragmentManager(), 1);
         feedfrag1 = new FeedFrag1();
         feedfrag2 = new FeedFrag2();
-        tabLayout = findViewById(R.id.tabs_apply);
+        tabLayout = findViewById(R.id.tabs);
     }
 
     private void initDesign() {
