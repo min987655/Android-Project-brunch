@@ -1,5 +1,6 @@
 package com.cos.brunch.screen.cabinet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,8 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.adapter.cabinet.CabinetTap1Adapter;
 import com.cos.brunch.adapter.cabinet.CabinetTap2Adapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
@@ -35,10 +38,7 @@ public class CabinetFrag2 extends Fragment {
 
         init(v);
         initData();
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        rvApplyContent2.setLayoutManager(layoutManager);
-        rvApplyContent2.setAdapter(cabinetTap2Adapter);
+        initlistener();
 
         return v;
     }
@@ -50,6 +50,11 @@ public class CabinetFrag2 extends Fragment {
     }
 
     private void initData() {
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        rvApplyContent2.setLayoutManager(layoutManager);
+        rvApplyContent2.setAdapter(cabinetTap2Adapter);
+
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
         mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
@@ -61,4 +66,16 @@ public class CabinetFrag2 extends Fragment {
             }
         });
     }
+
+    private void initlistener() {
+        cabinetTap2Adapter.setOnClickListener(new CabinetTap2Adapter.OnClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Log.d(TAG, "onItemClick: "+pos);
+                Intent intent = new Intent(getContext(), DetailPostActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }

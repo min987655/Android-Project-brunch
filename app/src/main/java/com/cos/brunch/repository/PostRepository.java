@@ -8,9 +8,13 @@ import com.cos.brunch.model.Post;
 import com.cos.brunch.network.BrunchService;
 import com.cos.brunch.network.ServiceGenerator;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,10 +47,30 @@ public class PostRepository {
                 List<Post> postItems = response.body();
                 Log.d(TAG, "onResponse: postItems : " + postItems);
 
+                // createDate format 맞춤
+                for (Post post : postItems) {
+
+                    String serverDate = post.getCreateDate();
+                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
+
+                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+
+                    try {
+                        Date testServerDate = serverDateFormat.parse(serverDate);
+                        String testNewDate = newDateFormat.format(testServerDate);
+
+                        String newDate = testNewDate;
+                        post.setCreateDate(newDate);
+
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                }
+
                 if (postItems != null) {
                     allPosts.setValue(postItems);
                 }
-                Log.d(TAG, "onResponse: allPosts : " + allPosts.getValue());
             }
 
             @Override

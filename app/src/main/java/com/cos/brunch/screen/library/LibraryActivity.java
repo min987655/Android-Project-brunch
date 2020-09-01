@@ -5,6 +5,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.library.LibraryFragmentAdapter;
+import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -23,7 +25,7 @@ public class LibraryActivity extends AppCompatActivity {
     private Context mContext = LibraryActivity.this;
 
     private DrawerLayout drawerLayout;
-    private ImageView imgLibraryMenu, imgLibrarySearch;
+    private ImageView imgMenu, imgSearch;
 
     private ViewPager viewPager;
     private LibraryFragmentAdapter libraryAdapter;
@@ -44,8 +46,8 @@ public class LibraryActivity extends AppCompatActivity {
         setupNavigationView();
     }
     private void initObject() {
-        imgLibraryMenu = findViewById(R.id.img_toolbar_l);
-        imgLibrarySearch = findViewById(R.id.img_toolbar_r);
+        imgMenu = findViewById(R.id.img_toolbar_l);
+        imgSearch = findViewById(R.id.img_toolbar_r);
         libraryAdapter = new LibraryFragmentAdapter(getSupportFragmentManager(), 1);
         libraryFrag1 = new LibraryFrag1();
         libraryFrag2 = new LibraryFrag2();
@@ -66,18 +68,26 @@ public class LibraryActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setText("최근 본");
         tabLayout.getTabAt(1).setText("라이킷");
 
-        imgLibraryMenu.setImageResource(R.drawable.img_menu);
-        imgLibrarySearch.setImageResource(R.drawable.img_search);
+        imgMenu.setImageResource(R.drawable.img_menu);
+        imgSearch.setImageResource(R.drawable.img_search);
     }
 
     private void initData() {
     }
 
     private void initlistener() {
-        imgLibraryMenu.setOnClickListener(new View.OnClickListener() {
+        imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SearchActivity.class);
+                startActivity(intent);
             }
         });
     }

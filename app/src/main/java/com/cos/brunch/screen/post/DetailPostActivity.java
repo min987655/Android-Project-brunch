@@ -62,8 +62,7 @@ public class DetailPostActivity extends AppCompatActivity {
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, PostsActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

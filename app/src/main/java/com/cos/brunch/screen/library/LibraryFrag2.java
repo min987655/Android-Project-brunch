@@ -1,10 +1,12 @@
 package com.cos.brunch.screen.library;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +20,7 @@ import com.cos.brunch.R;
 import com.cos.brunch.adapter.library.LibraryTap1Adapter;
 import com.cos.brunch.adapter.library.LibraryTap2Adapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
@@ -37,10 +40,7 @@ public class LibraryFrag2 extends Fragment {
 
         init(v);
         initData();
-
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
-        rvLibraryContent2.setLayoutManager(layoutManager);
-        rvLibraryContent2.setAdapter(libraryTap2Adapter);
+        initlistener();
 
         return v;
     }
@@ -52,6 +52,11 @@ public class LibraryFrag2 extends Fragment {
     }
 
     private void initData(){
+
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
+        rvLibraryContent2.setLayoutManager(layoutManager);
+        rvLibraryContent2.setAdapter(libraryTap2Adapter);
+
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
         mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
@@ -64,4 +69,16 @@ public class LibraryFrag2 extends Fragment {
             }
         });
     }
+
+    private void initlistener() {
+        libraryTap2Adapter.setOnClickListener(new LibraryTap2Adapter.OnClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Log.d(TAG, "onItemClick: "+pos);
+                Intent intent = new Intent(getContext(), DetailPostActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }

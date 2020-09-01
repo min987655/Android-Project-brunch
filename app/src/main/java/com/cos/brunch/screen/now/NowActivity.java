@@ -21,6 +21,7 @@ import com.cos.brunch.adapter.now.KeywordAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
 import com.cos.brunch.screen.posts.PostsActivity;
+import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
@@ -112,6 +113,14 @@ public class NowActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int position) {
                 Intent intent = new Intent(mContext, PostsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SearchActivity.class);
                 startActivity(intent);
             }
         });

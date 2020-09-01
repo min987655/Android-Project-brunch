@@ -1,5 +1,6 @@
 package com.cos.brunch.screen.feed;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.feed.FeedTap1Adapter;
+import com.cos.brunch.adapter.feed.FeedTap2Adapter;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
@@ -24,7 +27,7 @@ import java.util.List;
 public class FeedFrag2 extends Fragment {
 
     private static final String TAG = "ApplyFrag1";
-    public FeedTap1Adapter feedTap2Adapter;
+    public FeedTap2Adapter feedTap2Adapter;
     private RecyclerView rvFeedContent2;
     private MainViewModel mainViewModel;
 
@@ -36,10 +39,7 @@ public class FeedFrag2 extends Fragment {
 
         init(v);
         initData();
-
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
-        rvFeedContent2.setLayoutManager(layoutManager);
-        rvFeedContent2.setAdapter(feedTap2Adapter);
+        initlistener();
 
         return v;
     }
@@ -47,10 +47,15 @@ public class FeedFrag2 extends Fragment {
     private void init(View v){
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         rvFeedContent2 = v.findViewById(R.id.rv_feed_content2);
-        feedTap2Adapter = new FeedTap1Adapter();
+        feedTap2Adapter = new FeedTap2Adapter();
     }
 
     private void initData(){
+
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
+        rvFeedContent2.setLayoutManager(layoutManager);
+        rvFeedContent2.setAdapter(feedTap2Adapter);
+
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
         mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
@@ -63,4 +68,16 @@ public class FeedFrag2 extends Fragment {
             }
         });
     }
+
+    private void initlistener() {
+        feedTap2Adapter.setOnClickListener(new FeedTap2Adapter.OnClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Log.d(TAG, "onItemClick: "+pos);
+                Intent intent = new Intent(getContext(), DetailPostActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
