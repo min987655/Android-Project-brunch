@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.repository.PostRepository;
+import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.utils.DialogCallBack;
 
 import java.io.ByteArrayOutputStream;
@@ -79,6 +80,7 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
         tvToolbarHeader = findViewById(R.id.tv_toolbar_header);
         tvToolbarHeader.setText("글쓰기");
         imgWriteUpdate = findViewById(R.id.img_toolbar_r);
+        imgWriteUpdate.setImageResource(R.drawable.img_check);
     }
 
     private void initlistener() {

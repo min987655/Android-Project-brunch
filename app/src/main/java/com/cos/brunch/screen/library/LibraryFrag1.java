@@ -65,7 +65,7 @@ public class LibraryFrag1 extends Fragment {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
                 Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+postRespDtos);
-                libraryTap1Adapter.setPosts(postRespDtos);
+                libraryTap1Adapter.setPostRespDtos(postRespDtos);
             }
         });
     }

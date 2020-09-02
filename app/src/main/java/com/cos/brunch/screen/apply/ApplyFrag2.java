@@ -71,7 +71,7 @@ public class ApplyFrag2 extends Fragment {
         mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
-                applyTap2Adapter.setPosts(postRespDtos);
+                applyTap2Adapter.setPostRespDtos(postRespDtos);
             }
         });
     }

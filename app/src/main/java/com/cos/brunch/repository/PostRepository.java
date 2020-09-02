@@ -6,17 +6,14 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
-import com.cos.brunch.network.BrunchService;
+import com.cos.brunch.network.service.PostService;
 import com.cos.brunch.network.ServiceGenerator;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +25,7 @@ public class PostRepository {
 
     private MutableLiveData<List<Post>> allPosts = new MutableLiveData<>();
     private MutableLiveData<List<PostRespDto>> allPostRespDtos = new MutableLiveData<>();
-    private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
+    private PostService PostService = ServiceGenerator.createService(PostService.class);
 
     private static PostRepository instance = new PostRepository();
     private PostRepository() { }
@@ -87,20 +84,20 @@ public class PostRepository {
 
     public int save(Map<String,Object> headerJwtToken,Post post){
 
-        Call<Post> call = brunchService.createPost(headerJwtToken,post);
+        Call<Post> call = PostService.createPost(headerJwtToken,post);
         call.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
 
                 if (!response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: response.code() : " + response.code());
+                    Log.d(TAG, "onResponse: save : response.code() : " + response.code());
                     return;
                 }
             }
 
             @Override
             public void onFailure(Call<Post> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.getMessage());
+                Log.d(TAG, "onFailure: save : " + t.getMessage());
             }
         });
         return -1;
@@ -109,16 +106,17 @@ public class PostRepository {
 
     public MutableLiveData<List<PostRespDto>> getAllPostRespDtos() {
 
-        Call<List<PostRespDto>> call = brunchService.getPostRespDto();
+        Call<List<PostRespDto>> call = PostService.getPostRespDto();
         call.enqueue(new Callback<List<PostRespDto>>() {
             @Override
             public void onResponse(Call<List<PostRespDto>> call, Response<List<PostRespDto>> response) {
                 if (!response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: 연결실패 ! ");
+                    Log.d(TAG, "onResponse: getAllPostRespDtos : 연결실패 ! ");
                     return;
                 }
                 List<PostRespDto> postRespDtoItems = response.body();
-                Log.d(TAG, "onResponse: postItems : " + postRespDtoItems);
+                Log.d(TAG, "onResponse: getAllPostRespDtos : postRespDtoItems : " + postRespDtoItems);
+                Log.d(TAG, "onResponse: getAllPostRespDtos : postRespDtoItems : " + response.code());
 
                 // createDate format 맞춤
                 for (PostRespDto postRespDto : postRespDtoItems) {
@@ -154,6 +152,4 @@ public class PostRepository {
         });
         return allPostRespDtos;
     }
-
-
 }

@@ -72,7 +72,7 @@ public class PostsActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
                 Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
-                postsAdapter.setPosts(postRespDtos);
+                postsAdapter.setPostRespDtos(postRespDtos);
             }
         });
 
@@ -91,7 +91,6 @@ public class PostsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View v, int pos) {
                 Log.d(TAG, "onItemClick: "+pos);
-                Toast.makeText(mContext, "상세보기", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, DetailPostActivity.class);
                 startActivity(intent);
             }

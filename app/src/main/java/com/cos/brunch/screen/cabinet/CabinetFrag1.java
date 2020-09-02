@@ -63,7 +63,7 @@ public class CabinetFrag1 extends Fragment {
             public void onChanged(List<PostRespDto> postRespDtos) {
                 Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+postRespDtos);
 
-                cabinetTap1Adapter.setPosts(postRespDtos);
+                cabinetTap1Adapter.setPostRespDtos(postRespDtos);
 
             }
         });

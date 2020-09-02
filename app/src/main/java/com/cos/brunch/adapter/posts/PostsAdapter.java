@@ -60,7 +60,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
         return postRespDtos.size();
     }
 
-    public void setPosts(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos){
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }

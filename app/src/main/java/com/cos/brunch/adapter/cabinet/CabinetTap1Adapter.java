@@ -60,7 +60,7 @@ public class CabinetTap1Adapter extends RecyclerView.Adapter<CabinetTap1Adapter.
         return postRespDtos.size();
     }
 
-    public void setPosts(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos){
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }

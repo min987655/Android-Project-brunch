@@ -14,6 +14,7 @@ public class Post {
     private String title;
     private String subTitle;
     private String content;
+    private String coverImg;
     private String postType;
     private Integer readCount;
     private String createDate;

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.cos.brunch.dto.CommonRespDto;
+import com.cos.brunch.network.service.UserService;
 import com.cos.brunch.screen.main.MainActivity;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.authorization.accesstoken.AccessToken;
@@ -12,7 +13,6 @@ import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.usermgmt.response.model.Profile;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
 
@@ -25,7 +25,7 @@ import retrofit2.Response;
 
 public class SessionCallback implements ISessionCallback {
 
-    private BrunchService brunchService = ServiceGenerator.createService(BrunchService.class);
+    private UserService userService = ServiceGenerator.createService(UserService.class);
     private static final String TAG = "SessionCallback";
     private AccessToken accessToken;
     private Context context;
@@ -92,7 +92,7 @@ public class SessionCallback implements ISessionCallback {
                             data.put("properties",data2);
                             Log.d(TAG, "onSuccess: data : " +data);
 
-                            Call<CommonRespDto> call = brunchService.kakaoAccess(data);
+                            Call<CommonRespDto> call = userService.kakaoAccess(data);
                             call.enqueue(new Callback<CommonRespDto>() {
                                 @Override
                                 public void onResponse(Call<CommonRespDto> call, Response<CommonRespDto> response) {

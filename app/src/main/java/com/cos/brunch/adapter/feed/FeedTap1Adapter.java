@@ -60,7 +60,7 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
         return postRespDtos.size();
     }
 
-    public void setPosts(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos){
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }

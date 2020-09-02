@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class User {
@@ -33,6 +32,18 @@ public class User {
 
     public User(String email) {
         this.email = email;
+    }
+
+    public User(int id, String password, String snsId, String nickName, String email, String bio, String profileImage, String provider, String providerId) {
+        this.id = id;
+        this.password = password;
+        this.snsId = snsId;
+        this.nickName = nickName;
+        this.email = email;
+        this.bio = bio;
+        this.profileImage = profileImage;
+        this.provider = provider;
+        this.providerId = providerId;
     }
 
     public User(String password, String snsId, String nickName, String email, String bio, String profileImage, String provider, String providerId) {

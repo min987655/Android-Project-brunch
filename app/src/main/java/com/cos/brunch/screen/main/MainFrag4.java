@@ -38,20 +38,6 @@ public class MainFrag4 extends Fragment {
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
-//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: 구독 !!!! " + posts);
-//                String title = posts.get(3).getTitle();
-//                String title2 = posts.get(4).getTitle();
-//                layout.tvTitle4.setText(title);
-//                layout.tvTitle5.setText(title2);
-//                Log.d(TAG, "onChanged: layout.tvTitle : " + title.toString());
-//                Log.d(TAG, "onChanged: layout.tvTitle : " + title2.toString());
-//            }
-//
-//        });
-
         mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
@@ -71,9 +57,6 @@ public class MainFrag4 extends Fragment {
                 Log.d(TAG, "onChanged: nickName2 : " + nickName5);
             }
         });
-
         return layout.getRoot();
-
     }
-
 }

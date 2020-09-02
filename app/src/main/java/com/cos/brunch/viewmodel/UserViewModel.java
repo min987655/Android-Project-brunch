@@ -23,11 +23,11 @@ public class UserViewModel extends AndroidViewModel {
 
     public UserViewModel(@NonNull Application application) {
         super(application);
-//        user = userRepository.getUser();
+//        user = userRepository.findById();
         Log.d(TAG, "MainViewModel: " + user.getValue());
     }
 
-    public MutableLiveData<User> 구독하기() {
+    public MutableLiveData<User> User구독하기() {
         Log.d(TAG, "구독하기: " + user);
         return user;
     }

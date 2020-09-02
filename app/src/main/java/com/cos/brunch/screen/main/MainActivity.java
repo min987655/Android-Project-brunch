@@ -19,12 +19,16 @@ import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.network.ServiceGenerator;
 import com.cos.brunch.network.SessionCallback;
+import com.cos.brunch.repository.PostRepository;
+import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
         frag1 = new MainFrag1();
         frag2 = new MainFrag2();
         frag3 = new MainFrag3();
-        frag4 = new MainFrag4();
+//        frag4 = new MainFrag4();
 
         mainAdapter.addFragment(frag1);
         mainAdapter.addFragment(frag2);
         mainAdapter.addFragment(frag3);
-        mainAdapter.addFragment(frag4);
+//        mainAdapter.addFragment(frag4);
 
         viewPager.setAdapter(mainAdapter);
     }
@@ -104,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupNavigationView() {
 
+        UserRepository userRepository = UserRepository.getInstance();
+
         Intent intent = getIntent();
         String jwtToken = intent.getExtras().getString("jwtToken");
 
@@ -113,8 +119,13 @@ public class MainActivity extends AppCompatActivity {
         stEditor.putString("jwtToken", jwtToken);
         stEditor.commit();
 
-//        serverJwtToken = sf.getString("jwtToken", "");
-//        Log.d(TAG, "initData: sp : " + serverJwtToken);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
+        Map<String, Object> headerJwtToken = new HashMap<>();
+        headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+        Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
+        userRepository.getLoginUser(headerJwtToken);
 
         NavigationView navigationView = findViewById(R.id.nav);
         NavigationViewHelper.enableNavigation(mContext, navigationView, jwtToken);

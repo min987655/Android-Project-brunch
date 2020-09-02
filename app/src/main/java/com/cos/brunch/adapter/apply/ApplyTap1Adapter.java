@@ -44,7 +44,6 @@ public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyVi
                 false
         );
         return new MyViewHolder(itemPostBinding);
-
     }
 
     // 껍데기에 데이터 바인딩
@@ -60,7 +59,7 @@ public class ApplyTap1Adapter extends RecyclerView.Adapter<ApplyTap1Adapter.MyVi
         return postRespDtos.size();
     }
 
-    public void setPosts(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos){
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }

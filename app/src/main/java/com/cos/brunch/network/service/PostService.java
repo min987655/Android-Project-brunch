@@ -1,4 +1,4 @@
-package com.cos.brunch.network;
+package com.cos.brunch.network.service;
 
 import com.cos.brunch.dto.CommonRespDto;
 import com.cos.brunch.dto.PostRespDto;
@@ -15,7 +15,7 @@ import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
-public interface BrunchService {
+public interface PostService {
 
 //    @GET("posts")
 //    Call<List<Post>> getPosts();
@@ -23,16 +23,9 @@ public interface BrunchService {
     @GET("main/post")
     Call<List<PostRespDto>> getPostRespDto();
 
-    @POST("oauth/jwt/kakao/android")
-    Call<CommonRespDto> kakaoAccess(@Body Map<String, Object> data);
-
     @POST("post/save")
     Call<Post> createPost(@HeaderMap Map<String, Object> data,
                           @Body Post post);
-
-    @PUT("user/profile")
-    Call<User> updateUser(@HeaderMap Map<String, Object> data,
-                            @Body User user);
 }
 
 

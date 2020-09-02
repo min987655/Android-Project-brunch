@@ -1,6 +1,5 @@
 package com.cos.brunch.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
-import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.cabinet.CabinetActivity;
 import com.cos.brunch.screen.feed.FeedActivity;
 import com.cos.brunch.screen.library.LibraryActivity;
@@ -45,7 +43,6 @@ public class NavigationViewHelper {
         navNow = navHeader.findViewById(R.id.tv_now);
         navLibrary = navHeader.findViewById(R.id.tv_library);
         navFeed = navHeader.findViewById(R.id.tv_feed);
-//        navSettings = navHeader.findViewById(R.id.iv_settings);
         navLogout = navHeader.findViewById(R.id.btn_logout);
 
         navHome.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +123,7 @@ public class NavigationViewHelper {
             }
         });
 
+        // 카카오 회원탈퇴(카카오개발자에서도 사라짐)
 //        navSettings.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

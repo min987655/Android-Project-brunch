@@ -46,6 +46,8 @@ public class MainFrag1 extends Fragment {
                 String nickName = postRespDtos.get(0).getNickName();
                 layout.tvTitle.setText(title);
                 layout.tvNicknameMain.setText(nickName);
+                Log.d(TAG, "onChanged: title : " + title);
+                Log.d(TAG, "onChanged: nickName : " + nickName);
             }
         });
 

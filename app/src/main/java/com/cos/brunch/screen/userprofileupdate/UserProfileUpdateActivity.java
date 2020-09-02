@@ -58,6 +58,7 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
     private void initObject() {
         imgCancel = findViewById(R.id.img_toolbar_l);
         imgProfileUpdate = findViewById(R.id.img_toolbar_r);
+        imgProfileUpdate.setImageResource(R.drawable.img_check);
         imgUserProfile = findViewById(R.id.img_user_profile);
         tvHeader = findViewById(R.id.tv_toolbar_header);
         tvHeader.setText("프로필 편집");

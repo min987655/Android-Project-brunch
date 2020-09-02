@@ -69,7 +69,7 @@ public class CabinetFrag2 extends Fragment {
         mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
-                cabinetTap2Adapter.setPosts(postRespDtos);
+                cabinetTap2Adapter.setPostRespDtos(postRespDtos);
             }
         });
     }

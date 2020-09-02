@@ -60,7 +60,7 @@ public class ApplyTap2Adapter extends RecyclerView.Adapter<ApplyTap2Adapter.MyVi
         return postRespDtos.size();
     }
 
-    public void setPosts(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos){
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }

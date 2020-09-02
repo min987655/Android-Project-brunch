@@ -63,7 +63,7 @@ public class FeedFrag2 extends Fragment {
         mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {
-                feedTap2Adapter.setPosts(postRespDtos);
+                feedTap2Adapter.setPostRespDtos(postRespDtos);
             }
         });
 

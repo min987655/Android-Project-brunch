@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
@@ -35,18 +36,8 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        // 3번일 때만 2개로
-        // 나머지는 그대로
         Fragment fm = fragmentList.get(position);
-//        View v = fm.getView();
         Log.d(TAG, "createFragment: position : " + fm);
-//        Log.d(TAG, "createFragment: " + v);
-//        if(position == 3){
-//            TextView tvTitle1 = v.findViewById(R.id.tv_title1);
-//            TextView tvTitle2 = v.findViewById(R.id.tv_title2);
-//            tvTitle1.setText("동적변경1");
-//            tvTitle2.setText("동적변경2");
-//        }
         return fragmentList.get(position);
     }
 
