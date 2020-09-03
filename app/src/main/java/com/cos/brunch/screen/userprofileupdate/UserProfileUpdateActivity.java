@@ -96,7 +96,8 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
                         etBio.getText().toString(),
                         imageRealPath
                 );
-                userRepository.update(headerJwtToken, updateUser);
+
+                userRepository.update(headerJwtToken, updateUser, v);
                 Log.d(TAG, "onClick: updateUser : " + updateUser);
 
                 Intent intent = new Intent(mContext, UserActivity.class);

@@ -21,12 +21,15 @@ public interface UserService {
     @POST("oauth/jwt/kakao/android")
     Call<CommonRespDto> kakaoAccess(@Body Map<String, Object> data);
 
-    @PUT("user/profile")
+    @PUT("user/profileEdit")
     Call<User> updateUser(@HeaderMap Map<String, Object> data,
                           @Body User user);
 
-    @GET("user/login")
-    Call<User> getUser(@HeaderMap Map<String, Object> data);
+    @GET("user/loginUser")
+    Call<User> getLoginUser(@HeaderMap Map<String, Object> data);
+
+    @GET("user/list")
+    Call<User> getUserList();
 }
 
 

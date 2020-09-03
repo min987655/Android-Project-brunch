@@ -16,11 +16,13 @@ import android.widget.Toast;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.posts.PostsAdapter;
+import com.cos.brunch.dto.PostByTagRespDto;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.now.NowActivity;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
+import com.cos.brunch.viewmodel.PostsViewModel;
 
 import java.util.List;
 
@@ -32,6 +34,8 @@ public class PostsActivity extends AppCompatActivity {
     private RecyclerView rvPostsContent;
 
     private MainViewModel mainViewModel;
+
+    private PostsViewModel postsViewModel;
 
     private ImageView imgBack, imgSearch;
 
@@ -60,21 +64,30 @@ public class PostsActivity extends AppCompatActivity {
 
     private void initData() {
         postsAdapter = new PostsAdapter();
-//        postsAdapter.addPost(new Post("","평화로운 주말 스케치",R.drawable.img_apply_profile3, "세 달쯤 전부터 TV 리모컨의 왼쪽 방향키가 잘 눌리지 않았다. 말하자면 유튜브 메인화면에서"));
 
         rvPostsContent.setLayoutManager(new LinearLayoutManager(this));
         rvPostsContent.setAdapter(postsAdapter);
 
-        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+//        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-        // 콜백함수 : 컬랙션을 덮어 씌움
-        mainViewModel.DTO구독하기().observe(this, new Observer<List<PostRespDto>>() {
+        postsViewModel = new ViewModelProvider(this).get(PostsViewModel.class);
+
+        postsViewModel.PostByTagDto구독하기().observe(this, new Observer<List<PostByTagRespDto>>() {
             @Override
-            public void onChanged(List<PostRespDto> postRespDtos) {
-                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
-                postsAdapter.setPostRespDtos(postRespDtos);
+            public void onChanged(List<PostByTagRespDto> postByTagRespDtos) {
+                Log.d(TAG, "onChanged: 구독데이터 변경 완");
+                postsAdapter.setPostByTagRespDto(postByTagRespDtos);
             }
         });
+
+        // 콜백함수 : 컬랙션을 덮어 씌움
+//        mainViewModel.DTO구독하기().observe(this, new Observer<List<PostRespDto>>() {
+//            @Override
+//            public void onChanged(List<PostRespDto> postRespDtos) {
+//                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
+//                postsAdapter.setPostRespDtos(postRespDtos);
+//            }
+//        });
 
     }
 

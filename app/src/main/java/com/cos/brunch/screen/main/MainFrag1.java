@@ -17,6 +17,7 @@ import com.cos.brunch.R;
 import com.cos.brunch.databinding.Frag1MainBinding;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.repository.PostRepository;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
@@ -28,12 +29,11 @@ public class MainFrag1 extends Fragment {
     private MainViewModel mainViewModel;
     public List<PostRespDto> postRespDtos = new ArrayList<>();
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        final Frag1MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag1_main, container, false);
+        final Frag1MainBinding layout = DataBindingUtil.inflate(inflater, R.layout.frag1_main, container, false);
 
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
@@ -50,6 +50,8 @@ public class MainFrag1 extends Fragment {
                 Log.d(TAG, "onChanged: nickName : " + nickName);
             }
         });
+
+//        Log.d(TAG, "onCreateView: title : " + postRespDtos.get(0).getTitle());
 
         Log.d(TAG, "onCreateView: layout : " + layout);
         return layout.getRoot();

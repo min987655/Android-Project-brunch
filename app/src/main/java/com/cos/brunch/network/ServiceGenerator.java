@@ -63,6 +63,7 @@ public class ServiceGenerator {
 
         // 내 주소 http://192.168.0.64:8080/brunch/
         // 민경이 주소 http://192.168.0.61:8080/brunch/
+        // 아령이 주소 http://192.168.0.101:8080/brunch/
         // Retrofit
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.0.64:8080/brunch/")

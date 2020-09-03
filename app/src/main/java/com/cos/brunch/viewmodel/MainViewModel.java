@@ -22,7 +22,8 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application) {
         super(application);
-        allPostRespDto = postRepository.getAllPostRespDtos();
+//        allPostRespDto = postRepository.getAllPostRespDtos();
+        allPostRespDto = postRepository.getAllPostsTest();
     }
 
     public MutableLiveData<List<PostRespDto>> DTO구독하기() {

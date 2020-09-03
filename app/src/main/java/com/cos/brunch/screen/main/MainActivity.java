@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -78,13 +79,12 @@ public class MainActivity extends AppCompatActivity {
         frag1 = new MainFrag1();
         frag2 = new MainFrag2();
         frag3 = new MainFrag3();
-//        frag4 = new MainFrag4();
+        frag4 = new MainFrag4();
 
         mainAdapter.addFragment(frag1);
         mainAdapter.addFragment(frag2);
         mainAdapter.addFragment(frag3);
-//        mainAdapter.addFragment(frag4);
-
+        mainAdapter.addFragment(frag4);
         viewPager.setAdapter(mainAdapter);
     }
 
@@ -108,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupNavigationView() {
 
-        UserRepository userRepository = UserRepository.getInstance();
 
         Intent intent = getIntent();
         String jwtToken = intent.getExtras().getString("jwtToken");
@@ -125,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
         headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
         Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
 
-        userRepository.getLoginUser(headerJwtToken);
-
         NavigationView navigationView = findViewById(R.id.nav);
+
+        UserRepository userRepository = UserRepository.getInstance();
+        userRepository.getLoginUser(headerJwtToken, navigationView);
+
         NavigationViewHelper.enableNavigation(mContext, navigationView, jwtToken);
     }
 

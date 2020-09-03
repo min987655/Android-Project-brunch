@@ -6,10 +6,6 @@
 
     <!--setPost-->
     <data>
-
-        <variable
-            name="user"
-            type="com.cos.brunch.model.User" />
     </data>
 
     <LinearLayout
@@ -24,7 +20,7 @@
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginBottom="7dp"
-            android:src="@{user.profileImage}" />
+            android:src="@drawable/img_header" />
 
         <TextView
             android:id="@+id/tv_nickname"
@@ -32,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="13dp"
             android:gravity="center"
-            android:text="@{user.nickName}"
+            android:text="닉네임"
             android:textSize="13sp" />
 
         <Button

@@ -18,6 +18,7 @@ import com.cos.brunch.R;
 import com.cos.brunch.databinding.Frag2MainBinding;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.repository.PostRepository;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class MainFrag2 extends Fragment {
                 layout.tvContent2.setText(content2);
 
                 Log.d(TAG, "onChanged: title2 : " + title2);
+                Log.d(TAG, "onChanged: title2 : layout : " + layout.tvTitle2.getText());
                 Log.d(TAG, "onChanged: content2 : " + content2);
                 Log.d(TAG, "onChanged: nickName2 : " + nickName2);
             }

@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.databinding.ItemPostBinding;
+import com.cos.brunch.databinding.ItemPostTagBinding;
+import com.cos.brunch.dto.PostByTagRespDto;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 
@@ -21,8 +23,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
 
     private static OnClickListener mListener = null;
     private static final String TAG = "PostsAdapter";
-    private List<Post> posts = new ArrayList<>();
-    private List<PostRespDto> postRespDtos = new ArrayList<>();
+    private List<PostByTagRespDto> postByTagRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
         void onItemClick(View v, int pos);
@@ -37,48 +38,44 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "onCreateViewHolder: ");
-        ItemPostBinding itemPostBinding = DataBindingUtil.inflate(
+        ItemPostTagBinding itemPostTagBinding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()),
-                R.layout.item_post,
+                R.layout.item_post_tag,
                 parent, // 뷰그룹(해당 프로젝트에서는 리사이클러뷰)
                 false
         );
-        return new MyViewHolder(itemPostBinding);
+        return new MyViewHolder(itemPostTagBinding);
 
     }
 
     // 껍데기에 데이터 바인딩
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        PostRespDto currentPost = postRespDtos.get(position);
-        holder.itemPostBinding.setPostRespDto(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
+        PostByTagRespDto currentPost = postByTagRespDtos.get(position);
+        holder.itemPostTagBinding.setPostByTagRespDto(currentPost); // 오브젝트 통채로 넘기면 xml에 변수 값 알아서 찾아 들어감
     }
 
     @Override
     public int getItemCount() {
-        Log.d(TAG, "getItemCount: " + posts.size());
-        return postRespDtos.size();
+        Log.d(TAG, "getItemCount: " + postByTagRespDtos.size());
+        return postByTagRespDtos.size();
     }
 
-    public void setPostRespDtos(List<PostRespDto> postRespDtos){
-        this.postRespDtos = postRespDtos;
+    public void setPostByTagRespDto(List<PostByTagRespDto> postByTagRespDtos){
+        this.postByTagRespDtos = postByTagRespDtos;
         notifyDataSetChanged();
     }
-
-//    public Post getPostAt(int position){
-//        return posts.get(position);
-//    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private ItemPostBinding itemPostBinding;
+        private ItemPostTagBinding itemPostTagBinding;
 
-        public MyViewHolder(@NonNull ItemPostBinding itemPostBinding) {
-            super(itemPostBinding.getRoot()); // view. 부모에게 view를 넘겨줌
-            this.itemPostBinding = itemPostBinding;
+        public MyViewHolder(@NonNull ItemPostTagBinding itemPostTagBinding) {
+            super(itemPostTagBinding.getRoot()); // view. 부모에게 view를 넘겨줌
+            this.itemPostTagBinding = itemPostTagBinding;
 
-            itemPostBinding.getRoot().setOnClickListener(new View.OnClickListener() {
+            itemPostTagBinding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();

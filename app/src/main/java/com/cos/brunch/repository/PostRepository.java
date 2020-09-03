@@ -4,6 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.cos.brunch.dto.PostByTagRespDto;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.network.service.PostService;
@@ -23,8 +24,9 @@ public class PostRepository {
 
     private static final String TAG = "PostRepository";
 
-    private MutableLiveData<List<Post>> allPosts = new MutableLiveData<>();
+//    private MutableLiveData<List<Post>> allPosts = new MutableLiveData<>();
     private MutableLiveData<List<PostRespDto>> allPostRespDtos = new MutableLiveData<>();
+    private MutableLiveData<List<PostByTagRespDto>> allPostByTagRespDtos = new MutableLiveData<>();
     private PostService PostService = ServiceGenerator.createService(PostService.class);
 
     private static PostRepository instance = new PostRepository();
@@ -34,53 +36,57 @@ public class PostRepository {
         return instance;
     }
 
-//    public MutableLiveData<List<Post>> getAllPosts() {
-//
-//        Call<List<Post>> call = brunchService.getPosts();
-//        call.enqueue(new Callback<List<Post>>() {
-//            @Override
-//            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-//                if (!response.isSuccessful()) {
-//                    Log.d(TAG, "onResponse: 연결실패 ! ");
-//                    return;
-//                }
-//                List<Post> postItems = response.body();
-//                Log.d(TAG, "onResponse: postItems : " + postItems);
-//
-//                // createDate format 맞춤
-//                for (Post post : postItems) {
-//
-//                    String serverDate = post.getCreateDate();
-////                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
-//
-//                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-//                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-//
-//                    try {
-//                        Date testServerDate = serverDateFormat.parse(serverDate);
-//                        String testNewDate = newDateFormat.format(testServerDate);
-//
-//                        String newDate = testNewDate;
-//                        post.setCreateDate(newDate);
-//
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//                if (postItems != null) {
-//                    allPosts.setValue(postItems);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Post>> call, Throwable t) {
-//                Log.d(TAG, "onFailure: error : " + t.getMessage());
-//            }
-//
-//        });
-//        return allPosts;
-//    }
+    public MutableLiveData<List<PostByTagRespDto>> getAllPostByTags(){
+
+        Call<List<PostByTagRespDto>> call = PostService.getPostByTag();
+        call.enqueue(new Callback<List<PostByTagRespDto>>() {
+            @Override
+            public void onResponse(Call<List<PostByTagRespDto>> call, Response<List<PostByTagRespDto>> response) {
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: getAllPostByTags : 연결실패 ! " + response.code());
+                    return;
+                }
+                List<PostByTagRespDto> postByTagRespDtoItems = response.body();
+                Log.d(TAG, "onResponse: postByTagRespDtoItems : " + postByTagRespDtoItems);
+
+                if (postByTagRespDtoItems != null) {
+                    allPostByTagRespDtos.setValue(postByTagRespDtoItems);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PostByTagRespDto>> call, Throwable t) {
+                Log.d(TAG, "onFailure: getAllPostByTags : error : " + t.getMessage());
+            }
+        });
+        return allPostByTagRespDtos;
+    }
+
+    public MutableLiveData<List<PostRespDto>> getAllPostsTest() {
+
+        Call<List<PostRespDto>> call = PostService.getPosts();
+        call.enqueue(new Callback<List<PostRespDto>>() {
+            @Override
+            public void onResponse(Call<List<PostRespDto>> call, Response<List<PostRespDto>> response) {
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: getAllPostsTest : 연결실패 ! ");
+                    return;
+                }
+                List<PostRespDto> postItems = response.body();
+                Log.d(TAG, "onResponse: getAllPostsTest : postItems : " + postItems);
+
+                if (postItems != null) {
+                    allPostRespDtos.setValue(postItems);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PostRespDto>> call, Throwable t) {
+                Log.d(TAG, "onFailure: getAllPostsTest : error : " + t.getMessage());
+            }
+        });
+        return allPostRespDtos;
+    }
 
     public int save(Map<String,Object> headerJwtToken,Post post){
 
@@ -95,6 +101,7 @@ public class PostRepository {
                 }
             }
 
+            // 서버에서 돌려주는 값 json 아니라서 타입 오류남. 받을 필요 없어서 처리 안함.
             @Override
             public void onFailure(Call<Post> call, Throwable t) {
                 Log.d(TAG, "onFailure: save : " + t.getMessage());
@@ -102,7 +109,6 @@ public class PostRepository {
         });
         return -1;
     }
-
 
     public MutableLiveData<List<PostRespDto>> getAllPostRespDtos() {
 

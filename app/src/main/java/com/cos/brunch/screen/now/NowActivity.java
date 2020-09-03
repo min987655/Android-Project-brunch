@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,13 +21,16 @@ import com.cos.brunch.adapter.now.ContentVerticalAdapter;
 import com.cos.brunch.adapter.now.KeywordAdapter;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
+import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.screen.posts.PostsActivity;
 import com.cos.brunch.screen.search.SearchActivity;
 import com.cos.brunch.utils.NavigationViewHelper;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class NowActivity extends AppCompatActivity {
 
@@ -131,7 +135,15 @@ public class NowActivity extends AppCompatActivity {
         SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
         String serverJwtToken = sf.getString("jwtToken", "");
 
+        Map<String, Object> headerJwtToken = new HashMap<>();
+        headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+        Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
         NavigationView navigationView = findViewById(R.id.nav);
+
+        UserRepository userRepository = UserRepository.getInstance();
+        userRepository.getLoginUser(headerJwtToken, navigationView);
+
         NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
 
     }
