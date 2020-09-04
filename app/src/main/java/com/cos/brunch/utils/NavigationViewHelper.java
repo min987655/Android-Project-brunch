@@ -37,7 +37,7 @@ public class NavigationViewHelper {
         nav = view.findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
         navHome = navHeader.findViewById(R.id.tv_home);
-        navProfile = navHeader.findViewById(R.id.img_profile);
+        navProfile = navHeader.findViewById(R.id.img_profile_header);
         navWrite = navHeader.findViewById(R.id.btn_write);
         navCabinet = navHeader.findViewById(R.id.tv_cabinet);
         navNow = navHeader.findViewById(R.id.tv_now);

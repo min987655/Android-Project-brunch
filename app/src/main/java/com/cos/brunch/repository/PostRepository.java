@@ -62,18 +62,26 @@ public class PostRepository {
         return allPostByTagRespDtos;
     }
 
-    public MutableLiveData<List<PostRespDto>> getAllPostsTest() {
+    public MutableLiveData<List<PostRespDto>> getAllPosts() {
 
         Call<List<PostRespDto>> call = PostService.getPosts();
         call.enqueue(new Callback<List<PostRespDto>>() {
             @Override
             public void onResponse(Call<List<PostRespDto>> call, Response<List<PostRespDto>> response) {
                 if (!response.isSuccessful()) {
-                    Log.d(TAG, "onResponse: getAllPostsTest : 연결실패 ! ");
+                    Log.d(TAG, "onResponse: getAllPosts : 연결실패 ! ");
                     return;
                 }
                 List<PostRespDto> postItems = response.body();
-                Log.d(TAG, "onResponse: getAllPostsTest : postItems : " + postItems);
+                Log.d(TAG, "onResponse: getAllPosts : postItems : " + postItems);
+
+                for (PostRespDto postRespDto : postItems) {
+
+                    String coverImg = postRespDto.getCoverImg();
+                    String picassoImg = "http:"+coverImg;
+
+                    postRespDto.setCoverImg(picassoImg);
+                }
 
                 if (postItems != null) {
                     allPostRespDtos.setValue(postItems);
@@ -82,7 +90,7 @@ public class PostRepository {
 
             @Override
             public void onFailure(Call<List<PostRespDto>> call, Throwable t) {
-                Log.d(TAG, "onFailure: getAllPostsTest : error : " + t.getMessage());
+                Log.d(TAG, "onFailure: getAllPosts : error : " + t.getMessage());
             }
         });
         return allPostRespDtos;

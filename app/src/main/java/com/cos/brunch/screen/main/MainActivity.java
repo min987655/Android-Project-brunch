@@ -34,7 +34,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Main_Activity";
-    private Context mContext = MainActivity.this;
+    private MainActivity mContext = MainActivity.this;
 
     private DrawerLayout drawerLayout;
     private ImageView imgMenu, imgSearch;
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav);
 
         UserRepository userRepository = UserRepository.getInstance();
-        userRepository.getLoginUser(headerJwtToken, navigationView);
+        userRepository.getLoginUser(headerJwtToken, navigationView, mContext);
 
         NavigationViewHelper.enableNavigation(mContext, navigationView, jwtToken);
     }

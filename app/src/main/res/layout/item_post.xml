@@ -6,7 +6,6 @@
 
     <!--setPost-->
     <data>
-
         <variable
             name="postRespDto"
             type="com.cos.brunch.dto.PostRespDto" />
@@ -82,7 +81,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_cover" />
+                app:coverImg="@{postRespDto.coverImg}" />
 
 
         </RelativeLayout>

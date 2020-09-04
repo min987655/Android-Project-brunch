@@ -1,9 +1,6 @@
 package com.cos.brunch.repository;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +13,7 @@ import com.cos.brunch.model.User;
 import com.cos.brunch.network.ServiceGenerator;
 import com.cos.brunch.network.service.UserService;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,19 +55,6 @@ public class UserRepository {
                 User updateUser = response.body();
                 Log.d(TAG, "onResponse : updateUser : " + updateUser);
 
-//                Uri imgUri = Uri.parse(updateUser.getProfileImage());
-
-//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(v.getContext().getContentResolver(), imgUri);
-
-                TextView tvNickName;
-                ImageView ivProfile;
-
-                tvNickName = v.findViewById(R.id.tv_nickname);
-                tvNickName.setText(updateUser.getNickName());
-
-                ivProfile = v.findViewById(R.id.img_profile);
-//                ivProfile.set
-
                 if (updateUser != null) {
                     loginUser.add(updateUser);
                 }
@@ -83,7 +68,7 @@ public class UserRepository {
         return -1;
     }
 
-    public User getLoginUser(Map<String , Object> headerJwtToken, NavigationView view) {
+    public User getLoginUser(Map<String , Object> headerJwtToken, final NavigationView view, final Context context) {
 
         NavigationView nav;
         final View navHeader;
@@ -93,7 +78,7 @@ public class UserRepository {
         nav = view.findViewById(R.id.nav);
         navHeader = nav.getHeaderView(0);
 
-        navProfile = navHeader.findViewById(R.id.img_profile);
+        navProfile = navHeader.findViewById(R.id.img_profile_header);
         navNickName = navHeader.findViewById(R.id.tv_nickname);
 
         Call<User> call = userService.getLoginUser(headerJwtToken);
@@ -111,7 +96,10 @@ public class UserRepository {
                 Log.d(TAG, "onResponse : getLoginUser : updateUser : " + updateUser);
 
 
-//                navProfile.setImageURI(updateUser.getProfileImage());
+                String stringUpdateUser = updateUser.getProfileImage();
+//                Glide.with(context).load(stringUpdateUser).into(navProfile);
+                Log.d(TAG, "onResponse: stringUpdateUser : " + stringUpdateUser);
+                Picasso.get().load(stringUpdateUser).into(navProfile);
                 navNickName.setText(updateUser.getNickName());
 
 

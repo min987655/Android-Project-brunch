@@ -109,7 +109,7 @@ public class LibraryActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav);
 
         UserRepository userRepository = UserRepository.getInstance();
-        userRepository.getLoginUser(headerJwtToken, navigationView);
+        userRepository.getLoginUser(headerJwtToken, navigationView, mContext);
 
         NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
     }

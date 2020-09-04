@@ -1,37 +1,10 @@
 package com.cos.brunch.network;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.util.Log;
-
-import com.cos.brunch.dto.CommonRespDto;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import okhttp3.Cookie;
-import okhttp3.CookieJar;
-import okhttp3.Headers;
-import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
-import okhttp3.JavaNetCookieJar;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Header;
 
 public class ServiceGenerator {
 
