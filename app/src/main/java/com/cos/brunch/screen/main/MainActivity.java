@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private MainFragmentAdapter mainAdapter;
     private List<PostRespDto> postRespDtos = new ArrayList<>();
-//    private List<Post> posts = new ArrayList<>();
-//    public String serverJwtToken;
 
     private MainFrag1 frag1;
     private MainFrag2 frag2;

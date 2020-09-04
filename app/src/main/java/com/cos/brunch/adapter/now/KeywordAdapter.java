@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.model.Tag;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
 public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHolder> {
 
     private static final String TAG = "KeywordAdapter";
-    private List<Post> posts = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
 
     // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
     private static OnItemClickListener mListener = null;
@@ -31,8 +32,8 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
         this.mListener = listener ;
     }
 
-    public void addPost(Post post) {
-        posts.add(post);
+    public void addTag(Tag tag) {
+        tags.add(tag);
     }
 
     // 껍데기 생성
@@ -48,15 +49,15 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
     // 껍데기에 데이터 바인등
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post = posts.get(position);
-        Log.d(TAG, "onBindViewHolder: " + post);
-        holder.setItem(post);
+        Tag tag = tags.get(position);
+        Log.d(TAG, "onBindViewHolder: " + tag);
+        holder.setItem(tag);
     }
 
     @Override
     public int getItemCount() {
-        Log.d(TAG, "getItemCount: " + posts.size());
-        return posts.size();
+        Log.d(TAG, "getItemCount: " + tags.size());
+        return tags.size();
     }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
@@ -81,9 +82,9 @@ public class KeywordAdapter extends RecyclerView.Adapter<KeywordAdapter.MyViewHo
             });
         }
 
-        public void setItem(Post post) {
+        public void setItem(Tag tag) {
             Log.d(TAG, "setItem: ");
-//            btnKeyword.setText(post.getKeyword());
+            btnKeyword.setText(tag.getTag());
         }
     }
 

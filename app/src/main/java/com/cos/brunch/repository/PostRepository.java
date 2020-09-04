@@ -132,25 +132,33 @@ public class PostRepository {
                 Log.d(TAG, "onResponse: getAllPostRespDtos : postRespDtoItems : " + postRespDtoItems);
                 Log.d(TAG, "onResponse: getAllPostRespDtos : postRespDtoItems : " + response.code());
 
-                // createDate format 맞춤
+//                // createDate format 맞춤
+//                for (PostRespDto postRespDto : postRespDtoItems) {
+//
+//                    String serverDate = postRespDto.getCreateDate();
+////                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
+//
+//                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+//                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+//
+//                    try {
+//                        Date testServerDate = serverDateFormat.parse(serverDate);
+//                        String testNewDate = newDateFormat.format(testServerDate);
+//
+//                        String newDate = testNewDate;
+//                        postRespDto.setCreateDate(newDate);
+//
+//                    } catch (ParseException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+
                 for (PostRespDto postRespDto : postRespDtoItems) {
 
-                    String serverDate = postRespDto.getCreateDate();
-//                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
+                    String coverImg = postRespDto.getCoverImg();
+                    String picassoImg = "http:"+coverImg;
 
-                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-
-                    try {
-                        Date testServerDate = serverDateFormat.parse(serverDate);
-                        String testNewDate = newDateFormat.format(testServerDate);
-
-                        String newDate = testNewDate;
-                        postRespDto.setCreateDate(newDate);
-
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
+                    postRespDto.setCoverImg(picassoImg);
                 }
 
                 if (postRespDtoItems != null) {
