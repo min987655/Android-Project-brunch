@@ -7,8 +7,8 @@
     <!--setPost-->
     <data>
         <variable
-            name="postByTagRespDto"
-            type="com.cos.brunch.dto.PostByTagRespDto" />
+            name="post"
+            type="com.cos.brunch.model.Post" />
     </data>
 
     <RelativeLayout
@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="@{postByTagRespDto.title}"
+                android:text="@{post.title}"
                 android:textSize="17sp" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:lineSpacingExtra="2dp"
-                android:text="@{postByTagRespDto.content}"
+                android:text="@{post.content}"
                 android:textColor="@color/colorGray"
                 android:textSize="13sp" />
 
@@ -49,19 +49,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_post_content"
-                android:text="@{postByTagRespDto.createDate}"
+                android:text="@{post.createDate}"
                 android:textColor="@color/colorCharcoal" />
 
-            <TextView
-                android:id="@+id/tv_by"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_post_content"
-                android:layout_toRightOf="@+id/tv_post_createdate"
-                android:fontFamily="@font/droidserif_regular"
-                android:text=" · by  "
-                android:textColor="@color/colorCharcoal"
-                android:textStyle="italic" />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_by"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/tv_post_content"-->
+<!--                android:layout_toRightOf="@+id/tv_post_createdate"-->
+<!--                android:fontFamily="@font/droidserif_regular"-->
+<!--                android:text=" · by  "-->
+<!--                android:textColor="@color/colorCharcoal"-->
+<!--                android:textStyle="italic" />-->
 
             <TextView
                 android:id="@+id/tv_post_apply_nickname"
@@ -69,7 +69,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_post_content"
                 android:layout_toRightOf="@+id/tv_by"
-                android:text="@{postByTagRespDto.nickName}"
                 android:textColor="@color/colorCharcoal" />
 
             <ImageView
@@ -81,7 +80,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
-                app:coverImg="@{postByTagRespDto.coverImg}" />
+                app:coverImg="@{post.coverImg}" />
         </RelativeLayout>
 
         <View

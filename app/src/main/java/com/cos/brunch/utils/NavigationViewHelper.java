@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cos.brunch.R;
+import com.cos.brunch.repository.PostRepository;
+import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.screen.cabinet.CabinetActivity;
 import com.cos.brunch.screen.feed.FeedActivity;
 import com.cos.brunch.screen.library.LibraryActivity;
@@ -20,6 +22,9 @@ import com.cos.brunch.screen.write.WriteActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class NavigationViewHelper {
 

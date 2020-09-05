@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.lifecycle.MutableLiveData;
 
 import com.cos.brunch.R;
+import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
 import com.cos.brunch.network.ServiceGenerator;
 import com.cos.brunch.network.service.UserService;
@@ -38,6 +39,53 @@ public class UserRepository {
         return instance;
     }
 
+    public MutableLiveData<List<User>> mtAllUser(){
+        Call<List<User>> call = userService.getUserList();
+        call.enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: mtAllUser : response.code() : " + response.code());
+                    return;
+                }
+                Log.d(TAG, "onResponse: mtAllUser : response.body() : " + response.body());
+
+                List<User> userItem = response.body();
+
+                if (userItem != null) {
+                    allUsers.setValue(userItem);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+                Log.d(TAG, "onFailure: mtAllUser : " + t.getMessage());
+            }
+        });
+        return allUsers;
+    }
+
+    // 테스트 : 메인 search 이벤트에 걸려있음.
+    public int findById(int id) {
+        Call<User> call = userService.getUserProfile(id);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: findById : response.code() : " + response.code());
+                    return;
+                }
+                Log.d(TAG, "onResponse: findById : response.body() : " + response.body());
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getMessage());
+            }
+        });
+
+        return -1;
+    }
 
     public int update(Map<String,Object> headerJwtToken, User user, final View v){
 
@@ -95,16 +143,11 @@ public class UserRepository {
                 User updateUser = response.body();
                 Log.d(TAG, "onResponse : getLoginUser : updateUser : " + updateUser);
 
-
                 String stringUpdateUser = updateUser.getProfileImage();
-//                Glide.with(context).load(stringUpdateUser).into(navProfile);
                 Log.d(TAG, "onResponse: stringUpdateUser : " + stringUpdateUser);
                 Picasso.get().load(stringUpdateUser).into(navProfile);
                 navNickName.setText(updateUser.getNickName());
-
-
             }
-
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 Log.d(TAG, "onFailure: getLoginUser : " + t.getMessage());

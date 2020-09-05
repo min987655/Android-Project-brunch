@@ -6,9 +6,9 @@
 
     <!--setPost-->
     <data>
-        <variable
-            name="postRespDto"
-            type="com.cos.brunch.dto.PostRespDto" />
+<!--        <variable-->
+<!--            name="postRespDto"-->
+<!--            type="com.cos.brunch.dto.PostRespDto" />-->
     </data>
 
     <RelativeLayout
@@ -19,13 +19,12 @@
             android:id="@+id/img_cover_back_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_cover" />
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E2314A34" />
+            android:background="#E25C5C5C" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -66,8 +65,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/img_cover" />
+            android:layout_centerVertical="true"/>
 
         <TextView
             android:id="@+id/tv_title"
@@ -78,7 +76,7 @@
             android:gravity="center"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/notosans_light"
-            android:text="@{postRespDto.title}"
+            android:text=""
             android:ellipsize="end"
             android:textColor="@color/colorWhite"
             android:textSize="25sp" />
@@ -106,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/tv_by"
-                android:text="@{postRespDto.nickName}"
+                android:text=""
                 android:textColor="@color/colorWhite40"
                 android:textSize="15sp" />
 

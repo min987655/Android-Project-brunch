@@ -19,6 +19,7 @@ import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.repository.PostRepository;
 import com.cos.brunch.viewmodel.MainViewModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,14 +45,17 @@ public class MainFrag1 extends Fragment {
                 Log.d(TAG, "onChanged: 구독 !!!! " + postRespDtos);
                 String title = postRespDtos.get(0).getTitle();
                 String nickName = postRespDtos.get(0).getNickName();
+
+                String coverImage = postRespDtos.get(0).getCoverImg();
+                Picasso.get().load(coverImage).into(layout.imgCover);
+                Picasso.get().load(coverImage).into(layout.imgCoverBackMain);
+
                 layout.tvTitle.setText(title);
                 layout.tvNicknameMain.setText(nickName);
                 Log.d(TAG, "onChanged: title : " + title);
                 Log.d(TAG, "onChanged: nickName : " + nickName);
             }
         });
-
-//        Log.d(TAG, "onCreateView: title : " + postRespDtos.get(0).getTitle());
 
         Log.d(TAG, "onCreateView: layout : " + layout);
         return layout.getRoot();

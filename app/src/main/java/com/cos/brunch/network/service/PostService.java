@@ -16,21 +16,26 @@ import retrofit2.http.Path;
 
 public interface PostService {
 
+    // 메인 : post + nickName
     @GET("post/main")
-    Call<List<PostRespDto>> getPostRespDto();
+    Call<List<PostRespDto>> mtPostRespDtos();
 
+    // post
     @GET("post/list")
-    Call<List<PostRespDto>> getPosts();
+    Call<List<Post>> getPosts();
 
-    @GET("post/list/그림웹툰")
+    // now : post + tag
+    @GET("post/list/글쓰기코치")
     Call<List<PostByTagRespDto>> getPostByTag();
 
+    // 글쓰기
     @POST("post/save")
     Call<Post> createPost(@HeaderMap Map<String, Object> data,
                           @Body Post post);
 
-    @GET("/post/writer")
-    Call<Post> getWriterPost(@HeaderMap Map<String, Object> data);
+    // 작가의 서랍
+    @GET("post/writer")
+    Call<List<Post>> getWriterPost(@HeaderMap Map<String, Object> data);
 }
 
 

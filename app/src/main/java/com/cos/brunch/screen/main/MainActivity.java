@@ -97,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
         imgSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // 서버 특정유저 주소값 넘기기 테스트
+//                int id = 1;
+//                UserRepository userRepository = UserRepository.getInstance();
+//                userRepository.findById(id);
+
                 Intent intent = new Intent(mContext, SearchActivity.class);
                 startActivity(intent);
             }
@@ -105,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigationView() {
-
 
         Intent intent = getIntent();
         String jwtToken = intent.getExtras().getString("jwtToken");

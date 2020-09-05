@@ -17,7 +17,9 @@ import com.cos.brunch.R;
 import com.cos.brunch.databinding.Frag4MainBinding;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.repository.PostRepository;
 import com.cos.brunch.viewmodel.MainViewModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,28 +37,37 @@ public class MainFrag4 extends Fragment {
 
         final Frag4MainBinding layout = DataBindingUtil.inflate(inflater,R.layout.frag4_main, container, false);
 
-        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+        PostRepository postRepository = PostRepository.getInstance();
 
-        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
-            @Override
-            public void onChanged(List<PostRespDto> postRespDtos) {
-                Log.d(TAG, "onChanged: 구독 !!!! " + postRespDtos);
-                String title4 = postRespDtos.get(3).getTitle();
-                String title5 = postRespDtos.get(4).getTitle();
-                String nickName4 = postRespDtos.get(3).getNickName();
-                String nickName5 = postRespDtos.get(4).getNickName();
-                layout.tvTitle4.setText(title4);
-                layout.tvTitle5.setText(title5);
-                layout.tvNicknameMain4.setText(nickName4);
-                layout.tvNicknameMain5.setText(nickName5);
+        String title4 = postRepository.getPostRespDtos().getValue().get(3).getTitle();
+        String nickName4 = postRepository.getPostRespDtos().getValue().get(3).getNickName();
 
-                Log.d(TAG, "onChanged: title2 : " + title4);
-                Log.d(TAG, "onChanged: title2 : " + title5);
-                Log.d(TAG, "onChanged: nickName2 : " + nickName4);
-                Log.d(TAG, "onChanged: nickName2 : " + nickName5);
-            }
-        });
+        String title5 = postRepository.getPostRespDtos().getValue().get(4).getTitle();
+        String nickName5 = postRepository.getPostRespDtos().getValue().get(4).getNickName();
+
+//        String title4 = postRepository.getAllPosts().getValue().get(3).getTitle();
+//        String nickName4 = postRepository.getAllPosts().getValue().get(3).getNickName();
+//
+//        String title5 = postRepository.getAllPosts().getValue().get(4).getTitle();
+//        String nickName5 = postRepository.getAllPosts().getValue().get(4).getNickName();
+
+        String coverImage4 = postRepository.getPostRespDtos().getValue().get(3).getCoverImg();
+        String coverImage5 = postRepository.getPostRespDtos().getValue().get(4).getCoverImg();
+        Picasso.get().load(coverImage4).into(layout.imgCoverBackMain1);
+        Picasso.get().load(coverImage5).into(layout.imgCoverBackMain2);
+
+
+
+        layout.tvTitle4.setText(title4);
+        layout.tvNicknameMain4.setText(nickName4);
+
+        Log.d(TAG, "onCreateView: title4 : " + title4);
+        Log.d(TAG, "onCreateView: nickName4 : " + nickName4);
+
+        layout.tvTitle5.setText(title5);
+        layout.tvNicknameMain5.setText(nickName5);
+
+
         return layout.getRoot();
     }
 }

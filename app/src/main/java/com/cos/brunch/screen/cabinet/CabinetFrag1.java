@@ -20,16 +20,17 @@ import com.cos.brunch.adapter.cabinet.CabinetTap1Adapter;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
 import com.cos.brunch.screen.post.DetailPostActivity;
+import com.cos.brunch.viewmodel.CabinetViewModel;
 import com.cos.brunch.viewmodel.MainViewModel;
 
 import java.util.List;
 
 public class CabinetFrag1 extends Fragment {
 
-    private static final String TAG = "ApplyFrag1";
+    private static final String TAG = "CabinetFrag1";
     public CabinetTap1Adapter cabinetTap1Adapter;
     private RecyclerView rvCabinetContent1;
-    private MainViewModel mainViewModel;
+    private CabinetViewModel cabinetViewModel;
 
     @Nullable
     @Override
@@ -45,7 +46,7 @@ public class CabinetFrag1 extends Fragment {
     }
 
     private void init(View v){
-        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        cabinetViewModel = new ViewModelProvider(requireActivity()).get(CabinetViewModel.class);
         rvCabinetContent1 = v.findViewById(R.id.rv_cabinet_content1);
         cabinetTap1Adapter = new CabinetTap1Adapter();
     }
@@ -56,15 +57,13 @@ public class CabinetFrag1 extends Fragment {
         rvCabinetContent1.setLayoutManager(layoutManager);
         rvCabinetContent1.setAdapter(cabinetTap1Adapter);
 
-        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+        Log.d(TAG, "onViewCreated: mainViewModel : " + cabinetViewModel);
 
-        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
+        cabinetViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
             @Override
-            public void onChanged(List<PostRespDto> postRespDtos) {
-                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+postRespDtos);
-
-                cabinetTap1Adapter.setPostRespDtos(postRespDtos);
-
+            public void onChanged(List<Post> posts) {
+                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다."+posts);
+                cabinetTap1Adapter.setPost(posts);
             }
         });
 

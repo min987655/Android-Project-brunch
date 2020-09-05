@@ -79,16 +79,6 @@ public class PostsActivity extends AppCompatActivity {
                 postsAdapter.setPostByTagRespDto(postByTagRespDtos);
             }
         });
-
-        // 콜백함수 : 컬랙션을 덮어 씌움
-//        mainViewModel.DTO구독하기().observe(this, new Observer<List<PostRespDto>>() {
-//            @Override
-//            public void onChanged(List<PostRespDto> postRespDtos) {
-//                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다.");
-//                postsAdapter.setPostRespDtos(postRespDtos);
-//            }
-//        });
-
     }
 
     private void initlistener() {

@@ -29,7 +29,11 @@ public interface UserService {
     Call<User> getLoginUser(@HeaderMap Map<String, Object> data);
 
     @GET("user/list")
-    Call<User> getUserList();
+    Call<List<User>> getUserList();
+
+    // 구독한 작가 찾기
+    @GET("user/profile/{id}")
+    Call<User> getUserProfile(@Path("id") int id);
 }
 
 
