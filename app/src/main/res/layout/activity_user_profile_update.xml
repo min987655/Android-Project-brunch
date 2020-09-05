@@ -17,7 +17,7 @@
     <include layout="@layout/toolbar_sub"/>
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/img_user_profile"
+        android:id="@+id/img_user_profile_update"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignParentRight="true"
@@ -38,7 +38,7 @@
         android:textSize="13sp" />
 
     <EditText
-        android:id="@+id/et_nickname"
+        android:id="@+id/et_nickname_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_nickname_title"
@@ -51,7 +51,7 @@
         android:id="@+id/img_br"
         android:layout_width="match_parent"
         android:layout_height="0.3dp"
-        android:layout_below="@+id/et_nickname"
+        android:layout_below="@+id/et_nickname_update"
         android:layout_marginRight="@dimen/toolbar_marginRight"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:layout_marginBottom="25dp"
@@ -69,7 +69,7 @@
         android:textSize="13sp" />
 
     <EditText
-        android:id="@+id/et_bio"
+        android:id="@+id/et_bio_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_introduce"

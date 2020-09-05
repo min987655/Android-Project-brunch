@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.lifecycle.MutableLiveData;
 
 import com.cos.brunch.R;
-import com.cos.brunch.model.Post;
 import com.cos.brunch.model.User;
 import com.cos.brunch.network.ServiceGenerator;
 import com.cos.brunch.network.service.UserService;
@@ -30,6 +29,8 @@ public class UserRepository {
 
     private MutableLiveData<List<User>> allUsers = new MutableLiveData<>();
     private List<User> loginUser = new ArrayList<>();
+    public List<User> loginUserProfile = new ArrayList<>();
+    private MutableLiveData<User> mtloginUser = new MutableLiveData<>();
     private UserService userService = ServiceGenerator.createService(UserService.class);
 
     private static UserRepository instance = new UserRepository();
@@ -66,8 +67,8 @@ public class UserRepository {
     }
 
     // 테스트 : 메인 search 이벤트에 걸려있음.
-    public int findById(int id) {
-        Call<User> call = userService.getUserProfile(id);
+    public int findById(Map<String,Object> headerJwtToken, int id) {
+        Call<User> call = userService.getUserProfile(headerJwtToken, id);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -116,7 +117,7 @@ public class UserRepository {
         return -1;
     }
 
-    public User getLoginUser(Map<String , Object> headerJwtToken, final NavigationView view, final Context context) {
+    public List<User> getLoginUser(Map<String , Object> headerJwtToken, final NavigationView view, final Context context) {
 
         NavigationView nav;
         final View navHeader;
@@ -153,6 +154,38 @@ public class UserRepository {
                 Log.d(TAG, "onFailure: getLoginUser : " + t.getMessage());
             }
         });
-        return null;
+        return loginUser;
+    }
+
+    public List<User> loginUserProfile(Map<String , Object> headerJwtToken) {
+
+        Call<User> call = userService.getLoginUser(headerJwtToken);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, "onResponse: loginUserProfile : response.code() : " + response.code());
+                    return;
+                }
+                Log.d(TAG, "onResponse: loginUserProfile : response.body() : " + response.body());
+
+                User updateUser = response.body();
+                Log.d(TAG, "onResponse : loginUserProfile : updateUser : " + updateUser);
+
+                Log.d(TAG, "onResponse: loginUserProfile : getNickName() : " + updateUser.getNickName());
+                Log.d(TAG, "onResponse: loginUserProfile : getBio() : " + updateUser.getBio());
+                Log.d(TAG, "onResponse: loginUserProfile : getProfileImage() : " + updateUser.getProfileImage());
+
+                if(updateUser != null) {
+                    loginUserProfile.add(updateUser);
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.d(TAG, "onFailure: loginUserProfile : " + t.getMessage());
+            }
+        });
+        return loginUserProfile;
     }
 }

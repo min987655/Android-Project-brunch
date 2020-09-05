@@ -30,7 +30,7 @@ public interface PostService {
 
     // 글쓰기
     @POST("post/save")
-    Call<Post> createPost(@HeaderMap Map<String, Object> data,
+    Call<Post> savePost(@HeaderMap Map<String, Object> data,
                           @Body Post post);
 
     // 작가의 서랍

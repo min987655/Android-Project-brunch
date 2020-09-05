@@ -168,7 +168,7 @@ public class PostRepository {
 
     // post/save
     public int save(Map<String, Object> headerJwtToken, Post post) {
-        Call<Post> call = PostService.createPost(headerJwtToken, post);
+        Call<Post> call = PostService.savePost(headerJwtToken, post);
         call.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {

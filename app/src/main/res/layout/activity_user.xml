@@ -5,11 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="user"
-            type="com.cos.brunch.model.User" />
-
+<!--        <variable-->
+<!--            name="user"-->
+<!--            type="com.cos.brunch.model.User" />-->
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -30,19 +28,18 @@
                 android:id="@+id/img_user_profile"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_above="@+id/tv_nickname"
+                android:layout_above="@+id/tv_user_nickname"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
-                android:src="@{user.profileImage}" />
+                android:layout_marginBottom="20dp" />
 
             <TextView
-                android:id="@+id/tv_nickname"
+                android:id="@+id/tv_user_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/tv_intro"
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:text="@{user.nickName}"
+                android:text=""
                 android:textSize="25sp" />
 
             <TextView
@@ -52,7 +49,7 @@
                 android:layout_above="@+id/user_follower_following"
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:text="@{user.bio}"
+                android:text=""
                 android:textColor="@color/colorGray"
                 android:textSize="13sp" />
 

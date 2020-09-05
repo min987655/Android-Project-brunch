@@ -23,6 +23,7 @@ import com.cos.brunch.R;
 import com.cos.brunch.model.User;
 import com.cos.brunch.repository.UserRepository;
 import com.cos.brunch.screen.user.UserActivity;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -47,24 +48,37 @@ public class UserProfileUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile_update);
 
-        initData();
         initObject();
+        initData();
         initlistener();
-    }
-
-    private void initData() {
     }
 
     private void initObject() {
         imgCancel = findViewById(R.id.img_toolbar_l);
         imgProfileUpdate = findViewById(R.id.img_toolbar_r);
         imgProfileUpdate.setImageResource(R.drawable.img_check);
-        imgUserProfile = findViewById(R.id.img_user_profile);
         tvHeader = findViewById(R.id.tv_toolbar_header);
         tvHeader.setText("프로필 편집");
 
-        etNickname = findViewById(R.id.et_nickname);
-        etBio = findViewById(R.id.et_bio);
+        imgUserProfile = findViewById(R.id.img_user_profile_update);
+        etNickname = findViewById(R.id.et_nickname_update);
+        etBio = findViewById(R.id.et_bio_update);
+    }
+
+    private void initData() {
+        SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+        String serverJwtToken = sf.getString("jwtToken", "");
+
+        Map<String, Object> headerJwtToken = new HashMap<>();
+        headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+        Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
+        UserRepository userRepository = UserRepository.getInstance();
+        String stringProfileImage = userRepository.loginUserProfile(headerJwtToken).get(0).getProfileImage();
+        Log.d(TAG, "initData: stringProfileImage : " + stringProfileImage);
+        Picasso.get().load(stringProfileImage).into(imgUserProfile);
+        etNickname.setText(userRepository.loginUserProfile(headerJwtToken).get(0).getNickName());
+        etBio.setText(userRepository.loginUserProfile.get(0).getBio());
     }
 
     private void initlistener() {

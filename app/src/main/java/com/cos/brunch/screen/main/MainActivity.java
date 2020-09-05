@@ -91,6 +91,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);
+
+                SharedPreferences sf = getSharedPreferences("test",MODE_PRIVATE);
+                String serverJwtToken = sf.getString("jwtToken", "");
+
+                Map<String, Object> headerJwtToken = new HashMap<>();
+                headerJwtToken.put("Authorization", "Bearer "+serverJwtToken);
+                Log.d(TAG, "onClick: headerJwtToken : " + headerJwtToken);
+
+                UserRepository userRepository = UserRepository.getInstance();
+                userRepository.loginUserProfile(headerJwtToken);
+
             }
         });
 
@@ -98,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // 서버 특정유저 주소값 넘기기 테스트
+//              서버 특정유저 주소값 넘기기 테스트
 //                int id = 1;
 //                UserRepository userRepository = UserRepository.getInstance();
 //                userRepository.findById(id);

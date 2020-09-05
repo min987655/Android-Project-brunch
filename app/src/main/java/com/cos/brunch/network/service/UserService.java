@@ -33,7 +33,8 @@ public interface UserService {
 
     // 구독한 작가 찾기
     @GET("user/profile/{id}")
-    Call<User> getUserProfile(@Path("id") int id);
+    Call<User> getUserProfile(@HeaderMap Map<String, Object> data,
+            @Path("id") int id);
 }
 
 
