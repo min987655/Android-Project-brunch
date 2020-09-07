@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".screen.main.MainActivity">
+    android:layout_height="match_parent">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -20,8 +19,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="150dp">
 
             <ImageView
                 android:id="@+id/now_toolbar_img"
@@ -49,12 +47,55 @@
 
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_now_content"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4.5"
-            android:scrollbars="none" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_now_post_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:text="커피"
+                android:textColor="@color/colorAccent"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/story"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_now_post_tag"
+                android:gravity="center_vertical"
+                android:text="이야기"
+                android:textSize="23dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:gravity="center_vertical"
+                android:src="@drawable/img_next_g"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_now_post_coffee"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:layout_below="@+id/tv_now_post_tag"
+                android:scrollbars="none" />
+
+            <View
+                android:id="@+id/now_bar"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/rv_now_post_coffee"
+                android:background="@color/colorBorderDark" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 

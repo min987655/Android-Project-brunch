@@ -17,6 +17,13 @@
 
         <include layout="@layout/toolbar_sub" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_library"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/img_library"/>
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_library"
             android:layout_width="match_parent"
@@ -38,10 +45,11 @@
 
         <TextView
             android:id="@+id/tv_library"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="137dp"
-            android:gravity="center"
             android:text="글 읽는 서재"
+            android:gravity="center_vertical"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/nanummyeongjo"
             android:textColor="@color/colorBlack"
             android:textSize="23sp"/>

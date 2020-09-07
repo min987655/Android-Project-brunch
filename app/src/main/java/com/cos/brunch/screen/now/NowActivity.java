@@ -81,44 +81,44 @@ public class NowActivity extends AppCompatActivity {
         keywordAdapter.addTag(new Tag(1, 1, 1, "지구한바퀴세계여행"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "그림·웹툰"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "시사·이슈"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "IT트렌트"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "IT                 트렌트"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "사진·촬영"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "취향저격영화 리뷰"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "오늘은 이런 책"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "뮤직 인사이드"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "글쓰기 코치"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "직장인 현실 조언"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "스타트업 경험담"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "육아이야기"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "취향저격    영화 리뷰"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "오늘은        이런 책"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "뮤직            인사이드"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "글쓰기         코치"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "직장인        현실 조언"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "스타트업    경험담"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "육아            이야기"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "요리·레시피"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "건강·운동"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "멘탈 관리 심리 탐구"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "디자인 스토리"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "멘탈 관리   심리 탐구"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "디자인        스토리"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "문화·예술"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "건축·설계"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "인문학·철학"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "쉽게 읽는 역사"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "우리집 반려동물"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "멋진 캘리그래피"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "인문학        철학"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "쉽게 읽는   역사"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "우리집        반려동물"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "멋진            캘리그래피"));
         keywordAdapter.addTag(new Tag(1, 1, 1, "사랑·이별"));
-        keywordAdapter.addTag(new Tag(1, 1, 1, "감성 에세이"));
+        keywordAdapter.addTag(new Tag(1, 1, 1, "감성            에세이"));
         rvKeyword.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
         rvKeyword.scrollToPosition(keywordAdapter.getItemCount()-1);
         rvKeyword.setAdapter(keywordAdapter);
 
-        contentVerticalAdapter = new ContentVerticalAdapter(allUsers, this);
-        rvNowContent.setHasFixedSize(true);
-        rvNowContent.setLayoutManager(new LinearLayoutManager(this));
-        rvNowContent.setAdapter(contentVerticalAdapter);
-
-        List<User> user1 = new ArrayList<>();
-        allUsers.add(user1);
-
-        List<User> user2 = new ArrayList<>();
-        allUsers.add(user2);
-
-        List<User> user3 = new ArrayList<>();
-        allUsers.add(user3);
+//        contentVerticalAdapter = new ContentVerticalAdapter(allUsers, this);
+//        rvNowContent.setHasFixedSize(true);
+//        rvNowContent.setLayoutManager(new LinearLayoutManager(this));
+//        rvNowContent.setAdapter(contentVerticalAdapter);
+//
+//        List<User> user1 = new ArrayList<>();
+//        allUsers.add(user1);
+//
+//        List<User> user2 = new ArrayList<>();
+//        allUsers.add(user2);
+//
+//        List<User> user3 = new ArrayList<>();
+//        allUsers.add(user3);
     }
 
     private void initlistener() {
@@ -129,13 +129,13 @@ public class NowActivity extends AppCompatActivity {
             }
         });
 
-        contentVerticalAdapter.setOnItemClickListener(new ContentVerticalAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                Intent intent = new Intent(mContext, PostsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        contentVerticalAdapter.setOnItemClickListener(new ContentVerticalAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View v, int position) {
+//                Intent intent = new Intent(mContext, PostsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         keywordAdapter.setOnItemClickListener(new KeywordAdapter.OnItemClickListener() {
             @Override

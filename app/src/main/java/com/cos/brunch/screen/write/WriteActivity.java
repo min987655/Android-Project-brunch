@@ -177,12 +177,12 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
             }
         });
 
-        findViewById(R.id.action_blockquote).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mEditor.setBlockquote();
-            }
-        });
+//        findViewById(R.id.action_blockquote).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mEditor.setBlockquote();
+//            }
+//        });
 
         findViewById(R.id.action_insert_image).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,12 +191,12 @@ public class WriteActivity extends AppCompatActivity implements DialogCallBack {
             }
         });
 
-        findViewById(R.id.action_insert_link).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mEditor.insertLink("https://github.com/wasabeef", "testLink");
-            }
-        });
+//        findViewById(R.id.action_insert_link).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mEditor.insertLink("https://github.com/wasabeef", "testLink");
+//            }
+//        });
     }
 
     // 앨범으로 이동

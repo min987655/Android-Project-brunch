@@ -9,6 +9,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private Session session;
     private Context mContext = LoginActivity.this;
 
-    private Button btn_custom_login;
+    private TextView tvLoginKakao;
+    private Button btnCustomLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +49,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initObject(){
-        btn_custom_login = findViewById(R.id.btn_custom_login);
+        btnCustomLogin = findViewById(R.id.btn_custom_login);
+        tvLoginKakao = findViewById(R.id.tv_login_kakao);
     }
 
     private void initListener(){
-        btn_custom_login.setOnClickListener(new View.OnClickListener() {
+        btnCustomLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                session.open(AuthType.KAKAO_LOGIN_ALL, LoginActivity.this);
+            }
+        });
+        tvLoginKakao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 session.open(AuthType.KAKAO_LOGIN_ALL, LoginActivity.this);
