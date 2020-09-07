@@ -64,10 +64,13 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
         List<PostRespDto> postSelectItem = new ArrayList<>();
         postSelectItem.add(postRespDtos.get(2));
         postSelectItem.add(postRespDtos.get(7));
+        postSelectItem.add(postRespDtos.get(10));
+        postSelectItem.add(postRespDtos.get(13));
         postSelectItem.add(postRespDtos.get(0));
         postSelectItem.add(postRespDtos.get(9));
         postSelectItem.add(postRespDtos.get(1));
         postSelectItem.add(postRespDtos.get(4));
+        postSelectItem.add(postRespDtos.get(14));
         this.postRespDtos = postSelectItem;
         notifyDataSetChanged();
     }
