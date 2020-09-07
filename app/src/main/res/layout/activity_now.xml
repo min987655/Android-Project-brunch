@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" />
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,33 +45,189 @@
                 android:layout_below="@+id/now_background_color"
                 android:layout_marginLeft="@dimen/toolbar_marginLeft"
                 android:layout_marginTop="-90dp"
+                android:orientation="horizontal"
                 android:scrollbars="none" />
 
         </RelativeLayout>
 
+<!--        감성에세이 시작-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tv_now_post_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:gravity="center_vertical"
+                    android:text="감성에세이"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/story"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_now_post_tag"
+                    android:gravity="center_vertical"
+                    android:text="이야기"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/toolbar_marginRight"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/img_next_g" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_now_post_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/tv_now_post_tag"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:orientation="horizontal"
+                    android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/now_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_below="@+id/rv_now_post_1"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorBorderDark" />
+
+            </RelativeLayout>
+<!--        감성에세이 끝-->
+
+<!--        그림웹툰 시작-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_now_post_tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:gravity="center_vertical"
+                    android:text="그림·웹툰"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/story2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_now_post_tag2"
+                    android:gravity="center_vertical"
+                    android:text="이야기"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/iv_now_posts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:paddingLeft="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/toolbar_marginRight"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/img_next_g" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_now_post_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/tv_now_post_tag2"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:orientation="horizontal"
+                    android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/now_bar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_below="@+id/rv_now_post_2"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorBorderDark" />
+            </RelativeLayout>
+<!--        그림웹툰 끝-->
+
+<!--        추천작가 시작-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_now_apply_tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:gravity="center_vertical"
+                    android:text="추천"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/story3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_now_apply_tag1"
+                    android:gravity="center_vertical"
+                    android:text="작가"
+                    android:textSize="17sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_now_apply_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/tv_now_apply_tag1"
+                    android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                    android:orientation="horizontal"
+                    android:scrollbars="none" />
+
+                <View
+                    android:id="@+id/now_bar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_below="@+id/rv_now_apply_1"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorBorderDark" />
+
+            </RelativeLayout>
+<!--        추천작가 끝-->
+
+<!--        스타트업 시작-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_now_post_tag"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="@dimen/toolbar_marginLeft"
-                android:text="커피"
-                android:textColor="@color/colorAccent"
-                android:textSize="23dp" />
 
             <TextView
-                android:id="@+id/story"
+                android:id="@+id/tv_now_post_tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:gravity="center_vertical"
+                android:text="스타트업"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/story_3"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/tv_now_post_tag"
+                android:layout_toRightOf="@+id/tv_now_post_tag3"
                 android:gravity="center_vertical"
-                android:text="이야기"
-                android:textSize="23dp" />
+                android:text="경험담"
+                android:textSize="17sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -77,27 +235,126 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/toolbar_marginRight"
                 android:gravity="center_vertical"
-                android:src="@drawable/img_next_g"/>
+                android:src="@drawable/img_next_g" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_now_post_coffee"
+                android:id="@+id/rv_now_post_3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:layout_below="@+id/tv_now_post_tag3"
                 android:layout_marginLeft="@dimen/toolbar_marginLeft"
-                android:layout_below="@+id/tv_now_post_tag"
+                android:orientation="horizontal"
                 android:scrollbars="none" />
 
             <View
-                android:id="@+id/now_bar"
+                android:id="@+id/now_bar_3"
                 android:layout_width="match_parent"
                 android:layout_height="0.3dp"
+                android:layout_below="@+id/rv_now_post_3"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/rv_now_post_coffee"
                 android:background="@color/colorBorderDark" />
 
         </RelativeLayout>
+<!--        스타트업 끝-->
+
+<!--        IT트렌드 시작-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_now_post_tag4"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:gravity="center_vertical"
+                android:text="IT트렌드"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/story_4"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_now_post_tag4"
+                android:gravity="center_vertical"
+                android:text="분석"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/toolbar_marginRight"
+                android:gravity="center_vertical"
+                android:src="@drawable/img_next_g" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_now_post_4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/tv_now_post_tag4"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:orientation="horizontal"
+                android:scrollbars="none" />
+
+            <View
+                android:id="@+id/now_bar_4"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@+id/rv_now_post_4"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorBorderDark" />
+        </RelativeLayout>
+<!--        그림웹툰 끝-->
+
+<!--        인기작가 시작-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_now_apply_tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:gravity="center_vertical"
+                android:text="추천"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/story_5"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_now_apply_tag2"
+                android:gravity="center_vertical"
+                android:text="작가"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_now_apply_2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/tv_now_apply_tag2"
+                android:layout_marginLeft="@dimen/toolbar_marginLeft"
+                android:orientation="horizontal"
+                android:scrollbars="none" />
+
+            <View
+                android:id="@+id/now_bar_5"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@+id/rv_now_apply_2"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorBorderDark" />
+        </RelativeLayout>
+<!--        인기작가 끝-->
 
     </LinearLayout>
+</ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav"

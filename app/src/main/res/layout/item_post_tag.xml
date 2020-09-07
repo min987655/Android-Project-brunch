@@ -81,7 +81,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
-                app:coverImg="@{postByTagRespDto.coverImg}" />
+                app:coverImg="@{postByTagRespDto.coverImg}"/>
         </RelativeLayout>
 
         <View

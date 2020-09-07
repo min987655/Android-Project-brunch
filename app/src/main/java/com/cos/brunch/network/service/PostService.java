@@ -25,7 +25,7 @@ public interface PostService {
     Call<List<Post>> getPosts();
 
     // now : post + tag
-    @GET("post/list/글쓰기코치")
+    @GET("post/list/디자인스토리")
     Call<List<PostByTagRespDto>> getPostByTag();
 
     // 글쓰기

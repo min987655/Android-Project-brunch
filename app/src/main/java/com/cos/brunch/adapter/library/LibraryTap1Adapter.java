@@ -44,7 +44,7 @@ public class LibraryTap1Adapter extends RecyclerView.Adapter<LibraryTap1Adapter.
         );
         return new MyViewHolder(itemPostBinding);
 
-    }
+}
 
     // 껍데기에 데이터 바인딩
     @Override

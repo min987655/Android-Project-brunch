@@ -59,7 +59,7 @@
         android:layout_alignLeft="@+id/tv_1"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_rounded_stroke_gray"
-        android:text="방송작가"
+        android:text="출간작가"
         android:textColor="@color/colorCharcoal"
         android:textSize="13dp" />
 

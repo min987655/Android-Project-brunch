@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="postByTagRespDto"
+            type="com.cos.brunch.dto.PostByTagRespDto" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp">
+
+        <ImageView
+            android:id="@+id/img_now_content_cover"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            app:coverImg="@{postByTagRespDto.coverImg}" />
+
+        <ImageView
+            android:id="@+id/img_now_content_background"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:background="#79000000"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/tv_now_content_title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/post_by"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="40dp"
+            android:text="@{postByTagRespDto.title}"
+            android:textColor="@color/colorWhite"
+            android:textSize="13sp" />
+
+        <RelativeLayout
+            android:id="@+id/post_by"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="-30dp"
+            android:layout_below="@+id/img_now_content_background"
+            android:layout_alignLeft="@+id/tv_now_content_title">
+
+            <TextView
+                android:id="@+id/tv_by_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/droidserif_regular"
+                android:text="by"
+                android:textColor="@color/colorWhite40"
+                android:textSize="11sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_now_apply_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_by_now"
+                android:text="@{postByTagRespDto.nickName}"
+                android:textColor="@color/colorWhite40"
+                android:textSize="11sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

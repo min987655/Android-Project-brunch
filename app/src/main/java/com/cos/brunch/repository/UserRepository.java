@@ -169,13 +169,7 @@ public class UserRepository {
                     return;
                 }
                 Log.d(TAG, "onResponse: loginUserProfile : response.body() : " + response.body());
-
                 User updateUser = response.body();
-                Log.d(TAG, "onResponse : loginUserProfile : updateUser : " + updateUser);
-
-                Log.d(TAG, "onResponse: loginUserProfile : getNickName() : " + updateUser.getNickName());
-                Log.d(TAG, "onResponse: loginUserProfile : getBio() : " + updateUser.getBio());
-                Log.d(TAG, "onResponse: loginUserProfile : getProfileImage() : " + updateUser.getProfileImage());
 
                 if(updateUser != null) {
                     loginUserProfile.add(updateUser);

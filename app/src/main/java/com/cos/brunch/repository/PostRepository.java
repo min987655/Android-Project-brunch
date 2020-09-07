@@ -99,7 +99,8 @@ public class PostRepository {
                     return;
                 }
                 List<PostByTagRespDto> postByTagRespDtoItems = response.body();
-                Log.d(TAG, "onResponse: postByTagRespDtoItems : " + postByTagRespDtoItems);
+                Log.d(TAG, "onResponse: getAllPostByTags : " + postByTagRespDtoItems);
+                Log.d(TAG, "onResponse: getAllPostByTags : response.code() : " + response.code());
 
                 for (PostByTagRespDto PostByTagRespDto : postByTagRespDtoItems) {
                     String coverImg = PostByTagRespDto.getCoverImg();
