@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     private MainFrag2 frag2;
     private MainFrag3 frag3;
     private MainFrag4 frag4;
+    private MainFrag5 frag5;
+    private MainFrag6 frag6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +80,15 @@ public class MainActivity extends AppCompatActivity {
         frag2 = new MainFrag2();
         frag3 = new MainFrag3();
         frag4 = new MainFrag4();
+        frag5 = new MainFrag5();
+        frag6 = new MainFrag6();
 
         mainAdapter.addFragment(frag1);
         mainAdapter.addFragment(frag2);
         mainAdapter.addFragment(frag3);
         mainAdapter.addFragment(frag4);
+        mainAdapter.addFragment(frag6);
+        mainAdapter.addFragment(frag5);
         viewPager.setAdapter(mainAdapter);
     }
 
@@ -101,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
 
                 UserRepository userRepository = UserRepository.getInstance();
                 userRepository.loginUserProfile(headerJwtToken);
-
             }
         });
 

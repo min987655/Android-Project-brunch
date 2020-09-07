@@ -1,6 +1,7 @@
 package com.cos.brunch.screen.login;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cos.brunch.R;
@@ -46,7 +48,17 @@ public class LoginActivity extends AppCompatActivity {
         setupMainView();
 
         sessionCallback.onSessionOpened();
+
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
 
     private void initObject(){
         btnCustomLogin = findViewById(R.id.btn_custom_login);

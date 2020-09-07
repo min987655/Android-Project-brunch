@@ -61,7 +61,15 @@ public class LibraryTap2Adapter extends RecyclerView.Adapter<LibraryTap2Adapter.
     }
 
     public void setPostRespDtos(List<PostRespDto> postRespDtos){
-        this.postRespDtos = postRespDtos;
+        List<PostRespDto> postSelectItem = new ArrayList<>();
+        postSelectItem.add(postRespDtos.get(5));
+        postSelectItem.add(postRespDtos.get(3));
+        postSelectItem.add(postRespDtos.get(10));
+        postSelectItem.add(postRespDtos.get(4));
+        postSelectItem.add(postRespDtos.get(12));
+        postSelectItem.add(postRespDtos.get(7));
+        postSelectItem.add(postRespDtos.get(2));
+        this.postRespDtos = postSelectItem;
         notifyDataSetChanged();
     }
 

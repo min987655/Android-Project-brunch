@@ -38,9 +38,9 @@ public class ApplyFrag1 extends Fragment {
 
         View v = inflater.inflate(R.layout.frag1_apply, container, false);
 
-        init(v);
-        initData();
-        initlistener();
+//        init(v);
+//        initData();
+//        initlistener();
 
         return v;
     }
@@ -48,7 +48,7 @@ public class ApplyFrag1 extends Fragment {
     private void init(View v){
 
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        rvApplyContent1 = v.findViewById(R.id.rv_apply_content1);
+//        rvApplyContent1 = v.findViewById(R.id.rv_apply_content1);
         applyTap1Adapter = new ApplyTap1Adapter();
     }
 

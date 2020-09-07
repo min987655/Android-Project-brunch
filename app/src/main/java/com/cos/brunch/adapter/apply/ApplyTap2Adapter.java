@@ -61,7 +61,13 @@ public class ApplyTap2Adapter extends RecyclerView.Adapter<ApplyTap2Adapter.MyVi
     }
 
     public void setPostRespDtos(List<PostRespDto> postRespDtos){
-        this.postRespDtos = postRespDtos;
+        List<PostRespDto> postSelectItem = new ArrayList<>();
+        postSelectItem.add(postRespDtos.get(8));
+        postSelectItem.add(postRespDtos.get(10));
+        postSelectItem.add(postRespDtos.get(11));
+        postSelectItem.add(postRespDtos.get(12));
+        postSelectItem.add(postRespDtos.get(13));
+        this.postRespDtos = postSelectItem;
         notifyDataSetChanged();
     }
 

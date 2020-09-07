@@ -64,7 +64,7 @@ public class ApplyActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setText("작가소개");
-        tabLayout.getTabAt(1).setText("글 "+"10");
+        tabLayout.getTabAt(1).setText("글 "+"5");
 
         imgMenu.setImageResource(R.drawable.img_back_b);
     }

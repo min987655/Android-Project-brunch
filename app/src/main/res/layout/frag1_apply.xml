@@ -1,17 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_apply_content1"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
-        android:scrollbars="none" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:text="소개"
+        android:textFontWeight="550" />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="10dp"
+        android:text="마음을 움직이는 글을 쓰려고 합니다. 근간 ｜ 오리의 여행2 - 기억해줘요, 나의 이름을" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_rounded_stroke_gray"
+            android:text="문학"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="13dp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_rounded_stroke_gray"
+            android:text="에세이"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="13dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_rounded_stroke_gray"
+            android:text="라이프스타일"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rounded_stroke_gray"
+            android:text="소설가"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="13dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rounded_stroke_gray"
+            android:text="포토그래퍼"
+            android:textColor="@color/colorCharcoal"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:text="브런치 활동"
+        android:textFontWeight="550" />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="10dp"
+        android:text="브런치 무비패스 #2 활동" />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="5dp"
+        android:text="깊이 있는 해석으로 새로운 영감을 드립니다"
+        android:textSize="11dp"
+        android:textColor="@color/colorCharcoal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginRight="@dimen/toolbar_marginRight"
+        android:background="@color/colorGray"/>
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:text="브런치X오보이 콜라보레이션 프로젝트 수상" />
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/toolbar_marginLeft"
+        android:layout_marginTop="5dp"
+        android:text="글 ｜ 오리와 나와"
+        android:textSize="11dp"
+        android:textColor="@color/colorCharcoal"/>
+
 </LinearLayout>

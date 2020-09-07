@@ -34,7 +34,7 @@ public class CabinetActivity extends AppCompatActivity {
     private CabinetFragmentAdapter cabinetAdapter;
 
     private CabinetFrag1 cabinetfrag1;
-    private CabinetFrag2 cabinetfrag2;
+//    private CabinetFrag2 cabinetfrag2;
     private TabLayout tabLayout;
 
     @Override
@@ -53,7 +53,7 @@ public class CabinetActivity extends AppCompatActivity {
         imgMenu = findViewById(R.id.img_apply_menu);
         cabinetAdapter = new CabinetFragmentAdapter(getSupportFragmentManager(), 1);
         cabinetfrag1 = new CabinetFrag1();
-        cabinetfrag2 = new CabinetFrag2();
+//        cabinetfrag2 = new CabinetFrag2();
         tabLayout = findViewById(R.id.tabs);
     }
 
@@ -62,14 +62,14 @@ public class CabinetActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
 
         cabinetAdapter.addFragment(cabinetfrag1);
-        cabinetAdapter.addFragment(cabinetfrag2);
+//        cabinetAdapter.addFragment(cabinetfrag2);
 
         viewPager.setAdapter(cabinetAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setText("저장글");
-        tabLayout.getTabAt(1).setText("발행취소글");
+//        tabLayout.getTabAt(1).setText("발행취소글");
 
         imgMenu.setImageResource(R.drawable.img_menu);
     }

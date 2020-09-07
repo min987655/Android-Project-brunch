@@ -40,7 +40,7 @@
         android:layout_below="@+id/tv_post_detail_title"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@id/tv_by"
-        android:text="nickName"
+        android:text="산들"
         android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 

@@ -21,7 +21,6 @@ public class LibraryTap1Adapter extends RecyclerView.Adapter<LibraryTap1Adapter.
 
     private static OnClickListener mListener = null;
     private static final String TAG = "LibraryTap1Adapter";
-    private List<Post> posts = new ArrayList<>();
     private List<PostRespDto> postRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
@@ -61,7 +60,15 @@ public class LibraryTap1Adapter extends RecyclerView.Adapter<LibraryTap1Adapter.
     }
 
     public void setPostRespDtos(List<PostRespDto> postRespDtos){
-        this.postRespDtos = postRespDtos;
+        List<PostRespDto> postSelectItem = new ArrayList<>();
+        postSelectItem.add(postRespDtos.get(3));
+        postSelectItem.add(postRespDtos.get(1));
+        postSelectItem.add(postRespDtos.get(4));
+        postSelectItem.add(postRespDtos.get(0));
+        postSelectItem.add(postRespDtos.get(7));
+        postSelectItem.add(postRespDtos.get(10));
+        postSelectItem.add(postRespDtos.get(12));
+        this.postRespDtos = postSelectItem;
         notifyDataSetChanged();
     }
 

@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -63,7 +64,7 @@ public class PostRepository {
                     Log.d(TAG, "onResponse: serverDate : " + serverDate);
 
                     SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+                    SimpleDateFormat newDateFormat = new SimpleDateFormat("MMM dd. yyyy", Locale.ENGLISH);
 
                     try {
                         Date testServerDate = serverDateFormat.parse(serverDate);
@@ -109,8 +110,8 @@ public class PostRepository {
                     String serverDate = PostByTagRespDto.getCreateDate();
                     Log.d(TAG, "onResponse: serverDate : " + serverDate);
 
-                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-                    SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    SimpleDateFormat newDateFormat = new SimpleDateFormat("MMM dd. yyyy", Locale.ENGLISH);
 
                     try {
                         Date testServerDate = serverDateFormat.parse(serverDate);
@@ -153,6 +154,25 @@ public class PostRepository {
                     String coverImg = postRespDto.getCoverImg();
                     String picassoImg = "http:" + coverImg;
                     postRespDto.setCoverImg(picassoImg);
+
+                    // createDate format 맞춤
+                    String serverDate = postRespDto.getCreateDate();
+                    Log.d(TAG, "onResponse: serverDate : " + serverDate);
+
+                    SimpleDateFormat serverDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    SimpleDateFormat newDateFormat = new SimpleDateFormat("MMM dd. yyyy", Locale.ENGLISH);
+
+                    try {
+                        Date testServerDate = serverDateFormat.parse(serverDate);
+                        String testNewDate = newDateFormat.format(testServerDate);
+
+                        String newDate = testNewDate;
+                        postRespDto.setCreateDate(newDate);
+
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
                 }
                 if (postItems != null) {
                     allPostRespDtos.setValue(postItems);

@@ -27,7 +27,7 @@
         android:layout_below="@id/header_background"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:src="@drawable/img_logo_b" />
+        android:src="@drawable/apply_profile" />
 
     <TextView
         android:id="@+id/tv_apply"
@@ -37,7 +37,7 @@
         android:layout_marginRight="@dimen/toolbar_marginRight"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:layout_marginTop="15dp"
-        android:text="브런치팀"
+        android:text="멀고느린구름"
         android:fontFamily="@font/notosans_light"
         android:textColor="@color/colorBlack"
         android:textSize="23sp" />
@@ -50,7 +50,7 @@
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="-15dp"
-        android:text="작가명"
+        android:text="소설가"
         android:textSize="13sp" />
 
     <TextView
@@ -84,7 +84,7 @@
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="-7dp"
-        android:text="10"
+        android:text="6,045"
         android:textSize="13sp" />
 
     <TextView
@@ -94,9 +94,8 @@
         android:layout_below="@+id/tv_following"
         android:layout_toRightOf="@+id/tv_follower"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginBottom="5dp"
         android:layout_marginTop="-7dp"
-        android:text="20"
+        android:text="15"
         android:textSize="13sp" />
 
     <Button
@@ -109,19 +108,20 @@
         android:layout_alignBottom="@+id/tv_follower_count"
         android:background="@drawable/button_rounded_solid_accent" />
 
-    <View
-        android:id="@+id/bar1"
-        android:layout_width="match_parent"
-        android:layout_height="0.3dp"
-        android:layout_above="@+id/tabs"
-        android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:background="@color/colorBorderDark" />
+<!--    <View-->
+<!--        android:id="@+id/bar1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.3dp"-->
+<!--        android:layout_above="@+id/tabs"-->
+<!--        android:layout_marginRight="@dimen/toolbar_marginRight"-->
+<!--        android:layout_marginLeft="@dimen/toolbar_marginLeft"-->
+<!--        android:background="@color/colorBorderDark" />-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/tv_follower_count"
         android:layout_marginRight="@dimen/toolbar_marginRight"
         android:layout_marginLeft="@dimen/toolbar_marginLeft">

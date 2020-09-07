@@ -24,7 +24,7 @@
         android:layout_below="@id/edit_background_color"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="@dimen/toolbar_marginRight"
-        android:src="@drawable/img_logo_b" />
+        android:src="@drawable/myprofile" />
 
     <TextView
         android:id="@+id/tv_nickname_title"

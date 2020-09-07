@@ -1,5 +1,12 @@
 package com.cos.brunch.model;
 
+import android.widget.ImageView;
+
+import androidx.databinding.BindingAdapter;
+
+import com.cos.brunch.R;
+import com.squareup.picasso.Picasso;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -55,6 +62,16 @@ public class User {
         this.profileImage = profileImage;
         this.provider = provider;
         this.providerId = providerId;
+    }
+
+    @BindingAdapter({"profileImage"})
+    public static void loadImage(ImageView view, String profileImage){
+        Picasso.get()
+                .load(profileImage)
+                .error(R.drawable.ic_error)
+                .placeholder(R.drawable.ic_load)
+                .resize(50,50)
+                .into(view);
     }
 }
 

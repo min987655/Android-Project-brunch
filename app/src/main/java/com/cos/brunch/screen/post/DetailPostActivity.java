@@ -52,7 +52,8 @@ public class DetailPostActivity extends AppCompatActivity {
     }
     private void initData() {
         detailPostAdapter = new DetailPostAdapter();
-        detailPostAdapter.addPost(new Post(1,"1.제목", "1.소제목", "1.본문", "에세이", 0, null));
+//        detailPostAdapter.addPost(new Post(1,"퇴직을 앞두고 만난 90년생 공무원", "1.소제목", "1.본문", "에세이", 0, null));
+//        detailPostAdapter.addPost(new Post(1,"1.제목", "1.소제목", "1.본문", "에세이", 0, null));
 
         rvPostPost.setLayoutManager(new LinearLayoutManager(this));
         rvPostPost.setAdapter(detailPostAdapter);

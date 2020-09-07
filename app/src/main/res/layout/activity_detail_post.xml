@@ -58,7 +58,7 @@
             android:layout_alignBaseline="@+id/tv_by"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/tv_by"
-            android:text="nickName"
+            android:text="날숭이"
             android:textColor="@color/colorCharcoal"
             android:textSize="13sp" />
 
@@ -125,7 +125,7 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/btn_post_keyword"
             android:background="@drawable/button_rounded_stroke_gray"
-            android:text="키워드키워드"
+            android:text="화장실·청소"
             android:textColor="@color/colorCharcoal"
             android:textSize="13dp" />
 
@@ -218,7 +218,7 @@
             android:layout_alignTop="@+id/tv_post_apply_nickname2"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/toolbar_marginRight"
-            android:src="@drawable/img_logo_b" />
+            android:src="@drawable/detail_profile" />
 
         <TextView
             android:id="@+id/tv_post_follower"

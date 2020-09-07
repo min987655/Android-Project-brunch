@@ -20,9 +20,11 @@ import com.cos.brunch.adapter.feed.FeedTap1Adapter;
 import com.cos.brunch.adapter.feed.FeedTap2Adapter;
 import com.cos.brunch.dto.PostRespDto;
 import com.cos.brunch.model.Post;
+import com.cos.brunch.model.User;
 import com.cos.brunch.screen.apply.ApplyActivity;
 import com.cos.brunch.screen.post.DetailPostActivity;
 import com.cos.brunch.viewmodel.MainViewModel;
+import com.cos.brunch.viewmodel.UsersViewModel;
 
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class FeedFrag2 extends Fragment {
     private static final String TAG = "ApplyFrag1";
     public FeedTap2Adapter feedTap2Adapter;
     private RecyclerView rvFeedContent2;
-    private MainViewModel mainViewModel;
+    private UsersViewModel usersViewModel;
 
     @Nullable
     @Override
@@ -47,7 +49,8 @@ public class FeedFrag2 extends Fragment {
     }
 
     private void init(View v){
-        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        usersViewModel = new ViewModelProvider(requireActivity()).get(UsersViewModel.class);
         rvFeedContent2 = v.findViewById(R.id.rv_feed_content2);
         feedTap2Adapter = new FeedTap2Adapter();
     }
@@ -58,15 +61,14 @@ public class FeedFrag2 extends Fragment {
         rvFeedContent2.setLayoutManager(layoutManager);
         rvFeedContent2.setAdapter(feedTap2Adapter);
 
-        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
+        Log.d(TAG, "onViewCreated: mainViewModel : " + usersViewModel);
 
-        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
+        usersViewModel.allUser구독하기().observe(requireActivity(), new Observer<List<User>>() {
             @Override
-            public void onChanged(List<PostRespDto> postRespDtos) {
-                feedTap2Adapter.setPostRespDtos(postRespDtos);
+            public void onChanged(List<User> users) {
+                feedTap2Adapter.setPostRespDtos(users);
             }
         });
-
     }
 
     private void initlistener() {

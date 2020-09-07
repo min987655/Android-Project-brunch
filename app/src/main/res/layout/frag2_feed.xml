@@ -12,7 +12,7 @@
         android:id="@+id/rv_feed_content2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="50dp"
         android:scrollbars="none" />
 
 </LinearLayout>

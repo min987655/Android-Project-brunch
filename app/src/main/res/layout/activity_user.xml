@@ -39,7 +39,7 @@
                 android:layout_above="@+id/tv_intro"
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:text=""
+                android:text="강민정"
                 android:textSize="25sp" />
 
             <TextView
@@ -76,7 +76,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="6dp"
                     android:layout_toRightOf="@+id/tv_follower"
-                    android:text="0"
+                    android:text="4"
                     android:textColor="@color/colorCharcoal"
                     android:textSize="16sp" />
 
@@ -107,7 +107,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:layout_toRightOf="@+id/tv_following"
-                    android:text="0"
+                    android:text="7"
                     android:textColor="@color/colorCharcoal"
                     android:textSize="16sp" />
 
