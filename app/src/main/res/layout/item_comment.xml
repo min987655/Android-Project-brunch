@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="commentRespDto"
+            type="com.cos.brunch.dto.CommentRespDto" />
+    </data>
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -9,7 +18,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="@dimen/toolbar_marginLeft"
         android:layout_marginTop="20dp"
-        android:src="@drawable/img_logo_b" />
+        app:profileImage="@{commentRespDto.profileImage}" />
 
     <TextView
         android:id="@+id/tv_reply_nickname"
@@ -20,7 +29,7 @@
         android:layout_marginTop="-5dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/colorCharcoal"
-        android:text="nickName"
+        android:text="@{commentRespDto.nickName}"
         android:textSize="15sp" />
 
     <TextView
@@ -43,7 +52,7 @@
         android:layout_toRightOf="@+id/tv_by"
         android:layout_marginTop="-5dp"
         android:textColor="@color/colorCharcoal"
-        android:text="createDate"
+        android:text="@{commentRespDto.createDate}"
         android:textSize="15sp" />
 
     <TextView
@@ -52,7 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_reply_nickname"
         android:layout_alignLeft="@+id/tv_reply_nickname"
-        android:text="댓글내용임"
+        android:layout_marginTop="2dp"
+        android:text="@{commentRespDto.content}"
         android:textSize="16sp" />
 
     <View
@@ -60,9 +70,9 @@
         android:layout_width="match_parent"
         android:layout_height="0.3dp"
         android:layout_below="@+id/tv_reply_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:paddingBottom="1dp"
         android:background="@color/colorBorderDark" />
 
 </RelativeLayout>
-
+</layout>

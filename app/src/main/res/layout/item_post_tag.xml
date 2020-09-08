@@ -82,6 +82,16 @@
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
                 app:coverImg="@{postByTagRespDto.coverImg}"/>
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignTop="@+id/tv_post_content"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/colorLightGray"/>
+
         </RelativeLayout>
 
         <View

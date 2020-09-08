@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.reply.ReplyActivity">
+    tools:context=".screen.comment.CommentActivity">
 
     <include layout="@layout/toolbar_sub" />
 
@@ -15,43 +15,41 @@
         android:layout_marginTop="50dp"
         android:background="@color/colorBorderDark" />
 
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp"
-        android:src="@drawable/img_br"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_logo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:src="@drawable/img_br"/>-->
 
-    <TextView
-        android:id="@+id/tv_reply_ex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/iv_logo"
-        android:layout_marginBottom="5dp"
-        android:text="작성된 댓글이 없습니다."/>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_reply_ex"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_below="@+id/iv_logo"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:text="작성된 댓글이 없습니다."/>-->
 
-    <TextView
-        android:id="@+id/tv_reply_ex2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_reply_ex"
-        android:textSize="11sp"
-        android:textColor="@color/colorGray"
-        android:text="작가에게 첫 번째 댓글을 남겨주세요!"/>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_reply_ex2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_below="@+id/tv_reply_ex"-->
+<!--        android:textSize="11sp"-->
+<!--        android:textColor="@color/colorGray"-->
+<!--        android:text="작가에게 첫 번째 댓글을 남겨주세요!"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_reply"
+        android:id="@+id/rv_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
-        android:paddingLeft="@dimen/toolbar_marginLeft"
-        android:paddingRight="@dimen/toolbar_marginRight"
         android:layout_below="@+id/reply_br1"
         android:layout_above="@+id/et_reply"/>
 

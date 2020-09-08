@@ -33,7 +33,7 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-        <activity android:name=".screen.reply.ReplyActivity" />
+        <activity android:name=".screen.comment.CommentActivity" />
         <activity android:name=".screen.post.DetailPostActivity" />
         <activity android:name=".screen.posts.PostsActivity" />
         <activity android:name=".screen.now.NowActivity" />

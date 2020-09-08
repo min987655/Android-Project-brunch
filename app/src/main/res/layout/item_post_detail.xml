@@ -1,53 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/iv_post_item_background"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="postRespDto"
+            type="com.cos.brunch.dto.PostRespDto" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_header" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_post_detail_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/toolbar_marginLeft"
-        android:layout_marginTop="-60dp"
-        android:layout_below="@+id/iv_post_item_background"
-        android:textColor="@color/colorWhite"
-        android:text="화장실이 없는 집"
-        android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/iv_post_item_background"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            app:coverImg="@{postRespDto.coverImg}" />
 
-    <TextView
-        android:id="@+id/tv_by"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_post_detail_title"
-        android:layout_alignLeft="@+id/tv_post_detail_title"
-        android:text="by"
-        android:fontFamily="@font/droidserif_regular"
-        android:textColor="@color/colorWhite60"
-        android:textSize="15sp"
-        android:textStyle="italic" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/colorCharcoal" />
 
-    <TextView
-        android:id="@+id/tv_post_detail_nickname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_post_detail_title"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@id/tv_by"
-        android:text="산들"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_post_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_post_item_background"
+            android:layout_marginLeft="@dimen/toolbar_marginLeft"
+            android:layout_marginTop="-60dp"
+            android:text="@{postRespDto.title}"
+            android:textColor="#80FFFFFF"
+            android:textSize="14sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:background="@color/colorGray20"/>
+        <TextView
+            android:id="@+id/tv_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_post_detail_title"
+            android:layout_alignLeft="@+id/tv_post_detail_title"
+            android:fontFamily="@font/droidserif_regular"
+            android:text="by"
+            android:textColor="@color/colorWhite40"
+            android:textSize="13sp"
+            android:textStyle="italic" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_post_detail_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_post_detail_title"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/tv_by"
+            android:text="@{postRespDto.nickName}"
+            android:textColor="@color/colorWhite40"
+            android:textSize="13sp" />
 
+
+    </RelativeLayout>
+</layout>

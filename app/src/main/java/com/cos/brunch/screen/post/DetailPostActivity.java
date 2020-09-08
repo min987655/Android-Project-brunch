@@ -3,25 +3,33 @@ package com.cos.brunch.screen.post;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cos.brunch.R;
 import com.cos.brunch.adapter.post.DetailPostAdapter;
-import com.cos.brunch.model.Post;
-import com.cos.brunch.screen.posts.PostsActivity;
-import com.cos.brunch.screen.reply.ReplyActivity;
+import com.cos.brunch.dto.PostByTagRespDto;
+import com.cos.brunch.dto.PostRespDto;
+import com.cos.brunch.screen.comment.CommentActivity;
+import com.cos.brunch.viewmodel.MainViewModel;
+import com.cos.brunch.viewmodel.PostsViewModel;
+
+import java.util.List;
 
 public class DetailPostActivity extends AppCompatActivity {
     private static final String TAG = "PostActivity";
     private Context mContext = DetailPostActivity.this;
     private DetailPostAdapter detailPostAdapter;
     private RecyclerView rvPostPost;
+    private MainViewModel mainViewModel;
 
     private ImageView imgBack, imgSearch;
     private TextView tvReply;
@@ -47,16 +55,22 @@ public class DetailPostActivity extends AppCompatActivity {
     }
 
     private void initDesign() {
-        rvPostPost = findViewById(R.id.rv_post_post);
+        rvPostPost = findViewById(R.id.rv_detail_post_item);
         rvPostPost.setNestedScrollingEnabled(false);
     }
     private void initData() {
         detailPostAdapter = new DetailPostAdapter();
-//        detailPostAdapter.addPost(new Post(1,"퇴직을 앞두고 만난 90년생 공무원", "1.소제목", "1.본문", "에세이", 0, null));
-//        detailPostAdapter.addPost(new Post(1,"1.제목", "1.소제목", "1.본문", "에세이", 0, null));
-
         rvPostPost.setLayoutManager(new LinearLayoutManager(this));
         rvPostPost.setAdapter(detailPostAdapter);
+
+        mainViewModel = new ViewModelProvider(DetailPostActivity.this).get(MainViewModel.class);
+        mainViewModel.DTO구독하기().observe(this, new Observer<List<PostRespDto>>() {
+            @Override
+            public void onChanged(List<PostRespDto> postRespDtos) {
+                Log.d(TAG, "onChanged: 구독데이터 변경 완");
+                detailPostAdapter.setPostRespDto(postRespDtos);
+            }
+        });
     }
 
     private void initlistener() {
@@ -78,7 +92,7 @@ public class DetailPostActivity extends AppCompatActivity {
         tvReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, ReplyActivity.class);
+                Intent intent = new Intent(mContext, CommentActivity.class);
                 startActivity(intent);
             }
         });

@@ -33,8 +33,6 @@ public class PostsActivity extends AppCompatActivity {
     private PostsAdapter postsAdapter;
     private RecyclerView rvPostsContent;
 
-    private MainViewModel mainViewModel;
-
     private PostsViewModel postsViewModel;
 
     private ImageView imgBack, imgSearch;
@@ -67,8 +65,6 @@ public class PostsActivity extends AppCompatActivity {
 
         rvPostsContent.setLayoutManager(new LinearLayoutManager(this));
         rvPostsContent.setAdapter(postsAdapter);
-
-        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         postsViewModel = new ViewModelProvider(this).get(PostsViewModel.class);
 

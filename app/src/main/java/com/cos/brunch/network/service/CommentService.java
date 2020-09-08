@@ -1,5 +1,6 @@
 package com.cos.brunch.network.service;
 
+import com.cos.brunch.dto.CommentRespDto;
 import com.cos.brunch.dto.CommonRespDto;
 import com.cos.brunch.model.Comment;
 import com.cos.brunch.model.Post;
@@ -18,12 +19,13 @@ import retrofit2.http.Path;
 
 public interface CommentService {
 
-    @POST("post/commentSave")
+    @POST("post/commentSave/{postId}")
     Call<Comment> commentSave(@HeaderMap Map<String, Object> data,
                               @Body Comment comment,
-                              @Body Post post);
+                              @Path("postId") int postId);
 
-//    @GET("post/comment")
+    @GET("post/comment/{postId}")
+    Call<List<CommentRespDto>> getComment(@Path("postId") int postId);
 }
 
 

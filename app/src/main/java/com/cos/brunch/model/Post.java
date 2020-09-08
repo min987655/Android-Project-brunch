@@ -46,7 +46,7 @@ public class Post {
     public static void loadImage(ImageView view, String coverImg){
         Picasso.get()
                 .load(coverImg)
-                .error(R.drawable.img_test)
+                .error(R.drawable.img_post_write)
                 .placeholder(R.drawable.ic_load)
                 .resize(50,50)
                 .into(view);
