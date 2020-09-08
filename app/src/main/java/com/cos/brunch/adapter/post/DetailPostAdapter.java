@@ -51,10 +51,6 @@ public class DetailPostAdapter extends RecyclerView.Adapter<DetailPostAdapter.My
                 false
         );
         return new MyViewHolder(itemPostDetailBinding);
-//        Log.d(TAG, "onCreateViewHolder: ");
-//        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        View view = inflater.inflate(R.layout.item_post_detail, parent, false);
-//        return new MyViewHolder(view);
     }
 
     // 껍데기에 데이터 바인등
@@ -72,7 +68,6 @@ public class DetailPostAdapter extends RecyclerView.Adapter<DetailPostAdapter.My
     }
 
     public void setPostRespDto(List<PostRespDto> postRespDtos){
-
         List<PostRespDto> postRespDtoItem = new ArrayList<>();
         postRespDtoItem.add(postRespDtos.get(5));
         postRespDtoItem.add(postRespDtos.get(3));
@@ -104,34 +99,5 @@ public class DetailPostAdapter extends RecyclerView.Adapter<DetailPostAdapter.My
                 }
             });
         }
-
-//        private TextView tvPostDetailTitle, tvPostDetailNickname;
-//        private ImageView ivPostItemBackground;
-//
-//        public MyViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//            tvPostDetailTitle = itemView.findViewById(R.id.tv_post_detail_title);
-//            tvPostDetailNickname = itemView.findViewById(R.id.tv_post_detail_nickname);
-//            ivPostItemBackground = itemView.findViewById(R.id.iv_post_item_background);
-//
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Log.d(TAG, "onClick: 아이템 클릭 됨 ");
-//                    int position = getAdapterPosition() ;
-//                    if (position != RecyclerView.NO_POSITION) {
-//                        mListener.onItemClick(v, position);
-//                    }
-//                }
-//            });
-//
-//        }
-
-//        public void setItem(Post post) {
-//            Log.d(TAG, "setItem: ");
-//            tvPostDetailTitle.setText(post.getTitle());
-//            tvPostDetailNickname.setText("작가닉네임");
-////            ivPostItemBackground.setImageResource(post.getCoverImg());
-//        }
     }
 }

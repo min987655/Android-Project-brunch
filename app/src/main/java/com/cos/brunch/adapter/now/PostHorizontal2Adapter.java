@@ -20,7 +20,6 @@ public class PostHorizontal2Adapter extends RecyclerView.Adapter<PostHorizontal2
 
     private static final String TAG = "PostHorizontal1Adapter";
     private static OnClickListener mListener = null;
-//    private List<Post> posts;
     private List<PostByTagRespDto> postByTagRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
@@ -31,17 +30,10 @@ public class PostHorizontal2Adapter extends RecyclerView.Adapter<PostHorizontal2
         this.mListener = listener;
     }
 
-//    public PostHorizontal1Adapter(List<PostRespDto> postRespDtos) {
-//        this.postRespDtos = postRespDtos;
-//    }
-
     // 껍데기 생성
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        View view = inflater.inflate(R.layout.item_now_post_horizontal, parent, false);
-//        return new MyViewHolder(view);
 
         Log.d(TAG, "onCreateViewHolder: ");
         ItemNowPostHorizontalBinding itemNowPostHorizontalBinding = DataBindingUtil.inflate(
@@ -72,7 +64,6 @@ public class PostHorizontal2Adapter extends RecyclerView.Adapter<PostHorizontal2
         postByTagRespDtoItem.add(new PostByTagRespDto("딴상","오래오래","https://t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/4Led/image/tnVeLuxFAnnqIRj2n1C5GkAyjcE.jpg","어느 날은 집에 다와 현관문 밖까지 나온 엄마와 마주쳤는데 엄마가 날 보고 깜짝 놀라 해 같이 놀랬다. 내 문자를 받고 현관문 뒤 숨으려다가 나와 마주친 것이다.","2020-05-17 21:34:00.000000","박다빈","그림웹툰"));
         postByTagRespDtoItem.add(new PostByTagRespDto("17년 된 샤프에 대한 단상","","https://t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1aBA/image/EIv5-SwZruMZJY8ux0d0xRFvYVw.JPG","마음이 불안할 때 가끔 샤프 말고 연필이 땡긴다. 매끈하게 정제된 디자인에 심 갈아 끼우면서 쓰기 쉽게 사용할 수 있는 샤프보다, 투박한 모습에 관리가 필요해 보이는 연필 한 자루에 마음이 간다. 연필 한 자루 손에 꼭 쥐고서 종이에다가 하고 싶은 말을 끄적끄적거리면 토닥토닥 마음 깊숙이 위로를 받는다.","2020-08-02 10:14:00.000000","허지영","그림웹툰"));
         postByTagRespDtoItem.add(new PostByTagRespDto("발레, 잡설","최근에 그랬다","https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/guest/image/lEDQTwpfvM6e5m0vQtnOYDJCF_Q.JPG","더해가는 나이는 거칠고 무겁다. 육중한 파도의 무게와 같다. 어떻게 생각해도 하나의 책이 완결한 형식인 것과 비슷한 이치다. 또 한 사람의 삶은 책과 흡사하다. 몰락의 내러티브도 있지만 수직으로 달궈지는 서사도 있다.","2020-09-03 21:30:00.000000","지안","감성에세이"));
-//        postByTagRespDtoItem.add(postByTagRespDtos.get(0));
 
         this.postByTagRespDtos = postByTagRespDtoItem;
         notifyDataSetChanged();
@@ -80,9 +71,6 @@ public class PostHorizontal2Adapter extends RecyclerView.Adapter<PostHorizontal2
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-
-//        private ImageView imgNowContentCover;
-//        private TextView tvNowContentTitle, tvNowApplyNickname;
 
         private ItemNowPostHorizontalBinding itemNowPostHorizontalBinding;
 
@@ -102,19 +90,5 @@ public class PostHorizontal2Adapter extends RecyclerView.Adapter<PostHorizontal2
                 }
             });
         }
-
-//        public MyViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//            imgNowContentCover = itemView.findViewById(R.id.img_now_content_cover);
-//            tvNowContentTitle = itemView.findViewById(R.id.tv_now_content_title);
-//            tvNowApplyNickname = itemView.findViewById(R.id.tv_now_apply_nickname);
-//        }
-//
-//        public void setItem(PostRespDto postRespDto) {
-//            imgNowContentCover.setImageResource(R.drawable.img_cover);
-//            tvNowContentTitle.setText("꿈이 꼭 있어야할까.");
-//            tvNowApplyNickname.setText("닉네임");
-//        }
     }
-
 }

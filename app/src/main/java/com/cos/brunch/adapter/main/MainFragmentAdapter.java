@@ -45,20 +45,6 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         Fragment fm = fragmentList.get(position);
-//
-//        switch (position) {
-//            case 0:
-//                return new MainFrag1();
-//            case 1:
-//                return new MainFrag2();
-//            case 2:
-//                return new MainFrag3();
-//            case 3:
-//                return new MainFrag4();
-//            case 4:
-//                return new MainFrag2();
-//        }
-//        return new MainFrag1();
         Log.d(TAG, "createFragment: position : " + fm);
         return fragmentList.get(position);
     }
@@ -67,6 +53,5 @@ public class MainFragmentAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         Log.d(TAG, "getItemCount: " + fragmentList.size());
         return fragmentList.size();
-//        return 20;
     }
 }

@@ -23,7 +23,6 @@ public class FeedTap2Adapter extends RecyclerView.Adapter<FeedTap2Adapter.MyView
 
     private static OnClickListener mListener = null;
     private static final String TAG = "FeedTap2Adapter";
-//    private List<PostRespDto> postRespDtos = new ArrayList<>();
     private List<User> users = new ArrayList<>();
 
     public interface OnClickListener {
@@ -66,10 +65,6 @@ public class FeedTap2Adapter extends RecyclerView.Adapter<FeedTap2Adapter.MyView
         this.users = users;
         notifyDataSetChanged();
     }
-
-//    public Post getPostAt(int position){
-//        return posts.get(position);
-//    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {

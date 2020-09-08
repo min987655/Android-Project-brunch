@@ -27,7 +27,6 @@ import java.util.List;
 public class MainFrag4 extends Fragment {
     private static final String TAG = "MainFrag4";
 
-    private MainViewModel mainViewModel;
     public List<Post> post = new ArrayList<>();
     public List<PostRespDto> postRespDtos = new ArrayList<>();
 
@@ -45,18 +44,10 @@ public class MainFrag4 extends Fragment {
         String title5 = postRepository.getPostRespDtos().getValue().get(4).getTitle();
         String nickName5 = postRepository.getPostRespDtos().getValue().get(4).getNickName();
 
-//        String title4 = postRepository.getAllPosts().getValue().get(3).getTitle();
-//        String nickName4 = postRepository.getAllPosts().getValue().get(3).getNickName();
-//
-//        String title5 = postRepository.getAllPosts().getValue().get(4).getTitle();
-//        String nickName5 = postRepository.getAllPosts().getValue().get(4).getNickName();
-
         String coverImage4 = postRepository.getPostRespDtos().getValue().get(3).getCoverImg();
         String coverImage5 = postRepository.getPostRespDtos().getValue().get(4).getCoverImg();
         Picasso.get().load(coverImage4).into(layout.imgCoverBackMain1);
         Picasso.get().load(coverImage5).into(layout.imgCoverBackMain2);
-
-
 
         layout.tvTitle4.setText(title4);
         layout.tvNicknameMain4.setText(nickName4);
@@ -66,7 +57,6 @@ public class MainFrag4 extends Fragment {
 
         layout.tvTitle5.setText(title5);
         layout.tvNicknameMain5.setText(nickName5);
-
 
         return layout.getRoot();
     }

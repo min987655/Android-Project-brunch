@@ -27,11 +27,8 @@ import java.util.List;
 
 public class MainFrag6 extends Fragment {
 
-    private static final String TAG = "MainFrag2";
-    private MainViewModel mainViewModel;
-    //    public List<Post> post = new ArrayList<>();
+    private static final String TAG = "MainFrag6";
     public List<PostRespDto> postRespDtos = new ArrayList<>();
-    private Post post;
 
     @Nullable
     @Override
@@ -42,7 +39,6 @@ public class MainFrag6 extends Fragment {
         PostRepository postRepository = PostRepository.getInstance();
 
         String title7 = postRepository.getPostRespDtos().getValue().get(9).getTitle();
-        String content7 = postRepository.getPostRespDtos().getValue().get(9).getContent();
         String nickName7 = postRepository.getPostRespDtos().getValue().get(9).getNickName();
 
         String coverImage = postRepository.getPostRespDtos().getValue().get(9).getCoverImg();
@@ -51,7 +47,6 @@ public class MainFrag6 extends Fragment {
 
         layout.tvTitle.setText(title7);
         layout.tvNicknameMain.setText(nickName7);
-//        layout.tvConten.setText(content7);
 
         layout.imgCover.setOnClickListener(new View.OnClickListener() {
             @Override

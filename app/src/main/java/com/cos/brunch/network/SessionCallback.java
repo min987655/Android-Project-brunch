@@ -64,7 +64,6 @@ public class SessionCallback implements ISessionCallback {
                     @Override
                     public void onSuccess(MeV2Response result) {
 
-
                         Log.d(TAG, "onSuccess: result : " + result);
 
                         UserAccount kakaoAccount = result.getKakaoAccount();
@@ -74,9 +73,6 @@ public class SessionCallback implements ISessionCallback {
                             String id = String.valueOf(result.getId());
                             String email = kakaoAccount.getEmail();
                             String nickname = result.getProperties().get("nickname");
-
-//                            User user = new User(kakaoAccount.getEmail());
-//                            Log.d(TAG, "onSuccess: user : " + user);
 
                             // 서버에 맞는 json 형태 만들어 줌.
                             Map<String, Object> data1 = new HashMap<>();
@@ -119,14 +115,7 @@ public class SessionCallback implements ISessionCallback {
                                     Log.d(TAG, "onFailure: " + t.getMessage());
                                 }
                             });
-
-                            // 토큰
-//                            accessToken = Session.getCurrentSession().getTokenInfo();
-//                            String acToken = accessToken.getAccessToken();
-//                            Log.d(TAG, "onSuccess: getAccessToken : " + acToken);
-//                            Log.d(TAG, "onSuccess: getRefreshToken : " + accessToken.getRefreshToken());
                         }
-
                     }
                 });
     }

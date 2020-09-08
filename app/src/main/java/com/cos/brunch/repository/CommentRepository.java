@@ -80,7 +80,7 @@ public class CommentRepository {
             }
             @Override
             public void onFailure(Call<List<CommentRespDto>> call, Throwable t) {
-                Log.d(TAG, "onFailure: getAllPosts : error : " + t.getMessage());
+                Log.d(TAG, "onFailure: getAllComments : error : " + t.getMessage());
             }
         });
         return allCommentRespDtos;

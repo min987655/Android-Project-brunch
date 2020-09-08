@@ -95,5 +95,4 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             });
         }
     }
-
 }

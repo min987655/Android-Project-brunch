@@ -101,7 +101,5 @@ public class CabinetActivity extends AppCompatActivity {
         userRepository.getLoginUser(headerJwtToken, navigationView, mContext);
 
         NavigationViewHelper.enableNavigation(mContext, navigationView, serverJwtToken);
-
-
     }
 }

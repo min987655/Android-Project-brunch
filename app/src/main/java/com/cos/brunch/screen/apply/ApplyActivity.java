@@ -23,7 +23,6 @@ public class ApplyActivity extends AppCompatActivity {
     private static final String TAG = "ApplyActivity";
     private Context mContext = ApplyActivity.this;
 
-//    private DrawerLayout drawerLayout;
     private ImageView imgMenu;
 
     private ViewPager viewPager;
@@ -53,7 +52,6 @@ public class ApplyActivity extends AppCompatActivity {
     }
 
     private void initDesign() {
-//        drawerLayout = findViewById(R.id.drawer);
         viewPager = findViewById(R.id.view_pager);
 
         applyAdapter.addFragment(applyfrag1);

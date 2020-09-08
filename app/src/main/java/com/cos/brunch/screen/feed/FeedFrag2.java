@@ -49,7 +49,6 @@ public class FeedFrag2 extends Fragment {
     }
 
     private void init(View v){
-//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         usersViewModel = new ViewModelProvider(requireActivity()).get(UsersViewModel.class);
         rvFeedContent2 = v.findViewById(R.id.rv_feed_content2);
         feedTap2Adapter = new FeedTap2Adapter();

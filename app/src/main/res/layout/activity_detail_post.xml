@@ -168,7 +168,7 @@
             android:layout_marginTop="-2dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/toolbar_marginRight"
-            android:text="3"
+            android:text="4"
             android:textSize="17dp" />
 
         <View

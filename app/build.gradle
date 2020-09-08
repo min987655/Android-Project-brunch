@@ -21,10 +21,6 @@ android {
         }
     }
 
-//    buildFeatures{
-//        dataBinding = true
-//    }
-
     dataBinding{
         enabled = true
     }
@@ -57,6 +53,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
+    // 적용 필 !
     // ted permission
     implementation "gun0912.ted:tedpermission:2.1.0"
 

@@ -21,7 +21,6 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
 
     private static OnClickListener mListener = null;
     private static final String TAG = "FeedTap1Adapter";
-    private List<Post> posts = new ArrayList<>();
     private List<PostRespDto> postRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
@@ -60,7 +59,7 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
         return postRespDtos.size();
     }
 
-    public void setPostRespDtos(List<PostRespDto> postRespDtos){
+    public void setPostRespDtos(List<PostRespDto> postRespDtos) {
         List<PostRespDto> postSelectItem = new ArrayList<>();
         postSelectItem.add(postRespDtos.get(2));
         postSelectItem.add(postRespDtos.get(7));
@@ -74,10 +73,6 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
         this.postRespDtos = postSelectItem;
         notifyDataSetChanged();
     }
-
-//    public Post getPostAt(int position){
-//        return posts.get(position);
-//    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -93,7 +88,7 @@ public class FeedTap1Adapter extends RecyclerView.Adapter<FeedTap1Adapter.MyView
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION) {
-                        if(mListener!=null){
+                        if (mListener != null) {
                             mListener.onItemClick(v, pos);
                         }
                     }

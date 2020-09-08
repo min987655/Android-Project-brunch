@@ -30,7 +30,6 @@ public class UserRepository {
     private MutableLiveData<List<User>> allUsers = new MutableLiveData<>();
     private List<User> loginUser = new ArrayList<>();
     public List<User> loginUserProfile = new ArrayList<>();
-//    private MutableLiveData<User> mtloginUser = new MutableLiveData<>();
     private UserService userService = ServiceGenerator.createService(UserService.class);
 
     private static UserRepository instance = new UserRepository();

@@ -124,7 +124,6 @@ public class PostRepository {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
                 }
 
                 if (postByTagRespDtoItems != null) {
@@ -173,7 +172,6 @@ public class PostRepository {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
                 }
                 if (postItems != null) {
                     allPostRespDtos.setValue(postItems);

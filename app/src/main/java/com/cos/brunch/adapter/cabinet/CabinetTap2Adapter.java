@@ -21,7 +21,6 @@ public class CabinetTap2Adapter extends RecyclerView.Adapter<CabinetTap2Adapter.
 
     private static OnClickListener mListener = null;
     private static final String TAG = "CabinetTap2Adapter";
-    private List<Post> posts = new ArrayList<>();
     private List<PostRespDto> postRespDtos = new ArrayList<>();
 
     public interface OnClickListener {
@@ -64,10 +63,6 @@ public class CabinetTap2Adapter extends RecyclerView.Adapter<CabinetTap2Adapter.
         this.postRespDtos = postRespDtos;
         notifyDataSetChanged();
     }
-
-//    public Post getPostAt(int position){
-//        return posts.get(position);
-//    }
 
     // 인플레이터된 데이터 들어갈 뷰홀더
     public static class MyViewHolder extends RecyclerView.ViewHolder {

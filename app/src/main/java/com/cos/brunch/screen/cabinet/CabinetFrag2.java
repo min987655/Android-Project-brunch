@@ -57,15 +57,6 @@ public class CabinetFrag2 extends Fragment {
 
         Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
 
-//        mainViewModel.구독하기().observe(requireActivity(), new Observer<List<Post>>() {
-//            @Override
-//            public void onChanged(List<Post> posts) {
-//                Log.d(TAG, "onChanged: 구독하고있는 데이터가 변경되었습니다." + posts);
-//                cabinetTap2Adapter.setPosts(posts);
-//
-//            }
-//        });
-
         mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
             @Override
             public void onChanged(List<PostRespDto> postRespDtos) {

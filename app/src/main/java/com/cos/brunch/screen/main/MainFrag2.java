@@ -28,10 +28,7 @@ import java.util.List;
 public class MainFrag2 extends Fragment {
 
     private static final String TAG = "MainFrag2";
-    private MainViewModel mainViewModel;
-    //    public List<Post> post = new ArrayList<>();
     public List<PostRespDto> postRespDtos = new ArrayList<>();
-    private Post post;
 
     @Nullable
     @Override
@@ -39,30 +36,6 @@ public class MainFrag2 extends Fragment {
 
         final Frag2MainBinding layout = DataBindingUtil.inflate(inflater, R.layout.frag2_main, container, false);
 
-//        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-//        Log.d(TAG, "onViewCreated: mainViewModel : " + mainViewModel);
-
-//        //레트로호출해서 응답받은 postRespDto
-//        PostRespDto postRespDto = null;
-//        mainViewModel.changeData(postRespDto);
-
-//        mainViewModel.DTO구독하기().observe(requireActivity(), new Observer<List<PostRespDto>>() {
-//            @Override
-//            public void onChanged(List<PostRespDto> postRespDtos) {
-//                Log.d(TAG, "onChanged: 구독 !!!! " + postRespDtos);
-//                String title2 = postRespDtos.get(1).getTitle();
-//                String content2 = postRespDtos.get(1).getContent();
-//                String nickName2 = postRespDtos.get(1).getNickName();
-//                layout.tvTitle2.setText(title2);
-//                layout.tvNicknameMain2.setText(nickName2);
-//                layout.tvContent2.setText(content2);
-//
-//                Log.d(TAG, "onChanged: title2 : " + title2);
-//                Log.d(TAG, "onChanged: title2 : layout : " + layout.tvTitle2.getText());
-//                Log.d(TAG, "onChanged: content2 : " + content2);
-//                Log.d(TAG, "onChanged: nickName2 : " + nickName2);
-//            }
-//        });
 
         PostRepository postRepository = PostRepository.getInstance();
 

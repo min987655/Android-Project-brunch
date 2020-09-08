@@ -24,9 +24,7 @@ import java.util.List;
 
 public class MainFrag5 extends Fragment {
 
-    private static final String TAG = "MainFrag3";
-    private MainViewModel mainViewModel;
-    public MainFragmentAdapter mainFragmentAdapter;
+    private static final String TAG = "MainFrag5";
     public List<PostRespDto> postRespDtos = new ArrayList<>();
 
     @Nullable

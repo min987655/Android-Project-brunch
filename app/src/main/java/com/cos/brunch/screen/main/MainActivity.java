@@ -114,11 +114,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//              서버 특정유저 주소값 넘기기 테스트
-//                int id = 1;
-//                UserRepository userRepository = UserRepository.getInstance();
-//                userRepository.findById(id);
-
                 Intent intent = new Intent(mContext, SearchActivity.class);
                 startActivity(intent);
             }
